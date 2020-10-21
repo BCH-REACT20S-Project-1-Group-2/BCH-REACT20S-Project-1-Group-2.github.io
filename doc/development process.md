@@ -36,3 +36,28 @@
 - doc/*
     - Documentation
     - Commits **must** include commit msg with prefix `doc/%documentation headline%: `
+
+### Step-by-step example for starting on a new feature:
+Make sure you're code is up-to-date, and then branch out from dev:
+```
+$ git pull --all
+$ git checkout dev
+$ git checkout -b feature/%my_awesome_new_feature%
+```
+Once done, or *at least* once a day when you've been coding, add & commit:
+```
+$ git add %files_that_you_added%
+$ git commit -m "feature/%my_awesome_new_feature%: your commit msg here"
+```
+
+And push to remote. 1st time with:
+```
+$ git push --set-upstream origin feature/%my_awesome_new_feature%
+```
+Subsequent times go directly with:
+```
+$ git push
+```
+Finally, once you're done with coding and testing your feature, and have pushed them to remote, create a pull request on GitHub to begin merge of your feature branch back to **the dev branch**.  
+See link for more detailed instructions:  
+https://docs.github.com/en/free-pro-team@latest/github/collaborating-with-issues-and-pull-requests/creating-a-pull-request
