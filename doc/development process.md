@@ -1,0 +1,38 @@
+# Development process guidelines
+## General
+- Project timeline 20.10.2020 - 11.11.2020
+- Sprints
+    - 20.10. - 26.10. - Set-up Sprint
+    - 27.10. - 2.11. - Sprint topic/goal TBD in next sprint planning
+    - 3.11. - 9.11. - (initial target: MVP complete)
+    - 10.11. - 11.11. - (initial target: MVP+ items)
+- Primary teamwork schedule
+    - Tuesdays
+        - Previous sprint demo 09:00 - 09:45
+        - Previous sprint retrospective 09:45 - 10:15
+        - Sprint planning 10:15 - 11:00
+    - Wednesdays
+        - "Daily" standup 09:15 - 09:30
+        - Joint development time 09:30 - 11:00
+        - Joint development time 13:30 - 15:00
+    - Thu - Mon
+        - Individual development time as per allowed by personal schedules
+## Git branching strategy:
+- master
+    - "Production" branch
+    - Commits **must** only be merges from "staging" branch
+- staging
+    - Code ready to be merged to master
+    - Commits **must** satisfy MVP+ and be **squashed** merges from "dev" branch
+- dev
+    - Main development branch from which all development should branch out from
+    - Commits **must** be merges from feature/bug/doc branches via pull requests
+- feature/*
+    - Feature branches
+    - Commits **must** include commit msg with prefix `feature/%feature name%: `
+- bugfix/*
+    - Bug fixing branches for existing features
+    - Commits **must** include commit msg with prefix `bugfix/%feature name%: `
+- doc/*
+    - Documentation
+    - Commits **must** include commit msg with prefix `doc/%documentation headline%: `
