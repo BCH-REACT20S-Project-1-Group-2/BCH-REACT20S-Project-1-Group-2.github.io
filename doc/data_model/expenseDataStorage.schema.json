@@ -5,6 +5,9 @@
   "description": "Data storage schema for expense item data objects",
   "type": "object",
   "properties": {
+    "budget": {
+      "type": "number"
+    },
     "expenses": {
       "type": "array",
       "items": {
@@ -12,6 +15,6 @@
       }
     }
   },
-  "required": ["expenses"],
+  "required": ["budget", "expenses"],
   "additionalProperties": false
 }
