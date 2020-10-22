@@ -1,0 +1,17 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "category.schema.json",
+    "title": "Category",
+    "description": "Schema for category objects",
+    "type": "object",
+    "properties": {
+        "categoryId": {
+            "type": "integer"
+        },
+        "categoryName": {
+            "type": "string"
+        }
+    },
+    "required": ["categoryId", "categoryName"],
+    "additionalProperties": false
+}

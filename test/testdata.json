@@ -1,0 +1,53 @@
+{
+    "expenses": [{
+            "expenseId": 0,
+            "expenseCategoryId": 0,
+            "expenseAmount": 100
+        },
+        {
+            "expenseId": 1,
+            "expenseCategoryId": 0,
+            "expenseAmount": 200
+        },
+        {
+            "expenseId": 2,
+            "expenseCategoryId": 1,
+            "expenseAmount": 300
+        },
+        {
+            "expenseId": 3,
+            "expenseCategoryId": 1,
+            "expenseAmount": 400
+        },
+        {
+            "expenseId": 4,
+            "expenseCategoryId": 2,
+            "expenseAmount": 500
+        },
+        {
+            "expenseId": 5,
+            "expenseCategoryId": 2,
+            "expenseAmount": 600
+        },
+        {
+            "expenseId": 6,
+            "expenseCategoryId": 2,
+            "expenseAmount": 700
+        },
+        {
+            "expenseId": 7,
+            "expenseCategoryId": 3,
+            "expenseAmount": 800
+        },
+        {
+            "expenseId": 8,
+            "expenseCategoryId": 4,
+            "expenseAmount": 900
+        },
+        {
+            "expenseId": 9,
+            "expenseCategoryId": 5,
+            "expenseAmount": 1000
+        }
+    ]
+}

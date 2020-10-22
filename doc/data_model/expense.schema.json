@@ -1,0 +1,23 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "expense.schema.json",
+    "title": "Expense",
+    "description": "Schema for expense item objects",
+    "type": "object",
+    "properties": {
+        "expenseId": {
+            "type": "integer",
+            "exclusiveMinimum": -1
+        },
+        "expenseCategoryId": {
+            "type": "integer",
+            "exclusiveMinimum": -1
+        },
+        "expenseAmount": {
+            "type": "number",
+            "exclusiveMinimum": 0
+        }
+    },
+    "required": ["expenseId"],
+    "additionalProperties": false
+}

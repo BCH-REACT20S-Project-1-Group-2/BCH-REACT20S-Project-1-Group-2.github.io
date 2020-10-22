@@ -1,0 +1,17 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "expenseDataStorage.schema.json",
+  "title": "Expense data storage",
+  "description": "Data storage schema for expense item data objects",
+  "type": "object",
+  "properties": {
+    "expenses": {
+      "type": "array",
+      "items": {
+        "$ref": "expense.schema.json"
+      }
+    }
+  },
+  "required": ["expenses"],
+  "additionalProperties": false
+}
