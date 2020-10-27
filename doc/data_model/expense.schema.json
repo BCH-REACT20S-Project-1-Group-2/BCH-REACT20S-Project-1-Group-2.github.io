@@ -6,18 +6,25 @@
     "type": "object",
     "properties": {
         "expenseId": {
+            "description": "Unique identifier for an expense item",
             "type": "integer",
-            "exclusiveMinimum": -1
+            "minimum": 0
         },
         "expenseCategoryId": {
+            "description": "Reference to a category id to which this expense belongs",
             "type": "integer",
-            "exclusiveMinimum": -1
+            "minimum": 0
         },
         "expenseAmount": {
+            "description": "Value amount of the expense",
             "type": "number",
             "exclusiveMinimum": 0
+        },
+        "expenseType": {
+            "type": "string",
+            "enum": ["Fixed", "Irregular"]
         }
     },
-    "required": ["expenseId"],
+    "required": ["expenseId", "expenseType"],
     "additionalProperties": false
 }

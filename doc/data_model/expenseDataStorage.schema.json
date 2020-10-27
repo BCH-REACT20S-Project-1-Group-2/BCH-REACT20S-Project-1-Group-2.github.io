@@ -5,16 +5,23 @@
   "description": "Data storage schema for expense item data objects",
   "type": "object",
   "properties": {
-    "budget": {
+    "salary": {
+      "description": "Total salary for the user from which expenses should be deducted",
       "type": "number"
     },
+    "targetSavings": {
+      "description": "Target savings for the user",
+      "type": "number",
+      "minimum": 0
+    },
     "expenses": {
+      "description": "Array of expense items",
       "type": "array",
       "items": {
         "$ref": "expense.schema.json"
       }
     }
   },
-  "required": ["budget", "expenses"],
+  "required": ["salary", "expenses"],
   "additionalProperties": false
 }

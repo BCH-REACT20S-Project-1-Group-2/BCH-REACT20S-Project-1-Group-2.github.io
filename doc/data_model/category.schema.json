@@ -6,9 +6,12 @@
     "type": "object",
     "properties": {
         "categoryId": {
-            "type": "integer"
+            "description": "Unique identifier for a category item",
+            "type": "integer",
+            "minimum": 0
         },
         "categoryName": {
+            "description": "Display name of a category item",
             "type": "string"
         }
     },
