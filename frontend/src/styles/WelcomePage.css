@@ -1,0 +1,29 @@
+.WelcomePage {
+    height: 100vh;
+    display: grid;
+    grid-template-rows: 2fr 7fr 1fr;
+}
+
+.WelcomePage main {
+    background: #F2F0EB;
+    padding: 88px 21px;
+    text-align: center;
+}
+
+.WelcomePage h2 {
+    margin-bottom: 91px;
+}
+
+.WelcomePage form > * {
+    margin-bottom: 73px;
+    height: 60px;
+}
+
+.WelcomePage input, .WelcomePage button {
+    height: 60px;
+}
+
+.WelcomePage button, .WelcomePage button:hover, .WelcomePage button:active {
+    background-color: var(--secondary-color) !important;
+    border-color: var(--secondary-color) !important;
+}
