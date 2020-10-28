@@ -1,3 +1,26 @@
-.App {
-    /* Styles go here */
+:root {
+    --secondary-color: #E27D60;
+
+    --primary-bg-color: #F2F0EB;
 }
+
+* {
+    font-family: 'Nunito', sans-serif !important;
+}
+
+.App * {
+    margin: 0;
+    padding: 0;
+}
+
+.App h2 {
+    font-weight: 800;
+    font-size: 32px;
+}
+
+button, button:hover, button:active {
+    background-color: var(--secondary-color) !important;
+    border-color: var(--secondary-color) !important;
+}
+
+/* All application wide styling go here, e.g. fonts and colors etc */
