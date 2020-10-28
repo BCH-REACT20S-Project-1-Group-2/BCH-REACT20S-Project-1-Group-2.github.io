@@ -15,4 +15,9 @@
     font-size: 32px;
 }
 
+button, button:hover, button:active {
+    background-color: var(--secondary-color) !important;
+    border-color: var(--secondary-color) !important;
+}
+
 /* All application wide styling go here, e.g. fonts and colors etc */
