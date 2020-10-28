@@ -1,0 +1,30 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "expense.schema.json",
+    "title": "Expense",
+    "description": "Schema for expense item objects",
+    "type": "object",
+    "properties": {
+        "expenseId": {
+            "description": "Unique identifier for an expense item",
+            "type": "integer",
+            "minimum": 0
+        },
+        "expenseCategoryId": {
+            "description": "Reference to a category id to which this expense belongs",
+            "type": "integer",
+            "minimum": 0
+        },
+        "expenseAmount": {
+            "description": "Value amount of the expense",
+            "type": "number",
+            "exclusiveMinimum": 0
+        },
+        "expenseType": {
+            "type": "string",
+            "enum": ["Fixed", "Irregular"]
+        }
+    },
+    "required": ["expenseId", "expenseType"],
+    "additionalProperties": false
+}

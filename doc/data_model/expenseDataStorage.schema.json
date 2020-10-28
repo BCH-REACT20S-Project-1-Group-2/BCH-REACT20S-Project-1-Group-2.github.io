@@ -1,0 +1,27 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "expenseDataStorage.schema.json",
+  "title": "Expense data storage",
+  "description": "Data storage schema for expense item data objects",
+  "type": "object",
+  "properties": {
+    "salary": {
+      "description": "Total salary for the user from which expenses should be deducted",
+      "type": "number"
+    },
+    "targetSavings": {
+      "description": "Target savings for the user",
+      "type": "number",
+      "minimum": 0
+    },
+    "expenses": {
+      "description": "Array of expense items",
+      "type": "array",
+      "items": {
+        "$ref": "expense.schema.json"
+      }
+    }
+  },
+  "required": ["salary", "expenses"],
+  "additionalProperties": false
+}
