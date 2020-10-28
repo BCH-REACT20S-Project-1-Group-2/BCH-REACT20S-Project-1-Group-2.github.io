@@ -1,5 +1,5 @@
 import React from "react";
-import "./App.css";
+import "./styles/App.css";
 import WelcomePage from "./components/WelcomePage"
 import LandingPage from "./components/LandingPage"
 import ExpensePage from "./components/ExpensePage"
@@ -8,19 +8,22 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 function App() {
   return (
-    <Router>
-        <Switch>
-          <Route path="/landing">
-            <LandingPage />
-          </Route>
-          <Route path="/expense">
-            <ExpensePage />
-          </Route>
-          <Route path="/">
-            <WelcomePage />
-          </Route>
-        </Switch>
-    </Router>
+    <div className="App">
+      <Router>
+          <Switch>
+            <Route path="/landing">
+              <LandingPage />
+            </Route>
+            <Route path="/expense">
+              <ExpensePage />
+            </Route>
+            <Route path="/">
+              <WelcomePage />
+            </Route>
+          </Switch>
+      </Router>
+    </div>
+
   );
 }
 
