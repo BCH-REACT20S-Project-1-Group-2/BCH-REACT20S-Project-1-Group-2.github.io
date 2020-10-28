@@ -4,17 +4,18 @@ import { Link } from "react-router-dom";
 import Header from "./Header";
 import BalancePresentation from "./BalancePresentation";
 import Footer from "./Footer";
+import "../styles/LandingPage.css";
 
 function Landing() {
   return (
-    <>
+    <div className="LandingPage">
       <Header />
       <main>
         <BalancePresentation />
         <Accordion>
           <Card>
             <Accordion.Toggle as={Card.Header} eventKey="0">
-              Update salary
+              <Button className="w-100 text-white">Update salary</Button>
             </Accordion.Toggle>
             <Accordion.Collapse eventKey="0">
               <Card.Body>
@@ -45,16 +46,14 @@ function Landing() {
             </Accordion.Collapse>
           </Card>
           <Card>
-            <Link  to="/expense">
-            <Accordion.Toggle as={Card.Header}>
-              Add expense
-            </Accordion.Toggle>
+            <Link to="/expense">
+              <Accordion.Toggle as={Card.Header}>Add expense</Accordion.Toggle>
             </Link>
           </Card>
         </Accordion>
       </main>
       <Footer />
-    </>
+    </div>
   );
 }
 
