@@ -10,11 +10,13 @@ class ExpensePresentation extends React.Component {
     };
   }
   render() {
+    const { expensesLabel } = require("../phrases/ExpensePresentation.json");
+
     return (
       <Table>
         <tbody>
           <tr>
-            <td>Total Fixed Expense</td>
+            <td>{expensesLabel}</td>
             <td>{this.state.fixed} €</td>
           </tr>
           <tr>

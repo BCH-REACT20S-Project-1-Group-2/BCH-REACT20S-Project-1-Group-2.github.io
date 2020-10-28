@@ -7,6 +7,8 @@ function CustomModal(props) {
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
 
+  const { closeButtonLabel } = require("../phrases/App.json");
+
   return (
     <>
       <div onClick={handleShow}>{props.title}</div>
@@ -18,7 +20,7 @@ function CustomModal(props) {
         <Modal.Body>{props.body}</Modal.Body>
         <Modal.Footer>
           <Button variant="secondary" onClick={handleClose}>
-            Close
+            {closeButtonLabel}
           </Button>
         </Modal.Footer>
       </Modal>

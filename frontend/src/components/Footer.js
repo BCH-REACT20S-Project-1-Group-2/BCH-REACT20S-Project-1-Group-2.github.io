@@ -4,6 +4,8 @@ import AppFooter from "./AppFooter";
 import CustomModal from "./CustomModal";
 
 function Footer() {
+  const { about, privacyPolicy } = require("../phrases/Footer.json");
+  const { appName } = require("../phrases/App.json");
   return (
     <footer>
       <Switch>
@@ -14,14 +16,14 @@ function Footer() {
           <AppFooter />
         </Route>
         <Route path="/">
-          <CustomModal title="About" body="About lorem ipsum" />
+          <CustomModal title="About" body={about} />
           <CustomModal
             title="Privacy Policy"
-            body="Privacy policy lorem ipsum"
+            body={privacyPolicy}
           />
         </Route>
       </Switch>
-      <div>Copyright &copy; BudgetCrtl 2020</div>
+      <div>Copyright &copy; {appName}</div>
     </footer>
   );
 }

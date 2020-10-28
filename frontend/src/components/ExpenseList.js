@@ -7,6 +7,8 @@ class ExpenseList extends React.Component {
     this.state = { type: props.type };
   }
   render() {
+    const { saveButtonLabel } = require("../phrases/App.json");
+
     return (
       <>
         <Form>
@@ -20,7 +22,7 @@ class ExpenseList extends React.Component {
             </Form.Control>
             <Form.Control type="number" placeholder="e.g. 100 €" step=".01" />
           </Form.Group>
-          <Button variant="primary">Save</Button>
+          <Button variant="primary">{saveButtonLabel}</Button>
         </Form>
       </>
     );

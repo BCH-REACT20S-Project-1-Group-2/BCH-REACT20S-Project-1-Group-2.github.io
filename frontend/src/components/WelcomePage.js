@@ -5,17 +5,18 @@ import Header from "./Header";
 import Footer from "./Footer";
 
 function Welcome() {
+  const { welcomeText, welcomeCTA } = require("../phrases/App.json");
   return (
     <>
       <Header />
       <main>
-        <h2>Welcome Text</h2>
+        <h2>{welcomeText}</h2>
         <Form>
           <Form.Group controlId="formUserName">
             <Form.Control type="text" placeholder="your name" />
           </Form.Group>
           <Link to="/landing">
-            <Button variant="primary">Let's begin</Button>
+            <Button variant="primary">{welcomeCTA}</Button>
           </Link>
         </Form>
       </main>

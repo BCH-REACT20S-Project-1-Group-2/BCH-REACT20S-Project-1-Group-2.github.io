@@ -6,6 +6,14 @@ import BalancePresentation from "./BalancePresentation";
 import Footer from "./Footer";
 
 function Landing() {
+  const {
+    updateSalaryLabel,
+    salaryInputLabel,
+    updateSavingAmoungLabel,
+    savingInputLabel,
+    expensePageLinkLabel,
+  } = require("../phrases/LandingPage.json");
+  const {saveButtonLabel} = require('../phrases/App.json')
   return (
     <>
       <Header />
@@ -14,32 +22,32 @@ function Landing() {
         <Accordion>
           <Card>
             <Accordion.Toggle as={Card.Header} eventKey="0">
-              Update salary
+              {updateSalaryLabel}
             </Accordion.Toggle>
             <Accordion.Collapse eventKey="0">
               <Card.Body>
                 <Form>
                   <Form.Group controlId="formSalary">
-                    <Form.Label>Salary</Form.Label>
+                    <Form.Label>{salaryInputLabel}</Form.Label>
                     <Form.Control type="number" /> €
                   </Form.Group>
-                  <Button variant="primary">Save</Button>
+                  <Button variant="primary">{saveButtonLabel}</Button>
                 </Form>
               </Card.Body>
             </Accordion.Collapse>
           </Card>
           <Card>
             <Accordion.Toggle as={Card.Header} eventKey="1">
-              Add saving amount
+              {updateSavingAmoungLabel}
             </Accordion.Toggle>
             <Accordion.Collapse eventKey="1">
               <Card.Body>
                 <Form>
                   <Form.Group controlId="formSavings">
-                    <Form.Label>Amount</Form.Label>
+                    <Form.Label>{savingInputLabel}</Form.Label>
                     <Form.Control type="number" /> €
                   </Form.Group>
-                  <Button variant="primary">Save</Button>
+                  <Button variant="primary">{saveButtonLabel}</Button>
                 </Form>
               </Card.Body>
             </Accordion.Collapse>
@@ -47,7 +55,7 @@ function Landing() {
           <Card>
             <Link  to="/expense">
             <Accordion.Toggle as={Card.Header}>
-              Add expense
+              {expensePageLinkLabel}
             </Accordion.Toggle>
             </Link>
           </Card>
