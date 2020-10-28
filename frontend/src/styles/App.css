@@ -4,9 +4,10 @@
     --primary-bg-color: #F2F0EB;
 }
 
-.App {
-    font-family: 'Nunito', sans-serif;
+* {
+    font-family: 'Nunito', sans-serif !important;
 }
+
 .App * {
     margin: 0;
     padding: 0;
