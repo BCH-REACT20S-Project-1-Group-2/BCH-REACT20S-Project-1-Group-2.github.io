@@ -44,10 +44,14 @@ function Landing() {
               </Card.Body>
             </Accordion.Collapse>
           </Card>
+          <Card>
+            <Link  to="/expense">
+            <Accordion.Toggle as={Card.Header}>
+              Add expense
+            </Accordion.Toggle>
+            </Link>
+          </Card>
         </Accordion>
-        <Link to="/expense">
-          <Button variant="primary">Add expense</Button>
-        </Link>
       </main>
       <Footer />
     </>
