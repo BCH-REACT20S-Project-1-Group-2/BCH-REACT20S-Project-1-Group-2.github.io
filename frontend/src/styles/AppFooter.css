@@ -1,3 +1,16 @@
 .AppFooter {
     /* Styles go here */
+    background-color: #7FC1AC;
+    position: absolute;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 1rem;
+    
+}
+
+svg {
+    color: #F4F5F8;
+    font-size: 32px;
 }
