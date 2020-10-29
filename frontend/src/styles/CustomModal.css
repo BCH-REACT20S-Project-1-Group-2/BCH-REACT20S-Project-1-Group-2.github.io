@@ -9,3 +9,7 @@
 .modal-footer {
     justify-content: center !important;
 }
+
+.modal-content {
+    background-color: var(--primary-bg-color) !important;
+}
