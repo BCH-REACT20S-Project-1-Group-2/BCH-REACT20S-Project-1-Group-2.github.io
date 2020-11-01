@@ -15,39 +15,47 @@ function Landing() {
         <Accordion>
           <Card>
             <Accordion.Toggle as={Card.Header} eventKey="0">
-              <Button className="w-100 text-white">Update salary</Button>
+              <Button className="w-100 text-white">Update Salary</Button>
             </Accordion.Toggle>
             <Accordion.Collapse eventKey="0">
               <Card.Body>
                 <Form>
-                  <Form.Group controlId="formSalary">
-                    <Form.Label>Salary</Form.Label>
-                    <Form.Control type="number" /> €
-                  </Form.Group>
-                  <Button variant="primary">Save</Button>
+                  <div className="form-wrapper">
+                    <Form.Group controlId="formSalary">
+                      <Form.Label>Salary</Form.Label>
+                      <Form.Control type="number" />
+                      <p>€</p>
+                    </Form.Group>
+                    <Button variant="primary">Save</Button>
+                  </div>
                 </Form>
               </Card.Body>
             </Accordion.Collapse>
           </Card>
           <Card>
             <Accordion.Toggle as={Card.Header} eventKey="1">
-              Add saving amount
+              <Button className="w-100 text-white">Add Saving Amount</Button>
             </Accordion.Toggle>
             <Accordion.Collapse eventKey="1">
               <Card.Body>
                 <Form>
-                  <Form.Group controlId="formSavings">
-                    <Form.Label>Amount</Form.Label>
-                    <Form.Control type="number" /> €
-                  </Form.Group>
-                  <Button variant="primary">Save</Button>
+                  <div className="form-wrapper">
+                    <Form.Group controlId="formSavings">
+                      <Form.Label>Amount</Form.Label>
+                      <Form.Control type="number" />
+                      <p>€</p>
+                    </Form.Group>
+                    <Button variant="primary">Save</Button>
+                  </div>
                 </Form>
               </Card.Body>
             </Accordion.Collapse>
           </Card>
           <Card>
             <Link to="/expense">
-              <Accordion.Toggle as={Card.Header}>Add expense</Accordion.Toggle>
+              <Accordion.Toggle as={Card.Header}>
+                <Button className="w-100 text-white">Add Expense</Button>
+              </Accordion.Toggle>
             </Link>
           </Card>
         </Accordion>
