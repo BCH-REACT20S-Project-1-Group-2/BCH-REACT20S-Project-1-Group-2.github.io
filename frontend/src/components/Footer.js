@@ -1,7 +1,8 @@
-import React from "react";
-import { Switch, Route } from "react-router-dom";
-import AppFooter from "./AppFooter";
-import CustomModal from "./CustomModal";
+import React from 'react';
+import { Switch, Route } from 'react-router-dom';
+import AppFooter from './AppFooter';
+import CustomModal from './CustomModal';
+import '../styles/Footer.css';
 
 function Footer() {
   return (
@@ -21,7 +22,7 @@ function Footer() {
           />
         </Route>
       </Switch>
-      <div>Copyright &copy; BudgetCrtl 2020</div>
+      <div id="copyright">Copyright &copy; BudgetCrtl 2020</div>
     </footer>
   );
 }
