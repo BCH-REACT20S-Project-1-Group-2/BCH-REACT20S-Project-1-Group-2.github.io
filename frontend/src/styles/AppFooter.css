@@ -1,6 +1,6 @@
 .AppFooter {
     /* Styles go here */
-    background-color: #7FC1AC;
+    background-color: var(--headerFooter-bg-color);
     position: absolute;
     display: flex;
     justify-content: space-between;
@@ -11,6 +11,6 @@
 }
 
 svg {
-    color: #F4F5F8;
+    color: var(--light-font);
     font-size: 32px;
 }
