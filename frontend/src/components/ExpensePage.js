@@ -3,17 +3,16 @@ import Header from "./Header";
 import ExpensePresentation from "./ExpensePresentation";
 import ExpenseList from "./ExpenseList";
 import Footer from "./Footer";
-import "../styles/Expenses.css";
+import "../styles/ExpensePage.css";
 
 function Expense() {
   return (
-    <div className="expense">
+    <div className="ExpensePage">
       <Header />
-      <div className="bcg">
+      <div className="main">
         <ExpensePresentation />
         <ExpenseList type="expenses" />
       </div>
-
       <Footer />
     </div>
   );

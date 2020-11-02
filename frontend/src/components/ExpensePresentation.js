@@ -1,16 +1,16 @@
 import React from "react";
-import "../styles/Expenses.css";
+import "../styles/ExpensePresentation.css";
 
 class ExpensePresentation extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      expenses: 2800,
+      expenses: "2800 €",
     };
   }
   render() {
     return (
-      <div className="expPres">
+      <div className="ExpensePresentation">
         <div>Total Expense</div>
         <div>{this.state.expenses}</div>
       </div>

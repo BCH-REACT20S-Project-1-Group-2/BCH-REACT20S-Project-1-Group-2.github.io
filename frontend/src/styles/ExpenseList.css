@@ -1,0 +1,17 @@
+.expenseform{
+    display: grid;
+    height: 100%;
+    grid-template-columns: 6fr 3fr 1fr;
+    grid-gap: 1rem;
+    padding: 1rem;
+}
+
+.SaveIcon{
+    font-size: 22px;
+    color: #545149;
+    margin: 8px;
+}
+
+#SaveButton{
+    display: none;
+}
