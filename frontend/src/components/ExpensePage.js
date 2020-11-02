@@ -5,7 +5,7 @@ import ExpensePresentation from "./ExpensePresentation";
 import ExpenseList from "./ExpenseList";
 import Footer from "./Footer";
 
-function Expense() {
+function ExpensePage() {
   return (
     <>
       <Header />
@@ -23,4 +23,4 @@ function Expense() {
   );
 }
 
-export default Expense;
+export default ExpensePage;
