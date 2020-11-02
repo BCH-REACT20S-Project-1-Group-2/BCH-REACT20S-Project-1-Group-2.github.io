@@ -3,13 +3,11 @@
   margin-bottom: 40px;
 }
 
-.balance-display table td {
-  text-align: left;
-  border-top: 0px;
+.balance-display td {
   padding-bottom: 13px;
   width: 77%;
 }
-.balance-display table td:first-child {
+.balance-display td:first-child {
   font-weight: 700;
 }
 

@@ -19,15 +19,13 @@ function Landing() {
             </Accordion.Toggle>
             <Accordion.Collapse eventKey="0">
               <Card.Body>
-                <Form>
-                  <div className="form-wrapper">
-                    <Form.Group controlId="formSalary">
-                      <Form.Label>Salary</Form.Label>
-                      <Form.Control type="number" />
-                      <p>€</p>
-                    </Form.Group>
-                    <Button variant="primary">Save</Button>
-                  </div>
+                <Form className="form-wrapper">
+                  <Form.Group controlId="formSalary">
+                    <Form.Label>Salary</Form.Label>
+                    <Form.Control type="number" />
+                    <p>€</p>
+                  </Form.Group>
+                  <Button variant="primary">Save</Button>
                 </Form>
               </Card.Body>
             </Accordion.Collapse>
@@ -38,15 +36,13 @@ function Landing() {
             </Accordion.Toggle>
             <Accordion.Collapse eventKey="1">
               <Card.Body>
-                <Form>
-                  <div className="form-wrapper">
-                    <Form.Group controlId="formSavings">
-                      <Form.Label>Amount</Form.Label>
-                      <Form.Control type="number" />
-                      <p>€</p>
-                    </Form.Group>
-                    <Button variant="primary">Save</Button>
-                  </div>
+                <Form className="form-wrapper">
+                  <Form.Group controlId="formSavings">
+                    <Form.Label>Amount</Form.Label>
+                    <Form.Control type="number" />
+                    <p>€</p>
+                  </Form.Group>
+                  <Button variant="primary">Save</Button>
                 </Form>
               </Card.Body>
             </Accordion.Collapse>
