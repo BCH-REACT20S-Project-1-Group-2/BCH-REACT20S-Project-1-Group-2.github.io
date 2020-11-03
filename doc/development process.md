@@ -2,20 +2,19 @@
 ## General
 - Project timeline 20.10.2020 - 11.11.2020
 - Sprints
-    - 20.10. - 26.10. - Set-up Sprint
-    - 27.10. - 2.11. - Sprint topic/goal TBD in next sprint planning
-    - 3.11. - 9.11. - (initial target: MVP complete)
-    - 10.11. - 11.11. - (initial target: MVP+ items)
+    - 20.10. - 27.10. - Set-up & Design
+    - 27.10. - 3.11. - Front-end Visual Styling
+    - 3.11. - 10.11. - (initial target: MVP complete)
+    - 10.11. - 12.11. - (initial target: MVP+ items)
+    - 13.11. - 18.11. 
 - Primary teamwork schedule
-    - Tuesdays
+    - Wednesdays
         - Previous sprint demo 09:00 - 09:45
         - Previous sprint retrospective 09:45 - 10:15
         - Sprint planning 10:15 - 11:00
-    - Wednesdays
-        - "Daily" standup 09:15 - 09:30
-        - Joint development time 09:30 - 11:00
-        - Joint development time 13:30 - 15:00
-    - Thu - Mon
+        - Joint development time 11:45 - 15:00
+    - Thu - Tue
+        - Daily 09:00 - 09:30
         - Individual development time as per allowed by personal schedules
 ## Git branching strategy:
 - master
