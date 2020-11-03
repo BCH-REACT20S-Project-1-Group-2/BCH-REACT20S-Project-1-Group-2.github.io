@@ -7,7 +7,7 @@ import "../styles/WelcomePage.css";
 
 function WelcomePage() {
   return (
-    <div className="WelcomePage">
+    <>
       <Header />
       <main>
         <h2 id="welcomeText">Welcome Text</h2>
@@ -27,7 +27,7 @@ function WelcomePage() {
         </Form>
       </main>
       <Footer />
-    </div>
+    </>
   );
 }
 

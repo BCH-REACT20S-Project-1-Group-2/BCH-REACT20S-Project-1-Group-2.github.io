@@ -1,0 +1,18 @@
+.Page {
+  min-height: 812px;
+  height: 812px;
+  max-height: 812px;
+  min-width: 375px;
+  width: 375px;
+  max-width: 375px;
+
+  /* Every page is layed out as a grid with 3 items: 
+    <>
+        <header>
+        <main>
+        <footer>
+    </>
+    Each ...Page component should conform to this expectation. */
+  display: grid;
+  grid-template-rows: 155px 579px 78px;
+}
