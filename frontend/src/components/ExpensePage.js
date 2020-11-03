@@ -9,10 +9,10 @@ function Expense() {
   return (
     <div className="ExpensePage">
       <Header />
-      <div className="main">
+      <main>
         <ExpensePresentation />
         <ExpenseList type="expenses" />
-      </div>
+      </main>
       <Footer />
     </div>
   );
