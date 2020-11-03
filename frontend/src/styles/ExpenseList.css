@@ -1,6 +1,5 @@
 .expenseform{
     display: grid;
-    height: 100%;
     grid-template-columns: 6fr 3fr 1fr;
     grid-gap: 1rem;
     padding: 1rem;
@@ -8,7 +7,11 @@
 
 .SaveIcon{
     font-size: 22px;
-    color: #545149;
+    color: var(--dark-color);
     margin: 8px;
 }
 
+Form{
+    background: rgba(232, 168, 124, 0.11);
+    margin: 1rem !important;
+}
