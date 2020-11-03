@@ -5,7 +5,7 @@ import Header from "./Header";
 import BalancePresentation from "./BalancePresentation";
 import Footer from "./Footer";
 
-function Landing() {
+function LandingPage() {
   return (
     <>
       <Header />
@@ -45,10 +45,8 @@ function Landing() {
             </Accordion.Collapse>
           </Card>
           <Card>
-            <Link  to="/expense">
-            <Accordion.Toggle as={Card.Header}>
-              Add expense
-            </Accordion.Toggle>
+            <Link to="/expense">
+              <Accordion.Toggle as={Card.Header}>Add expense</Accordion.Toggle>
             </Link>
           </Card>
         </Accordion>
@@ -58,4 +56,4 @@ function Landing() {
   );
 }
 
-export default Landing;
+export default LandingPage;

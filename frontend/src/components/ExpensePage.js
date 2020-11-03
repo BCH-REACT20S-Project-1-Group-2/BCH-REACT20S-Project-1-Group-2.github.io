@@ -5,7 +5,7 @@ import ExpenseList from "./ExpenseList";
 import Footer from "./Footer";
 import "../styles/ExpensePage.css";
 
-function Expense() {
+function ExpensePage() {
   return (
     <div className="ExpensePage">
       <Header />
@@ -18,4 +18,4 @@ function Expense() {
   );
 }
 
-export default Expense;
+export default ExpensePage;
