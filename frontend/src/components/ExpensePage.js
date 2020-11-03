@@ -11,7 +11,7 @@ function Expense() {
       <Header />
       <main>
         <ExpensePresentation />
-        <ExpenseList type="expenses" />
+        <ExpenseList />
       </main>
       <Footer />
     </div>

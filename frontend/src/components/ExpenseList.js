@@ -4,10 +4,6 @@ import { FaSave } from "react-icons/fa";
 import "../styles/ExpenseList.css";
 
 class ExpenseList extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = { type: props.type };
-  }
   render() {
     return (
       <>
