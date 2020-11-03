@@ -5,14 +5,35 @@
   min-width: 375px;
   width: 375px;
   max-width: 375px;
+}
 
-  /* Every page is layed out as a grid with 3 items: 
+  /* Every page is layed out with 3 fixed position items: 
     <>
         <header>
         <main>
         <footer>
     </>
     Each ...Page component should conform to this expectation. */
-  display: grid;
-  grid-template-rows: 155px 579px 78px;
+
+.Page > * {
+  width: 100%;
+  overflow-y: auto;
+}
+
+.Page header {
+  position: fixed;
+  top: 0;
+  height: 155px;
+}
+
+.Page main {
+  position: fixed;
+  top: 155px;
+  height: 579px;
+}
+
+.Page footer {
+  position: fixed;
+  bottom: 0;
+  height: 78px;
 }
