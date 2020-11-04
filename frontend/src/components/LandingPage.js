@@ -6,7 +6,7 @@ import BalancePresentation from "./BalancePresentation";
 import Footer from "./Footer";
 import "../styles/LandingPage.css";
 
-function Landing() {
+function LandingPage() {
   return (
     <div className="LandingPage">
       <Header />
@@ -61,4 +61,4 @@ function Landing() {
   );
 }
 
-export default Landing;
+export default LandingPage;
