@@ -1,14 +1,10 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { Form, Button } from "react-bootstrap";
-import Header from "./Header";
-import Footer from "./Footer";
 import "../styles/WelcomePage.css";
 
 function WelcomePage() {
   return (
-    <>
-      <Header />
       <main>
         <h2 id="welcomeText">Welcome Text</h2>
         <Form>
@@ -26,8 +22,6 @@ function WelcomePage() {
           </Link>
         </Form>
       </main>
-      <Footer />
-    </>
   );
 }
 

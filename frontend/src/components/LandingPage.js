@@ -1,7 +1,6 @@
 import React from "react";
 import { Form, Button, Accordion, Card } from "react-bootstrap";
 import { Link } from "react-router-dom";
-import Header from "./Header";
 import BalancePresentation from "./BalancePresentation";
 import Footer from "./Footer";
 import "../styles/LandingPage.css";
