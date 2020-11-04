@@ -1,3 +1,7 @@
+.CustomModal {
+    cursor: pointer;
+}
+
 .modal-dialog {
     margin-top: 193px !important;
 }

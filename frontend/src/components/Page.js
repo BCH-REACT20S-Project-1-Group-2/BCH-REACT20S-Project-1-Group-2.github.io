@@ -1,15 +1,36 @@
 import React from "react";
 import Header from "./Header";
 import Footer from "./Footer";
-import "../styles/Page.css";
+import { Col, Container, Row } from "react-bootstrap";
 
 function Page(props) {
   return (
-    <div className="Page">
-      <Header />
-      {props.children}
-      <Footer />
-    </div>
+    <Container fluid className="Page mx-auto" style={{
+      width:"375px",
+      minWidth:"375px",
+      minHeight:"100vh"
+    }}>
+      <Row className="fixed-top mx-auto" style={{width:"375px"}}>
+        <Col className="p-0">
+          <Header />
+        </Col>
+      </Row>
+      <Row className="main-area" style={{
+        marginTop:"155px",
+        minHeight:"657px",
+        height:"calc(100vh - 155px - 78px)",
+        background: "var(--primary-bg-color)"
+      }}>
+        <Col className="p-0">
+          {props.children}
+        </Col>
+      </Row>
+      <Row className="fixed-bottom mx-auto" style={{width:"375px"}}>
+        <Col className="p-0">
+          <Footer />
+        </Col>
+      </Row>
+    </Container>
   );
 }
 

@@ -1,27 +1,39 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { Form, Button } from "react-bootstrap";
-import "../styles/WelcomePage.css";
+import {
+  Container,
+  Row,
+  Col,
+  InputGroup,
+  FormControl,
+  Button,
+} from "react-bootstrap";
 
 function WelcomePage() {
   return (
-      <main>
-        <h2 id="welcomeText">Welcome Text</h2>
-        <Form>
-          <Form.Group controlId="userName">
-            <Form.Control
-              type="text"
-              placeholder="your name"
-              className="text-center"
-            />
-          </Form.Group>
+    <Container className="mt-5 pt-5">
+      <Row>
+        <Col>
+          <h2 className="text-center">Welcome Text</h2>
+        </Col>
+      </Row>
+      <Row>
+        <Col>
+          <InputGroup className="my-5 pt-5">
+            <FormControl placeholder="your name" className="text-center" />
+          </InputGroup>
+        </Col>
+      </Row>
+      <Row>
+        <Col>
           <Link to="/landing">
-            <Button id="welcomeCTA" className="w-100 text-white">
+            <Button id="welcomeCTA" className="w-100 text-white mt-5">
               Let's begin
             </Button>
           </Link>
-        </Form>
-      </main>
+        </Col>
+      </Row>
+    </Container>
   );
 }
 

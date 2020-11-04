@@ -7,9 +7,7 @@ import "../styles/LandingPage.css";
 
 function LandingPage() {
   return (
-    <div className="LandingPage">
-      <Header />
-      <main>
+      <main className="LandingPage">
         <BalancePresentation />
         <Accordion>
           <Card>
@@ -55,8 +53,6 @@ function LandingPage() {
           </Card>
         </Accordion>
       </main>
-      <Footer />
-    </div>
   );
 }
 

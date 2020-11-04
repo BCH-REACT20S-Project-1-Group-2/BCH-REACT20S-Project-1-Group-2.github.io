@@ -2,20 +2,24 @@
   --secondary-light-color: #e8a87c45;
   --input-bg-color: #f2f0eb;
   --headerFooter-bg-color: #7fc1ac;
+  --border-color: #7fc1ac69;
   --light-font: #f4f5f8;
   --secondary-color: #E27D60;
   --dark-color: #545149;
+  --dark-color-with-alpha: #545149, 62%;
   --primary-bg-color: #F2F0EB;
+  
 }
 
 * {
   font-family: 'Nunito', sans-serif !important;
-}
-
-.App * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+}
+
+#root {
+  display: flex;
 }
 
 .App h2 {
@@ -23,10 +27,17 @@
   font-size: 32px;
 }
 
+input {
+  height: 60px !important;
+  background-color: var(--primary-bg-color);
+  border: 2px solid var(--border-color);
+}
+
 button,
 button:hover,
 button:active {
   font-size: 20px !important;
+  height: 60px !important;
   background-color: var(--secondary-color) !important;
   border-color: var(--secondary-color) !important;
 }
