@@ -3,10 +3,10 @@
 - Project timeline 20.10.2020 - 11.11.2020
 - Sprints
     - 20.10. - 27.10. - Set-up & Design
-    - 27.10. - 3.11. - Front-end Visual Styling
-    - 3.11. - 10.11. - (initial target: MVP complete)
-    - 10.11. - 12.11. - (initial target: MVP+ items)
-    - 13.11. - 18.11. 
+    - 28.10. - 3.11. - Front-end Visual Styling
+    - 4.11. - 10.11. - MVP
+    - 11.11. - 17.11. - (initial target: MVP+ items)
+    - 18.11. - (final demo to Hoang?)
 - Primary teamwork schedule
     - Wednesdays
         - Previous sprint demo 09:00 - 09:45
