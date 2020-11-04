@@ -10,9 +10,9 @@ function WelcomePage() {
     <div className="WelcomePage">
       <Header />
       <main>
-        <h2>Welcome Text</h2>
+        <h2 id="welcomeText">Welcome Text</h2>
         <Form>
-          <Form.Group controlId="formUserName">
+          <Form.Group controlId="userName">
             <Form.Control
               type="text"
               placeholder="your name"
@@ -20,7 +20,7 @@ function WelcomePage() {
             />
           </Form.Group>
           <Link to="/landing">
-            <Button className="w-100 text-white">
+            <Button id="welcomeCTA" className="w-100 text-white">
               Let's begin
             </Button>
           </Link>

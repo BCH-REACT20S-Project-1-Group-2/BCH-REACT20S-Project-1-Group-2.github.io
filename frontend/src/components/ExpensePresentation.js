@@ -1,28 +1,19 @@
 import React from "react";
-import { Table } from "react-bootstrap";
+import "../styles/ExpensePresentation.css";
 
 class ExpensePresentation extends React.Component {
-  constructor(props) {
-    super(props);
+  constructor() {
+    super();
     this.state = {
-      fixed: 2000,
-      irregular: 800,
+      expenses: "2800",
     };
   }
   render() {
     return (
-      <Table>
-        <tbody>
-          <tr>
-            <td>Total Fixed Expense</td>
-            <td>{this.state.fixed} €</td>
-          </tr>
-          <tr>
-            <td>Total Irregular Expense</td>
-            <td>{this.state.irregular} €</td>
-          </tr>
-        </tbody>
-      </Table>
+      <div className="ExpensePresentation">
+        <div>Total Expense</div>
+        <div>{this.state.expenses} €</div>
+      </div>
     );
   }
 }
