@@ -21,3 +21,10 @@
 .WelcomePage input, .WelcomePage button {
     height: 60px;
 }
+
+.WelcomePage input {
+    max-width: 100% !important;
+    border: 2px solid rgba(127, 193, 172, 0.41) !important;
+    background-color: var(--primary-bg-color);
+}
+
