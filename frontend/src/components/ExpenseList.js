@@ -2,6 +2,7 @@ import React from "react";
 import { Form, Button } from "react-bootstrap";
 import { FaSave } from "react-icons/fa";
 import "../styles/ExpenseList.css";
+import ExpenseItems from './ExpenseItems'
 
 class ExpenseList extends React.Component {
   render() {
@@ -18,6 +19,7 @@ class ExpenseList extends React.Component {
             </Form.Control>
             <Form.Control type="number" placeholder="e.g. 100 €" step=".01" />
             <FaSave className="SaveIcon" />
+            <ExpenseItems/>
           </Form.Group>
         </Form>
       </>
