@@ -1,8 +1,9 @@
 :root {
-  --secondary-color: #e27d60;
-  --primary-bg-color: #f2f0eb;
   --headerFooter-bg-color: #7fc1ac;
   --light-font: #f4f5f8;
+  --secondary-color: #E27D60;
+  --dark-color: #545149;
+  --primary-bg-color: #F2F0EB;
 }
 
 * {
