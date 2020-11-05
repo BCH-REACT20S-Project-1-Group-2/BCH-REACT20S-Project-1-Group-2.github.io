@@ -5,27 +5,37 @@ import { Col, Container, Row } from "react-bootstrap";
 
 function Page(props) {
   return (
-    <Container fluid className="Page mx-auto" style={{
-      width:"375px",
-      minWidth:"375px",
-      minHeight:"100vh"
-    }}>
-      <Row className="fixed-top mx-auto" style={{width:"375px"}}>
+    <Container
+      className="Page"
+      style={{
+        minWidth: "375px",
+        width: "375px",
+        minHeight: "100vh",
+      }}
+    >
+      <Row
+        className="fixed-top mx-auto"
+        style={{
+          minWidth: "375px",
+          width: "375px",
+        }}
+      >
         <Col className="p-0">
           <Header />
         </Col>
       </Row>
-      <Row className="main-area" style={{
-        marginTop:"155px",
-        minHeight:"657px",
-        height:"calc(100vh - 155px - 78px)",
-        background: "var(--primary-bg-color)"
-      }}>
-        <Col className="p-0">
-          {props.children}
-        </Col>
+      <Row
+        className="main-area px-3"
+        style={{
+          marginTop: "155px",
+          minHeight: "657px",
+          height: "calc(100vh - 155px - 78px)",
+          background: "var(--primary-bg-color)",
+        }}
+      >
+        <Col className="p-0">{props.children}</Col>
       </Row>
-      <Row className="fixed-bottom mx-auto" style={{width:"375px"}}>
+      <Row className="fixed-bottom mx-auto" style={{ width: "375px" }}>
         <Col className="p-0">
           <Footer />
         </Col>

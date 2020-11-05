@@ -5,15 +5,9 @@ import "../styles/AppFooter.css";
 function AppFooter() {
   return (
     <div className="AppFooter">
-      <div>
-        <Link to="/landing">Icon 1: dashboard/landing</Link>
-      </div>
-      <div>
-        <Link to="/landing">Icon 2: analysis (to be added in MVP+)</Link>
-      </div>
-      <div>
-        <Link to="/">Icon 3: logout</Link>
-      </div>
+      <Link to="/landing">Icon 1: dashboard/landing</Link>
+      <Link to="/landing">Icon 2: analysis (to be added in MVP+)</Link>
+      <Link to="/">Icon 3: logout</Link>
     </div>
   );
 }

@@ -11,7 +11,7 @@ import {
 
 function WelcomePage() {
   return (
-    <Container className="mt-5 pt-5">
+    <Container className="mt-5 pt-5 px-0 ">
       <Row>
         <Col>
           <h2 className="text-center">Welcome Text</h2>
@@ -19,7 +19,7 @@ function WelcomePage() {
       </Row>
       <Row>
         <Col>
-          <InputGroup className="my-5 pt-5">
+          <InputGroup className="mt-5">
             <FormControl placeholder="your name" className="text-center" />
           </InputGroup>
         </Col>
