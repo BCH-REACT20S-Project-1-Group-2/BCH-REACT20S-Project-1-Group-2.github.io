@@ -1,0 +1,15 @@
+.modal-dialog {
+    margin-top: 193px !important;
+}
+
+.modal-header, .modal-footer  {
+    border: none !important;
+}
+
+.modal-footer {
+    justify-content: center !important;
+}
+
+.modal-content {
+    background-color: var(--primary-bg-color) !important;
+}

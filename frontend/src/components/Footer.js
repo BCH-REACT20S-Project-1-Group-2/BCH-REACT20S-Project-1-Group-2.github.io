@@ -1,7 +1,8 @@
-import React from "react";
-import { Switch, Route } from "react-router-dom";
-import AppFooter from "./AppFooter";
-import CustomModal from "./CustomModal";
+import React from 'react';
+import { Switch, Route } from 'react-router-dom';
+import AppFooter from './AppFooter';
+import CustomModal from './CustomModal';
+import '../styles/Footer.css';
 
 function Footer() {
   const { about, privacyPolicy } = require("../phrases/Footer.json");
@@ -23,7 +24,7 @@ function Footer() {
           />
         </Route>
       </Switch>
-      <div>Copyright &copy; {appName}</div>
+      <div id="copyright">Copyright &copy; {appName}</div>
     </footer>
   );
 }

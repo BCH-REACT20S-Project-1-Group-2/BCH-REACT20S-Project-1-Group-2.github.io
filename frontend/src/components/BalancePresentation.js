@@ -1,5 +1,6 @@
 import React from "react";
-import { Table } from "react-bootstrap";
+//import { Table } from "react-bootstrap";
+import "../styles/BalancePresentation.css";
 
 class BalancePresentation extends React.Component {
   constructor(props) {
@@ -19,7 +20,7 @@ class BalancePresentation extends React.Component {
       balanceLabel,
     } = require("../phrases/BalancePresentation.json");
     return (
-      <Table>
+      <table className="balance-display">
         <tbody>
           <tr>
             <td>{salaryLabel}</td>
@@ -38,7 +39,7 @@ class BalancePresentation extends React.Component {
             <td>{this.state.balance} €</td>
           </tr>
         </tbody>
-      </Table>
+      </table>
     );
   }
 }
