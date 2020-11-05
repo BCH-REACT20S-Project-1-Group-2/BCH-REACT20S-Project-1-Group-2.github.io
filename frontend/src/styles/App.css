@@ -31,4 +31,9 @@ button:active {
   border-color: var(--secondary-color) !important;
 }
 
+header {
+  background-color: var(--headerFooter-bg-color);
+  color: var(--light-font);
+}
+
 /* All application wide styling go here, e.g. fonts and colors etc */
