@@ -1,6 +1,5 @@
 import React from "react";
-//import { Table } from "react-bootstrap";
-import "../styles/BalancePresentation.css";
+import { Container, Row, Col } from "react-bootstrap";
 
 class BalancePresentation extends React.Component {
   constructor(props) {
@@ -14,26 +13,32 @@ class BalancePresentation extends React.Component {
   }
   render() {
     return (
-      <table className="balance-display">
-        <tbody>
-          <tr>
-            <td>Total salary</td>
-            <td>{this.state.salary} €</td>
-          </tr>
-          <tr>
-            <td>Target savings</td>
-            <td>{this.state.saving} €</td>
-          </tr>
-          <tr>
-            <td>Total Expenses</td>
-            <td>{this.state.expenses} €</td>
-          </tr>
-          <tr>
-            <td>Balance</td>
-            <td>{this.state.balance} €</td>
-          </tr>
-        </tbody>
-      </table>
+      <Container className="px-0 pt-3 font-weight-bold">
+        <Row className="pb-1 ">
+          <Col className="font-weight-bolder">Total salary</Col>
+          <Col className="d-flex justify-content-end">
+            {this.state.salary} €
+          </Col>
+        </Row>
+        <Row className="pb-1">
+          <Col className="font-weight-bolder">Target savings</Col>
+          <Col className="d-flex justify-content-end">
+            {this.state.saving} €
+          </Col>
+        </Row>
+        <Row className="pb-1">
+          <Col className="font-weight-bolder">Total Expenses</Col>
+          <Col className="d-flex justify-content-end">
+            {this.state.expenses} €
+          </Col>
+        </Row>
+        <Row className="pb-1">
+          <Col className="font-weight-bolder">Balance</Col>
+          <Col className="d-flex justify-content-end">
+            {this.state.balance} €
+          </Col>
+        </Row>
+      </Container>
     );
   }
 }
