@@ -1,20 +1,23 @@
 import React from 'react';
-import { Switch, Route } from "react-router-dom";
+import { Switch, Route } from 'react-router-dom';
+import AppHeader from "./AppHeader";
 
 function Header() {
   return (
-    <header>
+    <header style={{ 
+      height: "155px",
+      display: "flex",
+      alignItems: "flex-end",
+    }}>
       <Switch>
         <Route path="/landing">
-          <div>Logo</div>
-          <div>User</div>
+          <AppHeader />
         </Route>
         <Route path="/expense">
-          <div>Logo</div>
-          <div>User</div>
+          <AppHeader />
         </Route>
         <Route path="/">
-          <div>Logo</div>
+          <h1 className="mx-auto">Logo</h1>
         </Route>
       </Switch>
     </header>
