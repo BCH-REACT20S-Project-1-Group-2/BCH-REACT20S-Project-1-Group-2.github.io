@@ -9,7 +9,7 @@ class ExpenseList extends React.Component {
 
     return (
       <>
-        <Form>
+        <Form className="expenseform">
           <Form.Group controlId="expenseList" className="expenseform">
             <Form.Control as="select" custom defaultValue="Add category">
               <option disabled>Add category</option>
