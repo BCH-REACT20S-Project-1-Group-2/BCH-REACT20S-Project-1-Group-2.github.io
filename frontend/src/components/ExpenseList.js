@@ -4,20 +4,80 @@ import { FaSave } from "react-icons/fa";
 import "../styles/ExpenseList.css";
 
 class ExpenseList extends React.Component {
+  state = {
+    userexpense: { categoryName: "", amount: "" },
+
+    expenselist: [
+      { categoryid: 1, categoryName: "Rent & Mortgage" },
+      { categoryid: 2, categoryName: "Groceries" },
+      { categoryid: 3, categoryName: "Loan payments" },
+      { categoryid: 4, categoryName: "Insurances" },
+      { categoryid: 5, categoryName: "Fuel/ Transportation costs" },
+      { categoryid: 6, categoryName: "Clothing & Shoes" },
+      { categoryid: 7, categoryName: "Entertainment & Hobbies" },
+      {
+        categoryid: 8,
+        categoryName: "Utility bills (cable, cell, electricity, water, etc",
+      },
+      { categoryid: 9, categoryName: "Health expenses" },
+      { categoryid: 10, categoryName: "Services (daycare, hair dresser)" },
+      { categoryid: 11, categoryName: "Miscellenous" },
+    ],
+  };
+
+  onSubmit = (e) => {
+    e.preventDefault();
+
+    // this adds the transaction to transaction list
+    this.props.addExpense(
+      this.state.userexpense.categoryName,
+      this.state.userexpense.amount
+    );
+
+    //this function is defined at expensepage and its updates total expenses
+    this.props.updateTotal(this.state.userexpense.amount);
+
+    //Clears the fields after taking input
+    e.target.reset();
+  };
+
+  onChange = (e) => {
+    this.setState((prevState) => {
+      let userexpense = Object.assign({}, prevState.userexpense);
+      userexpense[e.target.name] = e.target.value;
+      return { userexpense };
+    });
+  };
+
   render() {
+    const expenseList = this.state.expenselist.map((item) => {
+      return <option key={item.categoryid}>{item.categoryName}</option>;
+    });
+
     return (
       <>
-        <Form className="expenseform">
+        <Form onSubmit={this.onSubmit}>
           <Form.Group controlId="expenseList" className="expenseform">
-            <Form.Control as="select" custom defaultValue="Add category">
+            <Form.Control
+              as="select"
+              custom
+              defaultValue="Add category"
+              name="categoryName"
+              onChange={this.onChange.bind(this)}
+            >
               <option disabled>Add category</option>
-              <option>Rent</option>
-              <option>Mortgage(s)</option>
-              <option>Utility Bills</option>
-              <option>Insurance</option>
+              {expenseList}
             </Form.Control>
-            <Form.Control type="number" placeholder="e.g. 100 €" step=".01" />
-            <FaSave className="SaveIcon" />
+            <Form.Control
+              type="number"
+              placeholder="e.g. 100 €"
+              name="amount"
+              step=".01"
+              onChange={this.onChange.bind(this)}
+            />
+            <Button variant="primary" type="submit">
+              <FaSave className="SaveIcon" />
+            </Button>
           </Form.Group>
         </Form>
       </>
