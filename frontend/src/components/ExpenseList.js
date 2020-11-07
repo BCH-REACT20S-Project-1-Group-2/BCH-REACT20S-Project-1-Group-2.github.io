@@ -4,13 +4,14 @@ import {
   FormControl,
   Form,
   Button,
+  Card,
 } from "react-bootstrap";
 import { FaSave } from "react-icons/fa";
 
 class ExpenseList extends React.Component {
   render() {
     return (
-      <div className="mt-3 p-3" style={{backgroundColor:"var(--light-font)"}}>
+      <Card.Body className="mt-3 p-3">
       <InputGroup >
         <Form.Control as="select" custom defaultValue="Add category">
           <option disabled>Add category</option>
@@ -31,7 +32,7 @@ class ExpenseList extends React.Component {
           </InputGroup.Text>
         </InputGroup.Append>
       </InputGroup>
-      </div>
+      </Card.Body>
     );
   }
 }

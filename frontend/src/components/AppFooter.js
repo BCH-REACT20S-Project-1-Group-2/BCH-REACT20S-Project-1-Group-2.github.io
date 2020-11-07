@@ -5,23 +5,23 @@ import { Container, Row, Col } from "react-bootstrap";
 
 function AppFooter() {
   return (
-    <Container style={{textAlign:"center", fontSize:"32px"}}>
+    <Container style={{ textAlign: "center" }}>
       <Row>
         <Col>
           <Link to="/landing">
-            <FaTachometerAlt /> 
-          </Link> 
+            <FaTachometerAlt />
+          </Link>
         </Col>
         <Col>
           <Link to="/landing">
             <FaChartBar />
           </Link>
-          </Col>
-          <Col>
+        </Col>
+        <Col>
           <Link to="/">
             <FaSignOutAlt />
           </Link>
-          </Col>
+        </Col>
       </Row>
     </Container>
   );

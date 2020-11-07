@@ -23,7 +23,7 @@ function LandingPage() {
             Update Salary
           </Accordion.Toggle>
           <Accordion.Collapse eventKey="0">
-            <Card.Body style={{backgroundColor:"var(--light-color)"}}>
+            <Card.Body>
               <InputGroup>
                 <FormControl 
                   placeholder="Salary"
@@ -48,7 +48,7 @@ function LandingPage() {
             Add Saving Amount
           </Accordion.Toggle>
           <Accordion.Collapse eventKey="1">
-            <Card.Body style={{backgroundColor:"var(--light-color)"}}>
+            <Card.Body>
               <InputGroup>
                 <FormControl 
                   placeholder="Amount"

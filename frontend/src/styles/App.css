@@ -15,8 +15,6 @@
 
 * {
   font-family: 'Nunito', sans-serif !important;
-  /* font-size: 20px !important; */
-
   box-sizing: border-box !important;
 }
 
@@ -70,7 +68,14 @@ header, footer, footer a {
   background-color: var(--headerFooter-bg-color);
   color: var(--light-font) !important;
 }
+footer a {
+  font-size: 32px;
+}
 
 .modal-content {
   background-color: var(--primary-bg-color) !important;
+}
+
+.card-body {
+  background-color: var(--light-font) !important;
 }

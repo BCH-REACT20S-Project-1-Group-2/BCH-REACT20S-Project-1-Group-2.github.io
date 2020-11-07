@@ -25,19 +25,13 @@ function Footer() {
           <Route path="/">
             <Row>
               <Col>
-                <p>
-                  <CustomModal 
-                    title="About"
-                    body="About lorem ipsum" />
-                </p>
+                  <CustomModal title="About" body="About lorem ipsum" />
               </Col>
               <Col className="d-flex justify-content-end">
-                <p>
                   <CustomModal
                     title="Privacy Policy"
                     body="Privacy policy lorem ipsum"
                   />
-                </p>
               </Col>
             </Row>
             <Row>
