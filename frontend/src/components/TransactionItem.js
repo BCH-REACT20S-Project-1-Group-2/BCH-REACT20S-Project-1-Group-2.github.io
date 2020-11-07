@@ -9,7 +9,8 @@ export class TransactionItem extends Component {
           <button
             onClick={this.props.delExpense.bind(
               this,
-              this.props.userexpense.id
+              this.props.userexpense.id,
+              this.props.userexpense.amount
             )}
             style={btnstyle}
           >

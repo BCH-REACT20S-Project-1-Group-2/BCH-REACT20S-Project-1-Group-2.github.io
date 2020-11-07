@@ -59,7 +59,7 @@ class ExpenseList extends React.Component {
 
     return (
       <>
-        <Form noValidate onSubmit={this.onSubmit}>
+        <Form noValidate onSubmit={this.onSubmit.bind(this)}>
           <Form.Group controlId="expenseList" className="expenseform">
             <Form.Control
               as="select"

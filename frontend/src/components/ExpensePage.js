@@ -12,7 +12,7 @@ export class ExpensePage extends Component {
     total: 0,
   };
 
-  delExpense = (id) => {
+  delExpense = (id, amt) => {
     this.setState({
       userexpenses: [
         ...this.state.userexpenses.filter(
@@ -20,13 +20,16 @@ export class ExpensePage extends Component {
         ),
       ],
     });
+    this.setState({
+      total: this.state.total - parseFloat(amt),
+    });
   };
 
   addExpense = (title, amount) => {
     const newExpense = {
       id: Math.floor(Math.random() * 10000000000),
       title: title,
-      amount: amount,
+      amount: parseFloat(amount),
     };
     this.setState({
       userexpenses: [newExpense, ...this.state.userexpenses],
@@ -37,21 +40,41 @@ export class ExpensePage extends Component {
     this.setState({ total: this.state.total + parseFloat(amount) });
   };
 
-  //React Life Cycle
+  // React Life Cycle
   componentDidMount() {
-    this.total = JSON.parse(localStorage.getItem("total"));
-    if (localStorage.getItem("total")) {
+    if (localStorage.getItem("userexpenses")) {
+      console.log("inside then loop");
+      const items = JSON.parse(localStorage.getItem("userexpenses"));
+
+      const newExpense = items.map((obj) => ({
+        id: obj.id,
+        title: obj.title,
+        amount: parseFloat(obj.amount),
+      }));
+
       this.setState({
-        total: this.total,
+        userexpenses: [...newExpense],
       });
+
+      //Function to change total state as per the userexpense state
+
+      var totalexpensesarray = [];
+      newExpense.forEach((item) => {
+        totalexpensesarray.push(item.amount);
+      });
+      const totalexpenses = totalexpensesarray.reduce((a, b) => a + b, 0);
+
+      this.setState({ total: totalexpenses });
     } else {
-      this.setState({
-        total: 0,
-      });
+      this.setState({ userexpenses: [] }, { total: 0 });
     }
   }
 
   componentWillUpdate(nextProps, nextState) {
+    localStorage.setItem(
+      "userexpenses",
+      JSON.stringify(nextState.userexpenses)
+    );
     localStorage.setItem("total", JSON.stringify(nextState.total));
   }
 
