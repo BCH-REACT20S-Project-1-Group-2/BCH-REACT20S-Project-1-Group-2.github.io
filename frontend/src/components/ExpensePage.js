@@ -15,6 +15,24 @@ export class ExpensePage extends Component {
     this.setState({ total: this.state.total + parseFloat(amount) });
   };
 
+  // React Life Cycle
+  componentDidMount() {
+    this.total = JSON.parse(localStorage.getItem("total"));
+    if (localStorage.getItem("total")) {
+      this.setState({
+        total: this.total,
+      });
+    } else {
+      this.setState({
+        total: 0,
+      });
+    }
+  }
+
+  componentWillUpdate(nextProps, nextState) {
+    localStorage.setItem("total", JSON.stringify(nextState.total));
+  }
+
   render() {
     return (
       <div className="ExpensePage">
