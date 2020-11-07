@@ -1,16 +1,13 @@
 /* All custom application wide styling go here, e.g. fonts and colors etc */
 
 :root {
-  --secondary-light-color: #e8a87c45;
-  --input-bg-color: #f2f0eb;
-  --headerFooter-bg-color: #7fc1ac;
-  --border-color: #7fc1ac69;
-  --light-font: #f4f5f8;
-  --secondary-color: #E27D60;
+  --primary-green: #7fc1ac;
+  --primary-orange: #E27D60;
+  --light-orange: #e8a87c;
+
   --dark-color: #545149;
-  --dark-color-with-alpha: #545149, 62%;
-  --form-bg-color: rgba(232, 168, 124, 0.11);
-  --primary-bg-color: #F2F0EB;
+  --light-color: #F2F0EB;
+  --lighter-color: #f4f5f8;
 }
 
 * {
@@ -49,8 +46,8 @@ span {
 
 input, select {
   height: 60px !important;
-  background-color: var(--primary-bg-color) !important;
-  border: 2px solid var(--border-color) !important;
+  background-color: var(--lighter-color) !important;
+  border: 2px solid var(--primary-green) !important;
   font-size: 20px !important;
 }
 
@@ -58,24 +55,24 @@ button,
 button:hover,
 button:active {
   font-size: 20px !important;
-  color: var(--light-font) !important;
+  color: var(--lighter-color) !important;
   height: 60px !important;
-  background-color: var(--secondary-color) !important;
-  border-color: var(--secondary-color) !important;
+  background-color: var(--primary-orange) !important;
+  border-color: var(--primary-orange) !important;
 }
 
 header, footer, footer a {
-  background-color: var(--headerFooter-bg-color);
-  color: var(--light-font) !important;
+  background-color: var(--primary-green);
+  color: var(--lighter-color) !important;
 }
 footer a {
   font-size: 32px;
 }
 
 .modal-content {
-  background-color: var(--primary-bg-color) !important;
+  background-color: var(--lighter-color) !important;
 }
 
 .card-body {
-  background-color: var(--light-font) !important;
+  background-color: var(--light-color) !important;
 }

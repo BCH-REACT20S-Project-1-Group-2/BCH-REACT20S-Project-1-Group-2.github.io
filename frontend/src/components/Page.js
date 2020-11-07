@@ -30,7 +30,7 @@ function Page(props) {
           marginTop: "155px",
           marginBottom: "78px",
           minHeight: "100vh",
-          background: "var(--primary-bg-color)",
+          background: "var(--lighter-color)",
         }}
       >
         <Col className="p-0">{props.children}</Col>
