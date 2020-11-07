@@ -11,7 +11,7 @@
     margin: 8px;
 }
 
-Form{
+.expenseform{
     background: rgba(232, 168, 124, 0.11);
     margin: 1rem !important;
 }

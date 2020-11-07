@@ -19,12 +19,8 @@
             "description": "Value amount of the expense",
             "type": "number",
             "exclusiveMinimum": 0
-        },
-        "expenseType": {
-            "type": "string",
-            "enum": ["Fixed", "Irregular"]
         }
     },
-    "required": ["expenseId", "expenseType"],
+    "required": ["expenseId"],
     "additionalProperties": false
 }
