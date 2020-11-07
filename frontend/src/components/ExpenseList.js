@@ -5,7 +5,7 @@ import "../styles/ExpenseList.css";
 
 class ExpenseList extends React.Component {
   state = {
-    expenses: [
+    categories: [
       { categoryid: 1, categoryName: "Rent & Mortgage" },
       { categoryid: 2, categoryName: "Groceries" },
       { categoryid: 3, categoryName: "Loan payments" },
@@ -23,7 +23,7 @@ class ExpenseList extends React.Component {
     ],
   };
   render() {
-    const expenseList = this.state.expenses.map((item) => {
+    const categoriesList = this.state.categories.map((item) => {
       return <option>{item.categoryName}</option>;
     });
 
@@ -33,7 +33,7 @@ class ExpenseList extends React.Component {
           <Form.Group controlId="expenseList" className="expenseform">
             <Form.Control as="select" custom defaultValue="Add category">
               <option disabled>Add category</option>
-              {expenseList}
+              {categoriesList}
             </Form.Control>
             <Form.Control type="number" placeholder="e.g. 100 €" step=".01" />
             <FaSave className="SaveIcon" />
