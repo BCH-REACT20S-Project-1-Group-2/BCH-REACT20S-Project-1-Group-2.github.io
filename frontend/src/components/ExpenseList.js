@@ -17,7 +17,10 @@ class ExpenseList extends React.Component {
               <option>Insurance</option>
             </Form.Control>
             <Form.Control type="number" placeholder="e.g. 100 €" step=".01" />
-            <FaSave className="SaveIcon" />
+            <label htmlFor="savebutton">
+              <FaSave className="SaveIcon" />
+            </label>
+            <Button variant="primary" type="submit" id="savebutton"></Button>
           </Form.Group>
         </Form>
       </>
