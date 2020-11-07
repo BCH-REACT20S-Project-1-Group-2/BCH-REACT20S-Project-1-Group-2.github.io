@@ -28,8 +28,8 @@ function Page(props) {
         className="main-area px-3"
         style={{
           marginTop: "155px",
-          minHeight: "657px",
-          height: "calc(100vh - 155px - 78px)",
+          marginBottom: "78px",
+          minHeight: "100vh",
           background: "var(--primary-bg-color)",
         }}
       >

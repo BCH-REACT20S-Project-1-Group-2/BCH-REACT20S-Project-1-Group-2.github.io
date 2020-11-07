@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
-import { Modal, Button } from 'react-bootstrap';
-import '../styles/CustomModal.css';
+import { Modal, Button } from "react-bootstrap";
 
 function CustomModal(props) {
   const [show, setShow] = useState(false);

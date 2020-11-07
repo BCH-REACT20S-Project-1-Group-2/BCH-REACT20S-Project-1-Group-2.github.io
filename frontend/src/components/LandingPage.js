@@ -1,57 +1,72 @@
 import React from "react";
-import { Form, Button, Accordion, Card } from "react-bootstrap";
+import { InputGroup, FormControl, Form, Button, Accordion, Card } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import BalancePresentation from "./BalancePresentation";
-import "../styles/LandingPage.css";
 
 function LandingPage() {
   return (
-      <main className="LandingPage">
-        <BalancePresentation />
-        <Accordion>
-          <Card>
-            <Accordion.Toggle as={Card.Header} eventKey="0">
-              <Button className="w-100 text-white">Update Salary</Button>
+    <main className="LandingPage">
+      <BalancePresentation />
+      <Accordion className="mt-3" >
+        <Card className="mb-3">
+          <Accordion.Toggle
+            as={Button}
+            eventKey="0"
+            className="w-100"
+          >
+            Update Salary
+          </Accordion.Toggle>
+          <Accordion.Collapse eventKey="0">
+            <Card.Body style={{backgroundColor:"var(--light-color)"}}>
+              <InputGroup>
+                <FormControl 
+                  placeholder="Salary"
+                  className="text-center"
+                  type="number"
+                  step=".01"
+                />
+                <InputGroup.Append>
+                  <InputGroup.Text>€</InputGroup.Text>
+                  <InputGroup.Text as={Button}>Save</InputGroup.Text>
+                </InputGroup.Append>
+              </InputGroup>
+            </Card.Body>
+          </Accordion.Collapse>
+        </Card>
+        <Card className="mb-3">
+          <Accordion.Toggle
+            as={Button}
+            eventKey="1"
+            className="w-100"          
+          >
+            Add Saving Amount
+          </Accordion.Toggle>
+          <Accordion.Collapse eventKey="1">
+            <Card.Body style={{backgroundColor:"var(--light-color)"}}>
+              <InputGroup>
+                <FormControl 
+                  placeholder="Amount"
+                  className="text-center"
+                  type="number"
+                  step=".01"
+                />
+                <InputGroup.Append>
+                  <InputGroup.Text>€</InputGroup.Text>
+                  <InputGroup.Text as={Button}>Save</InputGroup.Text>
+                </InputGroup.Append>
+              </InputGroup>
+            </Card.Body>
+          </Accordion.Collapse>
+        </Card>
+        <Card className="mb-3">
+          <Link to="/expense">
+            <Accordion.Toggle as={Button} className="w-100">
+              Add Expense
             </Accordion.Toggle>
-            <Accordion.Collapse eventKey="0">
-              <Card.Body>
-                <Form className="form-wrapper">
-                  <Form.Group controlId="formSalary">
-                    <Form.Label>Salary</Form.Label>
-                    <Form.Control type="number" />
-                    <p>€</p>
-                  </Form.Group>
-                  <Button variant="primary">Save</Button>
-                </Form>
-              </Card.Body>
-            </Accordion.Collapse>
-          </Card>
-          <Card>
-            <Accordion.Toggle as={Card.Header} eventKey="1">
-              <Button className="w-100 text-white">Add Saving Amount</Button>
-            </Accordion.Toggle>
-            <Accordion.Collapse eventKey="1">
-              <Card.Body>
-                <Form className="form-wrapper">
-                  <Form.Group controlId="formSavings">
-                    <Form.Label>Amount</Form.Label>
-                    <Form.Control type="number" />
-                    <p>€</p>
-                  </Form.Group>
-                  <Button variant="primary">Save</Button>
-                </Form>
-              </Card.Body>
-            </Accordion.Collapse>
-          </Card>
-          <Card>
-            <Link to="/expense">
-              <Accordion.Toggle as={Card.Header}>
-                <Button className="w-100 text-white">Add Expense</Button>
-              </Accordion.Toggle>
-            </Link>
-          </Card>
-        </Accordion>
-      </main>
+          </Link>
+        </Card>
+      </Accordion>
+    </main>
   );
 }
 

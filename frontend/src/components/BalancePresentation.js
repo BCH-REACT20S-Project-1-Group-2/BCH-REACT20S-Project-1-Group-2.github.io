@@ -15,27 +15,35 @@ class BalancePresentation extends React.Component {
     return (
       <Container className="px-0 pt-3 font-weight-bold">
         <Row className="pb-1 ">
-          <Col className="font-weight-bolder">Total salary</Col>
+          <Col className="font-weight-bolder">
+            <p>Total salary</p>
+          </Col>
           <Col className="d-flex justify-content-end">
-            {this.state.salary} €
+            <p>{this.state.salary} €</p>
           </Col>
         </Row>
         <Row className="pb-1">
-          <Col className="font-weight-bolder">Target savings</Col>
+          <Col className="font-weight-bolder">
+            <p>Target savings</p>
+          </Col>
           <Col className="d-flex justify-content-end">
-            {this.state.saving} €
+            <p>{this.state.saving} €</p>
           </Col>
         </Row>
         <Row className="pb-1">
-          <Col className="font-weight-bolder">Total Expenses</Col>
+          <Col className="font-weight-bolder">
+            <p>Total Expenses</p>
+          </Col>
           <Col className="d-flex justify-content-end">
-            {this.state.expenses} €
+            <p>{this.state.expenses} €</p>
           </Col>
         </Row>
         <Row className="pb-1">
-          <Col className="font-weight-bolder">Balance</Col>
+          <Col className="font-weight-bolder">
+            <p>Balance</p>
+          </Col>
           <Col className="d-flex justify-content-end">
-            {this.state.balance} €
+            <p>{this.state.balance} €</p>
           </Col>
         </Row>
       </Container>

@@ -1,3 +1,5 @@
+/* All custom application wide styling go here, e.g. fonts and colors etc */
+
 :root {
   --secondary-light-color: #e8a87c45;
   --input-bg-color: #f2f0eb;
@@ -7,12 +9,13 @@
   --secondary-color: #E27D60;
   --dark-color: #545149;
   --dark-color-with-alpha: #545149, 62%;
+  --form-bg-color: rgba(232, 168, 124, 0.11);
   --primary-bg-color: #F2F0EB;
 }
 
 * {
   font-family: 'Nunito', sans-serif !important;
-  font-size: 20px !important;
+  /* font-size: 20px !important; */
 
   box-sizing: border-box !important;
 }
@@ -35,26 +38,39 @@ h3 {
 }
 h6 {
   font-size: 12px !important;
+  margin: 0 !important;
+}
+p {
+  font-size: 20px !important;
+  margin: 0 !important;
+}
+span {
+  font-size: inherit !important;
+  color: inherit !important;
 }
 
 input {
   height: 60px !important;
   background-color: var(--primary-bg-color) !important;
   border: 2px solid var(--border-color) !important;
+  font-size: 20px !important;
 }
 
 button,
 button:hover,
 button:active {
   font-size: 20px !important;
+  color: var(--light-font) !important;
   height: 60px !important;
   background-color: var(--secondary-color) !important;
   border-color: var(--secondary-color) !important;
 }
 
-header, footer {
+header, footer, footer a {
   background-color: var(--headerFooter-bg-color);
-  color: var(--light-font);
+  color: var(--light-font) !important;
 }
 
-/* All application wide styling go here, e.g. fonts and colors etc */
+.modal-content {
+  background-color: var(--primary-bg-color) !important;
+}
