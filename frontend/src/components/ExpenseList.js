@@ -27,18 +27,21 @@ class ExpenseList extends React.Component {
 
   onSubmit = (e) => {
     e.preventDefault();
+    if (!e.target.checkValidity()) {
+      return;
+    } else {
+      // this adds the transaction to transaction list
+      this.props.addExpense(
+        this.state.userexpense.categoryName,
+        this.state.userexpense.amount
+      );
 
-    // this adds the transaction to transaction list
-    this.props.addExpense(
-      this.state.userexpense.categoryName,
-      this.state.userexpense.amount
-    );
+      //this function is defined at expensepage and its updates total expenses
+      this.props.updateTotal(this.state.userexpense.amount);
 
-    //this function is defined at expensepage and its updates total expenses
-    this.props.updateTotal(this.state.userexpense.amount);
-
-    //Clears the fields after taking input
-    e.target.reset();
+      //Clears the fields after taking input
+      e.target.reset();
+    }
   };
 
   onChange = (e) => {
@@ -56,7 +59,7 @@ class ExpenseList extends React.Component {
 
     return (
       <>
-        <Form onSubmit={this.onSubmit}>
+        <Form noValidate onSubmit={this.onSubmit}>
           <Form.Group controlId="expenseList" className="expenseform">
             <Form.Control
               as="select"
@@ -64,6 +67,7 @@ class ExpenseList extends React.Component {
               defaultValue="Add category"
               name="categoryName"
               onChange={this.onChange.bind(this)}
+              required
             >
               <option disabled>Add category</option>
               {expenseList}
@@ -74,10 +78,14 @@ class ExpenseList extends React.Component {
               name="amount"
               step=".01"
               onChange={this.onChange.bind(this)}
+              required
+              min="0.01"
             />
-            <Button variant="primary" type="submit">
+
+            <label htmlFor="savebutton">
               <FaSave className="SaveIcon" />
-            </Button>
+            </label>
+            <Button variant="primary" type="submit" id="savebutton"></Button>
           </Form.Group>
         </Form>
       </>
