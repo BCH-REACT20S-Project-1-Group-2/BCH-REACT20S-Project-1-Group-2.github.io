@@ -5,13 +5,18 @@ import "../styles/BalancePresentation.css";
 class BalancePresentation extends React.Component {
   constructor(props) {
     super(props);
+
     this.state = {
-      salary: 5000,
+      salary: this.props.salary,
       saving: 1000,
       expenses: 2800,
       balance: 1200,
     };
   }
+  componentWillReceiveProps(nextProps) {
+    this.setState({ salary: nextProps.salary });
+  }
+
   render() {
     return (
       <table className="balance-display">
