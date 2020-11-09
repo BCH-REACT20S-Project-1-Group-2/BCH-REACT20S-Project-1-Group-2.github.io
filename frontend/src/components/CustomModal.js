@@ -8,6 +8,8 @@ function CustomModal(props) {
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
 
+  const { closeButtonLabel } = require("../phrases/App.json");
+
   return (
     <div className="CustomModal" id={props.title.split(' ')[0]}>
       <div onClick={handleShow}>{props.title}</div>
@@ -18,7 +20,9 @@ function CustomModal(props) {
         </Modal.Header>
         <Modal.Body>{props.body}</Modal.Body>
         <Modal.Footer>
-          <Button onClick={handleClose}>Close</Button>
+          <Button onClick={handleClose}>
+            {closeButtonLabel}
+          </Button>
         </Modal.Footer>
       </Modal>
     </div>

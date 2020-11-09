@@ -23,9 +23,12 @@ class ExpenseList extends React.Component {
     ],
   };
   render() {
+
     const categoriesList = this.state.categories.map((item) => {
       return <option>{item.categoryName}</option>;
     });
+    const { saveButtonLabel } = require("../phrases/App.json");
+
 
     return (
       <>
@@ -38,6 +41,7 @@ class ExpenseList extends React.Component {
             <Form.Control type="number" placeholder="e.g. 100 €" step=".01" />
             <FaSave className="SaveIcon" />
           </Form.Group>
+          <Button>{saveButtonLabel}</Button>
         </Form>
       </>
     );
