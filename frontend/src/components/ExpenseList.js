@@ -4,6 +4,8 @@ import { FaSave } from "react-icons/fa";
 
 class ExpenseList extends React.Component {
   render() {
+    const { expenseInputLabel } = require("../phrases/ExpenseList.json");
+
     return (
       <Card.Body className="mt-3 p-3">
         <Form>
@@ -16,7 +18,7 @@ class ExpenseList extends React.Component {
               <option>Insurance</option>
             </Form.Control>
             <FormControl
-              placeholder="e.g. 100 €"
+              placeholder={expenseInputLabel}
               className="text-center"
               type="number"
               step=".01"

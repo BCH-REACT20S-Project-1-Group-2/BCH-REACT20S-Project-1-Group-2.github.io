@@ -12,11 +12,17 @@ class BalancePresentation extends React.Component {
     };
   }
   render() {
+    const {
+      salaryLabel,
+      savingLabel,
+      expensesLabel,
+      balanceLabel,
+    } = require("../phrases/BalancePresentation.json");
     return (
       <Container className="px-0 pt-3 font-weight-bold">
         <Row className="pb-1 ">
           <Col className="font-weight-bolder">
-            <p>Total salary</p>
+            <p>{salaryLabel}</p>
           </Col>
           <Col className="d-flex justify-content-end">
             <p>{this.state.salary} €</p>
@@ -24,7 +30,7 @@ class BalancePresentation extends React.Component {
         </Row>
         <Row className="pb-1">
           <Col className="font-weight-bolder">
-            <p>Target savings</p>
+            <p>{savingLabel}</p>
           </Col>
           <Col className="d-flex justify-content-end">
             <p>{this.state.saving} €</p>
@@ -32,7 +38,7 @@ class BalancePresentation extends React.Component {
         </Row>
         <Row className="pb-1">
           <Col className="font-weight-bolder">
-            <p>Total Expenses</p>
+            <p>{expensesLabel}</p>
           </Col>
           <Col className="d-flex justify-content-end">
             <p>{this.state.expenses} €</p>
@@ -40,7 +46,7 @@ class BalancePresentation extends React.Component {
         </Row>
         <Row className="pb-1">
           <Col className="font-weight-bolder">
-            <p>Balance</p>
+            <p>{balanceLabel}</p>
           </Col>
           <Col className="d-flex justify-content-end">
             <p>{this.state.balance} €</p>

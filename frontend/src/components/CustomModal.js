@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState } from "react";
 import { Modal, Button } from "react-bootstrap";
 
 function CustomModal(props) {
@@ -6,6 +6,8 @@ function CustomModal(props) {
 
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
+
+  const { closeButtonLabel } = require("../phrases/App.json");
 
   return (
     <>
@@ -26,7 +28,7 @@ function CustomModal(props) {
         </Modal.Header>
         <Modal.Body>{props.body}</Modal.Body>
         <Modal.Footer className="align-self-center border-0">
-          <Button onClick={handleClose}>Close</Button>
+          <Button onClick={handleClose}>{closeButtonLabel}</Button>
         </Modal.Footer>
       </Modal>
     </>

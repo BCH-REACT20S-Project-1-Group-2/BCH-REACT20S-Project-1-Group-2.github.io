@@ -9,11 +9,13 @@ class ExpensePresentation extends React.Component {
     };
   }
   render() {
+    const { expensesLabel } = require("../phrases/ExpensePresentation.json");
+
     return (
       <Container className="px-0 pt-3 font-weight-bold">
         <Row className="pb-1 ">
           <Col className="font-weight-bolder">
-            <p>Total Expense</p>
+            <p>{expensesLabel}</p>
           </Col>
           <Col className="d-flex justify-content-end">
             <p>{this.state.expenses} €</p>
