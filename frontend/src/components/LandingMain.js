@@ -5,6 +5,7 @@ import {
   Button,
   Accordion,
   Card,
+  Form,
 } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import BalancePresentation from "./BalancePresentation";
@@ -20,18 +21,20 @@ function LandingMain() {
           </Accordion.Toggle>
           <Accordion.Collapse eventKey="0">
             <Card.Body>
-              <InputGroup>
-                <FormControl
-                  placeholder="Salary"
-                  className="text-center"
-                  type="number"
-                  step=".01"
-                />
-                <InputGroup.Append>
-                  <InputGroup.Text>€</InputGroup.Text>
-                  <InputGroup.Text as={Button}>Save</InputGroup.Text>
-                </InputGroup.Append>
-              </InputGroup>
+              <Form>
+                <InputGroup>
+                  <FormControl
+                    placeholder="Salary"
+                    className="text-center"
+                    type="number"
+                    step=".01"
+                  />
+                  <InputGroup.Append>
+                    <InputGroup.Text>€</InputGroup.Text>
+                    <InputGroup.Text as={Button}>Save</InputGroup.Text>
+                  </InputGroup.Append>
+                </InputGroup>
+              </Form>
             </Card.Body>
           </Accordion.Collapse>
         </Card>
@@ -41,18 +44,20 @@ function LandingMain() {
           </Accordion.Toggle>
           <Accordion.Collapse eventKey="1">
             <Card.Body>
-              <InputGroup>
-                <FormControl
-                  placeholder="Amount"
-                  className="text-center"
-                  type="number"
-                  step=".01"
-                />
-                <InputGroup.Append>
-                  <InputGroup.Text>€</InputGroup.Text>
-                  <InputGroup.Text as={Button}>Save</InputGroup.Text>
-                </InputGroup.Append>
-              </InputGroup>
+              <Form>
+                <InputGroup>
+                  <FormControl
+                    placeholder="Amount"
+                    className="text-center"
+                    type="number"
+                    step=".01"
+                  />
+                  <InputGroup.Append>
+                    <InputGroup.Text>€</InputGroup.Text>
+                    <InputGroup.Text as={Button}>Save</InputGroup.Text>
+                  </InputGroup.Append>
+                </InputGroup>
+              </Form>
             </Card.Body>
           </Accordion.Collapse>
         </Card>
