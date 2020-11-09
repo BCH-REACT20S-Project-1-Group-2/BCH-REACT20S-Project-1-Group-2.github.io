@@ -12,7 +12,7 @@ export class ExpensePage extends Component {
   };
 
   updateTotal = (amount) => {
-    this.setState({ total: this.state.total + parseFloat(amount) });
+    this.setState((state) => ({ total: state.total + parseFloat(amount) }));
   };
 
   // React Life Cycle

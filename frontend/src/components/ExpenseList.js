@@ -19,13 +19,8 @@ class ExpenseList extends React.Component {
 
   onSubmit = (e) => {
     e.preventDefault();
-    if (!e.target.checkValidity()) {
-      return;
-    } else {
-      //this function is defined at expensepage and its updates total expenses
+    if (e.target.checkValidity()) {
       this.props.updateTotal(this.state.userexpense.amount);
-
-      //Clears the fields after taking input
       e.target.reset();
     }
   };
@@ -56,10 +51,10 @@ class ExpenseList extends React.Component {
               min="0.01"
               onChange={this.onChange.bind(this)}
             />
-            <label htmlFor="savebutton">
+
+            <Button variant="primary" type="submit" id="savebutton">
               <FaSave className="SaveIcon" />
-            </label>
-            <Button variant="primary" type="submit" id="savebutton"></Button>
+            </Button>
           </Form.Group>
         </Form>
       </>
