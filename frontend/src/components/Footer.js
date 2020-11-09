@@ -1,8 +1,8 @@
-import React from 'react';
-import { Switch, Route } from 'react-router-dom';
-import AppFooter from './AppFooter';
-import CustomModal from './CustomModal';
-import '../styles/Footer.css';
+import React from "react";
+import { Switch, Route } from "react-router-dom";
+import AppFooter from "./AppFooter";
+import CustomModal from "./CustomModal";
+import "../styles/Footer.css";
 
 function Footer() {
   const { about, privacyPolicy } = require("../phrases/Footer.json");
@@ -18,10 +18,7 @@ function Footer() {
         </Route>
         <Route path="/">
           <CustomModal title="About" body={about} />
-          <CustomModal
-            title="Privacy Policy"
-            body={privacyPolicy}
-          />
+          <CustomModal title="Privacy Policy" body={privacyPolicy} />
         </Route>
       </Switch>
       <div id="copyright">Copyright &copy; {appName}</div>

@@ -1,17 +1,17 @@
-.expenseform{
-    display: grid;
-    grid-template-columns: 6fr 3fr 1fr;
-    grid-gap: 1rem;
-    padding: 1rem;
+.expenseform {
+  display: grid;
+  grid-template-columns: 6fr 3fr 1fr;
+  grid-gap: 1rem;
+  padding: 1rem;
 }
 
-.SaveIcon{
-    font-size: 22px;
-    color: var(--dark-color);
-    margin: 8px;
+.SaveIcon {
+  font-size: 22px;
+  color: var(--dark-color);
+  margin: 8px;
 }
 
-.expenseform{
-    background: rgba(232, 168, 124, 0.11);
-    margin: 1rem !important;
+.expenseform {
+  background: rgba(232, 168, 124, 0.11);
+  margin: 1rem !important;
 }

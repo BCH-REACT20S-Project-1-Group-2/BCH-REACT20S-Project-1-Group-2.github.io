@@ -5,7 +5,7 @@ class ExpensePresentation extends React.Component {
   constructor() {
     super();
     this.state = {
-      expenses: "2800",
+      expenses: "2800"
     };
   }
   render() {

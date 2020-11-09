@@ -12,9 +12,9 @@ function LandingPage() {
     salaryInputLabel,
     updateSavingAmoungLabel,
     savingInputLabel,
-    expensePageLinkLabel,
+    expensePageLinkLabel
   } = require("../phrases/LandingPage.json");
-  const {saveButtonLabel} = require('../phrases/App.json')
+  const { saveButtonLabel } = require("../phrases/App.json");
 
   return (
     <div className="LandingPage">
@@ -41,7 +41,9 @@ function LandingPage() {
           </Card>
           <Card>
             <Accordion.Toggle as={Card.Header} eventKey="1">
-              <Button className="w-100 text-white">{updateSavingAmoungLabel}</Button>
+              <Button className="w-100 text-white">
+                {updateSavingAmoungLabel}
+              </Button>
             </Accordion.Toggle>
             <Accordion.Collapse eventKey="1">
               <Card.Body>
@@ -59,7 +61,9 @@ function LandingPage() {
           <Card>
             <Link to="/expense">
               <Accordion.Toggle as={Card.Header}>
-                <Button className="w-100 text-white">{expensePageLinkLabel}</Button>
+                <Button className="w-100 text-white">
+                  {expensePageLinkLabel}
+                </Button>
               </Accordion.Toggle>
             </Link>
           </Card>
