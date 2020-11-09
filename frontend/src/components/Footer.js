@@ -6,14 +6,7 @@ import CustomModal from "./CustomModal";
 
 function Footer() {
   return (
-    <footer
-      className="p-2"
-      style={{
-        height: "78px",
-        display: "flex",
-        alignItems: "center",
-      }}
-    >
+    <footer className="p-2 d-flex justify-content-center">
       <Container>
         <Switch>
           <Route path="/landing">
@@ -25,13 +18,13 @@ function Footer() {
           <Route path="/">
             <Row>
               <Col>
-                  <CustomModal title="About" body="About lorem ipsum" />
+                <CustomModal title="About" body="About lorem ipsum" />
               </Col>
               <Col className="d-flex justify-content-end">
-                  <CustomModal
-                    title="Privacy Policy"
-                    body="Privacy policy lorem ipsum"
-                  />
+                <CustomModal
+                  title="Privacy Policy"
+                  body="Privacy policy lorem ipsum"
+                />
               </Col>
             </Row>
             <Row>

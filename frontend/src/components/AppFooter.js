@@ -5,7 +5,7 @@ import { Container, Row, Col } from "react-bootstrap";
 
 function AppFooter() {
   return (
-    <Container style={{ textAlign: "center" }}>
+    <Container className="p-2 text-center">
       <Row>
         <Col>
           <Link to="/landing">
