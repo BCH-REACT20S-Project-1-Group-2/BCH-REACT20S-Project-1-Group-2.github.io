@@ -9,7 +9,7 @@ import {
   Button,
 } from "react-bootstrap";
 
-function WelcomePage() {
+function WelcomeMain() {
   return (
     <Container className="mt-5 pt-5 px-0">
       <Row>
@@ -37,4 +37,4 @@ function WelcomePage() {
   );
 }
 
-export default WelcomePage;
+export default WelcomeMain;

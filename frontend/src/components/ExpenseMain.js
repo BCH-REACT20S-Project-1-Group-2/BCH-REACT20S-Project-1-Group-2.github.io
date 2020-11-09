@@ -2,13 +2,13 @@ import React from "react";
 import ExpensePresentation from "./ExpensePresentation";
 import ExpenseList from "./ExpenseList";
 
-function ExpensePage() {
+function ExpenseMain() {
   return (
-    <main className="ExpensePage">
+    <main>
       <ExpensePresentation />
       <ExpenseList />
     </main>
   );
 }
 
-export default ExpensePage;
+export default ExpenseMain;

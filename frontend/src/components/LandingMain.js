@@ -9,23 +9,19 @@ import {
 import { Link } from "react-router-dom";
 import BalancePresentation from "./BalancePresentation";
 
-function LandingPage() {
+function LandingMain() {
   return (
-    <main className="LandingPage">
+    <main>
       <BalancePresentation />
-      <Accordion className="mt-3" >
+      <Accordion className="mt-3">
         <Card className="mb-3">
-          <Accordion.Toggle
-            as={Button}
-            eventKey="0"
-            className="w-100"
-          >
+          <Accordion.Toggle as={Button} eventKey="0" className="w-100">
             Update Salary
           </Accordion.Toggle>
           <Accordion.Collapse eventKey="0">
             <Card.Body>
               <InputGroup>
-                <FormControl 
+                <FormControl
                   placeholder="Salary"
                   className="text-center"
                   type="number"
@@ -40,17 +36,13 @@ function LandingPage() {
           </Accordion.Collapse>
         </Card>
         <Card className="mb-3">
-          <Accordion.Toggle
-            as={Button}
-            eventKey="1"
-            className="w-100"          
-          >
+          <Accordion.Toggle as={Button} eventKey="1" className="w-100">
             Add Saving Amount
           </Accordion.Toggle>
           <Accordion.Collapse eventKey="1">
             <Card.Body>
               <InputGroup>
-                <FormControl 
+                <FormControl
                   placeholder="Amount"
                   className="text-center"
                   type="number"
@@ -76,4 +68,4 @@ function LandingPage() {
   );
 }
 
-export default LandingPage;
+export default LandingMain;
