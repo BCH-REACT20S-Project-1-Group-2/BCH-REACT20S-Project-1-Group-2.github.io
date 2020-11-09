@@ -13,23 +13,29 @@ class BalancePresentation extends React.Component {
     };
   }
   render() {
+    const {
+      salaryLabel,
+      savingLabel,
+      expensesLabel,
+      balanceLabel,
+    } = require("../phrases/BalancePresentation.json");
     return (
       <table className="balance-display">
         <tbody>
           <tr>
-            <td>Total salary</td>
+            <td>{salaryLabel}</td>
             <td>{this.state.salary} €</td>
           </tr>
           <tr>
-            <td>Target savings</td>
+            <td>{savingLabel}</td>
             <td>{this.state.saving} €</td>
           </tr>
           <tr>
-            <td>Total Expenses</td>
+            <td>{expensesLabel}</td>
             <td>{this.state.expenses} €</td>
           </tr>
           <tr>
-            <td>Balance</td>
+            <td>{balanceLabel}</td>
             <td>{this.state.balance} €</td>
           </tr>
         </tbody>

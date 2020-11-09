@@ -7,6 +7,15 @@ import Footer from "./Footer";
 import "../styles/LandingPage.css";
 
 function LandingPage() {
+  const {
+    updateSalaryLabel,
+    salaryInputLabel,
+    updateSavingAmoungLabel,
+    savingInputLabel,
+    expensePageLinkLabel,
+  } = require("../phrases/LandingPage.json");
+  const {saveButtonLabel} = require('../phrases/App.json')
+
   return (
     <div className="LandingPage">
       <Header />
@@ -15,34 +24,34 @@ function LandingPage() {
         <Accordion>
           <Card>
             <Accordion.Toggle as={Card.Header} eventKey="0">
-              <Button className="w-100 text-white">Update Salary</Button>
+              <Button className="w-100 text-white">{updateSalaryLabel}</Button>
             </Accordion.Toggle>
             <Accordion.Collapse eventKey="0">
               <Card.Body>
                 <Form className="form-wrapper">
                   <Form.Group controlId="formSalary">
-                    <Form.Label>Salary</Form.Label>
+                    <Form.Label>{salaryInputLabel}</Form.Label>
                     <Form.Control type="number" />
                     <p>€</p>
                   </Form.Group>
-                  <Button variant="primary">Save</Button>
+                  <Button variant="primary">{saveButtonLabel}</Button>
                 </Form>
               </Card.Body>
             </Accordion.Collapse>
           </Card>
           <Card>
             <Accordion.Toggle as={Card.Header} eventKey="1">
-              <Button className="w-100 text-white">Add Saving Amount</Button>
+              <Button className="w-100 text-white">{updateSavingAmoungLabel}</Button>
             </Accordion.Toggle>
             <Accordion.Collapse eventKey="1">
               <Card.Body>
                 <Form className="form-wrapper">
                   <Form.Group controlId="formSavings">
-                    <Form.Label>Amount</Form.Label>
+                    <Form.Label>{savingInputLabel}</Form.Label>
                     <Form.Control type="number" />
                     <p>€</p>
                   </Form.Group>
-                  <Button variant="primary">Save</Button>
+                  <Button variant="primary">{saveButtonLabel}</Button>
                 </Form>
               </Card.Body>
             </Accordion.Collapse>
@@ -50,7 +59,7 @@ function LandingPage() {
           <Card>
             <Link to="/expense">
               <Accordion.Toggle as={Card.Header}>
-                <Button className="w-100 text-white">Add Expense</Button>
+                <Button className="w-100 text-white">{expensePageLinkLabel}</Button>
               </Accordion.Toggle>
             </Link>
           </Card>

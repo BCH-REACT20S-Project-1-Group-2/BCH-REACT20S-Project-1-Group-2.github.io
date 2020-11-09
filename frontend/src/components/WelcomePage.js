@@ -6,11 +6,13 @@ import Footer from "./Footer";
 import "../styles/WelcomePage.css";
 
 function WelcomePage() {
+  const { welcomeText, welcomeCTA } = require("../phrases/App.json");
+
   return (
     <div className="WelcomePage">
       <Header />
       <main>
-        <h2 id="welcomeText">Welcome Text</h2>
+        <h2 id="welcomeText">{welcomeText}</h2>
         <Form>
           <Form.Group controlId="userName">
             <Form.Control
@@ -21,7 +23,7 @@ function WelcomePage() {
           </Form.Group>
           <Link to="/landing">
             <Button id="welcomeCTA" className="w-100 text-white">
-              Let's begin
+              {welcomeCTA}
             </Button>
           </Link>
         </Form>

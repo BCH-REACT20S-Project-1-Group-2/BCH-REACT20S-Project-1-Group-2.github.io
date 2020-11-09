@@ -5,6 +5,8 @@ import "../styles/ExpenseList.css";
 
 class ExpenseList extends React.Component {
   render() {
+    const { saveButtonLabel } = require("../phrases/App.json");
+
     return (
       <>
         <Form className="expenseform">
@@ -19,6 +21,7 @@ class ExpenseList extends React.Component {
             <Form.Control type="number" placeholder="e.g. 100 €" step=".01" />
             <FaSave className="SaveIcon" />
           </Form.Group>
+          <Button>{saveButtonLabel}</Button>
         </Form>
       </>
     );
