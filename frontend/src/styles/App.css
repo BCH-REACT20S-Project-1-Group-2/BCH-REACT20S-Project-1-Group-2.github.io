@@ -14,6 +14,9 @@
   font-family: 'Nunito', sans-serif !important;
   box-sizing: border-box !important;
 }
+body { 
+  overflow: hidden;
+}
 
 /* Text stylings */
 h1 {
@@ -62,7 +65,7 @@ button:active {
 .Page, .Page-main-area {
   min-height: 100vh !important;
 }
-.Page, .Page-header, .Page-main-area, .Page-footer {
+.Page, .Page-header, .Page-footer {
   width: 375px !important;
 }
 .Page-main-area {
@@ -70,12 +73,15 @@ button:active {
   margin-bottom: 78px;
   background: var(--lighter-color);
 }
-header, footer, footer a {
+header, footer {
+  min-width: 375px;
+  
   background-color: var(--primary-green);
   color: var(--lighter-color) !important;
 }
-footer a {
+footer * {
   font-size: 32px;
+  color: var(--lighter-color) !important;
 }
 header {
   height: 155px;

@@ -12,7 +12,7 @@ function AppFooter() {
             <FaTachometerAlt />
           </Link>
         </Col>
-        <Col>
+        <Col className="border-left border-right">
           <Link to="/landing">
             <FaChartBar />
           </Link>

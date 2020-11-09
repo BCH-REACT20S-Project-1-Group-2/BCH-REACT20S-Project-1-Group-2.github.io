@@ -9,7 +9,7 @@ function CustomModal(props) {
 
   return (
     <>
-      <p 
+      <p
         onClick={handleShow}
         style={{
           cursor: "pointer",
