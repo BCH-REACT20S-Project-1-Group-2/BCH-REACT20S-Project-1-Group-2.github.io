@@ -9,7 +9,7 @@ class BalancePresentation extends React.Component {
       salary: 5000,
       saving: 1000,
       expenses: 2800,
-      balance: 1200,
+      balance: 1200
     };
   }
   render() {
@@ -17,7 +17,7 @@ class BalancePresentation extends React.Component {
       salaryLabel,
       savingLabel,
       expensesLabel,
-      balanceLabel,
+      balanceLabel
     } = require("../phrases/BalancePresentation.json");
     return (
       <table className="balance-display">

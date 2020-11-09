@@ -1,9 +1,8 @@
-
-.ExpensePresentation{
-    display: flex;
-    justify-content: space-between;
-    margin: 2rem;
-    margin-top: 4rem;
-    font-weight: 600;
-    font-size: 20px;
+.ExpensePresentation {
+  display: flex;
+  justify-content: space-between;
+  margin: 2rem;
+  margin-top: 4rem;
+  font-weight: 600;
+  font-size: 20px;
 }

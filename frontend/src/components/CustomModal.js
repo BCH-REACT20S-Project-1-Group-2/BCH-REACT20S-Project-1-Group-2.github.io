@@ -1,6 +1,6 @@
-import React, { useState } from 'react';
-import { Modal, Button } from 'react-bootstrap';
-import '../styles/CustomModal.css';
+import React, { useState } from "react";
+import { Modal, Button } from "react-bootstrap";
+import "../styles/CustomModal.css";
 
 function CustomModal(props) {
   const [show, setShow] = useState(false);
@@ -11,7 +11,7 @@ function CustomModal(props) {
   const { closeButtonLabel } = require("../phrases/App.json");
 
   return (
-    <div className="CustomModal" id={props.title.split(' ')[0]}>
+    <div className="CustomModal" id={props.title.split(" ")[0]}>
       <div onClick={handleShow}>{props.title}</div>
 
       <Modal show={show} onHide={handleClose}>
@@ -20,9 +20,7 @@ function CustomModal(props) {
         </Modal.Header>
         <Modal.Body>{props.body}</Modal.Body>
         <Modal.Footer>
-          <Button onClick={handleClose}>
-            {closeButtonLabel}
-          </Button>
+          <Button onClick={handleClose}>{closeButtonLabel}</Button>
         </Modal.Footer>
       </Modal>
     </div>

@@ -39,5 +39,5 @@ module.exports = {
       .which.contains("rgb(226, 125, 96)");
 
     browser.end();
-  },
+  }
 };
