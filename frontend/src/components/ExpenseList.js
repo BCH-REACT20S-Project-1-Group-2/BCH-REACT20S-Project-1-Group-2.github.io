@@ -27,7 +27,10 @@ class ExpenseList extends React.Component {
 
   onSubmit = (e) => {
     e.preventDefault();
-    if (!e.target.checkValidity()) {
+    if (
+      !e.target.checkValidity() ||
+      this.state.userexpense.categoryName === ""
+    ) {
       return;
     } else {
       // this adds the transaction to transaction list

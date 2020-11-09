@@ -5,7 +5,7 @@ export class TransactionItem extends Component {
   render() {
     return (
       <div>
-        <p style={{ backgroundColor: "#ffffff", margin: ".5rem 1rem" }}>
+        <p style={{ backgroundColor: "#ffffff", margin: ".25rem .5rem" }}>
           <button
             onClick={this.props.delExpense.bind(
               this,
