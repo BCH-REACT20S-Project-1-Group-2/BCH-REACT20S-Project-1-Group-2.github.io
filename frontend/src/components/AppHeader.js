@@ -1,5 +1,6 @@
 import React from "react";
 import { Container, Row, Col } from "react-bootstrap";
+import {FaUserEdit} from 'react-icons/fa';
 import "../styles/AppHeader.css";
 
 function AppHeader() {
@@ -13,7 +14,7 @@ function AppHeader() {
           <h3 className="m-0">user name</h3>
         </Col>
         <Col>
-          <div className="m-0 userIcon"></div>
+        <FaUserEdit className="userIcon" />
         </Col>
       </Row>
     </Container>
