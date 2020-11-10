@@ -4,9 +4,6 @@ import "../styles/ExpensePresentation.css";
 class ExpensePresentation extends React.Component {
   constructor() {
     super();
-    // this.state = {
-    //   expenses: "2800",
-    // };
   }
   render() {
     return (
