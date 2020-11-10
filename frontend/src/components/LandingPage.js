@@ -47,7 +47,14 @@ class LandingPage extends React.Component {
                   <Form className="form-wrapper" onSubmit={this.saveSalary}>
                     <Form.Group controlId="formSalary">
                       <Form.Label>Salary</Form.Label>
-                      <Form.Control type="number" />
+                      <Form.Control
+                        type="number"
+                        placeholder="e.g. 3000 €"
+                        step="0.01"
+                        required
+                        name="amount"
+                        min="0.01"
+                      />
                       <p>€</p>
                     </Form.Group>
                     <Button variant="primary" type="submit">
