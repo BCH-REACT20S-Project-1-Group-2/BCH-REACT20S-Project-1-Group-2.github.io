@@ -10,28 +10,24 @@ class LandingPage extends React.Component {
   constructor(props) {
     super(props);
 
-    let salary = localStorage.getItem("totalSalary");
+    let salary = JSON.parse(localStorage.getItem("totalSalary"));
 
-    if (salary == "null" || salary == null) {
+    if (salary == null) {
       salary = 0;
       localStorage.setItem("totalSalary", salary);
     }
 
     this.state = {
-      salaryInput: salary,
       savedSalary: salary,
     };
   }
 
-  saveSalary = () => {
-    localStorage.setItem("totalSalary", this.state.salaryInput);
-    this.setState({ savedSalary: this.state.salaryInput });
+  saveSalary = (e) => {
+    e.preventDefault();
+    localStorage.setItem("totalSalary", e.target[0].value);
+    this.setState({ savedSalary: e.target[0].value });
     document.getElementById("UpdateSalaryBtn").click();
   };
-
-  handleTotalSalaryChange(event) {
-    this.setState({ salaryInput: event.target.value });
-  }
 
   render() {
     return (
@@ -48,16 +44,13 @@ class LandingPage extends React.Component {
               </Accordion.Toggle>
               <Accordion.Collapse eventKey="0">
                 <Card.Body>
-                  <Form className="form-wrapper">
+                  <Form className="form-wrapper" onSubmit={this.saveSalary}>
                     <Form.Group controlId="formSalary">
                       <Form.Label>Salary</Form.Label>
-                      <Form.Control
-                        type="number"
-                        onChange={this.handleTotalSalaryChange.bind(this)}
-                      />
+                      <Form.Control type="number" />
                       <p>€</p>
                     </Form.Group>
-                    <Button variant="primary" onClick={this.saveSalary.bind()}>
+                    <Button variant="primary" type="submit">
                       Save
                     </Button>
                   </Form>

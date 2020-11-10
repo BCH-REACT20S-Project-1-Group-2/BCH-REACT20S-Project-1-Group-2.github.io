@@ -7,14 +7,10 @@ class BalancePresentation extends React.Component {
     super(props);
 
     this.state = {
-      salary: this.props.salary,
       saving: 1000,
       expenses: 2800,
       balance: 1200,
     };
-  }
-  componentWillReceiveProps(nextProps) {
-    this.setState({ salary: nextProps.salary });
   }
 
   render() {
@@ -23,7 +19,7 @@ class BalancePresentation extends React.Component {
         <tbody>
           <tr>
             <td>Total salary</td>
-            <td>{this.state.salary} €</td>
+            <td>{this.props.salary} €</td>
           </tr>
           <tr>
             <td>Target savings</td>
