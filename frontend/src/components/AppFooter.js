@@ -13,7 +13,7 @@ function AppFooter() {
           </Link>
         </Col>
         <Col className="border-left border-right">
-          <Link to="/landing">
+          <Link to="/analysis">
             <FaChartBar />
           </Link>
         </Col>

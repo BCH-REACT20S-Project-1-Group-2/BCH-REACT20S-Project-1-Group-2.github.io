@@ -25,7 +25,12 @@ function LandingMain() {
       <BalancePresentation />
       <Accordion className="mt-3">
         <Card className="mb-3">
-          <Accordion.Toggle as={Button} eventKey="0" className="w-100">
+          <Accordion.Toggle
+            as={Button}
+            id="updateSalary"
+            eventKey="0"
+            className="w-100"
+          >
             {updateSalaryLabel}
           </Accordion.Toggle>
           <Accordion.Collapse eventKey="0">
@@ -33,6 +38,7 @@ function LandingMain() {
               <Form>
                 <InputGroup>
                   <FormControl
+                    id="inputSalary"
                     placeholder={salaryInputLabel}
                     className="text-center"
                     type="number"
@@ -40,7 +46,7 @@ function LandingMain() {
                   />
                   <InputGroup.Append>
                     <InputGroup.Text>€</InputGroup.Text>
-                    <InputGroup.Text as={Button}>
+                    <InputGroup.Text as={Button} id="saveSalary">
                       {saveButtonLabel}
                     </InputGroup.Text>
                   </InputGroup.Append>
@@ -50,7 +56,12 @@ function LandingMain() {
           </Accordion.Collapse>
         </Card>
         <Card className="mb-3">
-          <Accordion.Toggle as={Button} eventKey="1" className="w-100">
+          <Accordion.Toggle          
+            as={Button}          
+            id="updateSaving"
+            eventKey="1"
+            className="w-100"
+          >
             {updateSavingAmoungLabel}
           </Accordion.Toggle>
           <Accordion.Collapse eventKey="1">
@@ -58,6 +69,7 @@ function LandingMain() {
               <Form>
                 <InputGroup>
                   <FormControl
+                    id="inputSaving"
                     placeholder={savingInputLabel}
                     className="text-center"
                     type="number"
@@ -65,7 +77,7 @@ function LandingMain() {
                   />
                   <InputGroup.Append>
                     <InputGroup.Text>€</InputGroup.Text>
-                    <InputGroup.Text as={Button}>
+                    <InputGroup.Text as={Button} id="saveSaving">
                       {saveButtonLabel}
                     </InputGroup.Text>
                   </InputGroup.Append>
@@ -76,7 +88,7 @@ function LandingMain() {
         </Card>
         <Card className="mb-3">
           <Link to="/expense">
-            <Accordion.Toggle as={Button} className="w-100">
+            <Accordion.Toggle as={Button} id="updateExpense" className="w-100">
               {expensePageLinkLabel}
             </Accordion.Toggle>
           </Link>

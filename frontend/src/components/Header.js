@@ -13,7 +13,9 @@ function Header() {
           <AppHeader />
         </Route>
         <Route path="/">
-          <h1 className="mx-auto">Logo</h1>
+          <h1 id="logo" className="mx-auto">
+            Logo
+          </h1>
         </Route>
       </Switch>
     </header>

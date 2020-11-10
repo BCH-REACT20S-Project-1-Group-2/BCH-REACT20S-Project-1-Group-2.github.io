@@ -13,7 +13,7 @@ class ExpensePresentation extends React.Component {
 
     return (
       <Container className="px-0 pt-3 font-weight-bold">
-        <Row className="pb-1 ">
+        <Row id="expenses" className="pb-1 ">
           <Col className="font-weight-bolder">
             <p>{expensesLabel}</p>
           </Col>

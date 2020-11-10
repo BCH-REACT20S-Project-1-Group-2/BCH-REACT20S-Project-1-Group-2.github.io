@@ -13,33 +13,37 @@ function WelcomeMain() {
   const { welcomeText, welcomeCTA } = require("../phrases/App.json");
 
   return (
-    <Container className="mt-5 pt-5 px-0">
-      <Row>
-        <Col>
-          <h2 className="text-center">{welcomeText}</h2>
-        </Col>
-      </Row>
-      <Row>
-        <Col>
-          <InputGroup className="mt-5">
-            <FormControl
-              id="test"
-              placeholder="your name"
-              className="text-center"
-            />
-          </InputGroup>
-        </Col>
-      </Row>
-      <Row>
-        <Col>
-          <Link to="/landing">
-            <Button id="welcomeCTA" className="w-100 text-white mt-5">
-              {welcomeCTA}
-            </Button>
-          </Link>
-        </Col>
-      </Row>
-    </Container>
+    <main>
+            <Container className="mt-5 pt-5 px-0">
+              <Row>
+                <Col>
+                  <h2 id="welcome" className="text-center">
+                    {welcomeText}
+                  </h2>
+                </Col>
+              </Row>
+              <Row>
+                <Col>
+                  <InputGroup className="mt-5">
+                    <FormControl
+                      id="userName"
+                      placeholder="your name"
+                      className="text-center"
+                    />
+                  </InputGroup>
+                </Col>
+              </Row>
+              <Row>
+                <Col>
+                  <Link to="/landing">
+                    <Button id="welcomeCTA" className="w-100 text-white mt-5">
+                      {welcomeCTA}
+                    </Button>
+                  </Link>
+                </Col>
+              </Row>
+            </Container>
+    </main>
   );
 }
 

@@ -8,7 +8,7 @@ class BalancePresentation extends React.Component {
       salary: 1,
       saving: 1,
       expenses: 1,
-      balance: 1,
+      balance: -1,
     };
   }
   render() {
@@ -28,7 +28,7 @@ class BalancePresentation extends React.Component {
             <p>{this.state.salary} €</p>
           </Col>
         </Row>
-        <Row className="pb-1">
+        <Row id="saving" className="pb-1">
           <Col className="font-weight-bolder">
             <p>{savingLabel}</p>
           </Col>
@@ -36,7 +36,7 @@ class BalancePresentation extends React.Component {
             <p>{this.state.saving} €</p>
           </Col>
         </Row>
-        <Row className="pb-1">
+        <Row id="expenses" className="pb-1">
           <Col className="font-weight-bolder">
             <p>{expensesLabel}</p>
           </Col>
@@ -44,7 +44,7 @@ class BalancePresentation extends React.Component {
             <p>{this.state.expenses} €</p>
           </Col>
         </Row>
-        <Row className="pb-1">
+        <Row id="balance" className="pb-1">
           <Col className="font-weight-bolder">
             <p>{balanceLabel}</p>
           </Col>
