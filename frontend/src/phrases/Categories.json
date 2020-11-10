@@ -1,6 +1,16 @@
 [
-    "Rent",
-    "Mortgage(s)",
-    "Utility Bills",
-    "Insurance"
+  { "categoryId": 1, "categoryName": "Rent & Mortgage" },
+  { "categoryId": 2, "categoryName": "Groceries" },
+  { "categoryId": 3, "categoryName": "Loan payments" },
+  { "categoryId": 4, "categoryName": "Insurances" },
+  { "categoryId": 5, "categoryName": "Fuel/ Transportation costs" },
+  { "categoryId": 6, "categoryName": "Clothing & Shoes" },
+  { "categoryId": 7, "categoryName": "Entertainment & Hobbies" },
+  {
+    "categoryId": 8,
+    "categoryName": "Utility bills (cable, cell, electricity, water, etc"
+  },
+  { "categoryId": 9, "categoryName": "Health expenses" },
+  { "categoryId": 10, "categoryName": "Services (daycare, hair dresser)" },
+  { "categoryId": 11, "categoryName": "Miscellenous" }
 ]
