@@ -19,21 +19,19 @@ class ExpenseList extends React.Component {
 
   onSubmit = (e) => {
     e.preventDefault();
-    if (e.target.checkValidity()) {
-      this.props.updateTotal(this.state.userexpense.amount);
-      this.props.addExpense(
-        this.state.userexpense.categoryName,
-        this.state.userexpense.amount
-      );
-      this.setState({ categoryName: "", amount: "" });
-      e.target.reset();
-    }
+    this.props.updateTotal(this.state.userexpense.amount);
+    this.props.addExpense(
+      this.state.userexpense.categoryName,
+      this.state.userexpense.amount
+    );
+    this.setState({ categoryName: "", amount: "" });
+    e.target.reset();
   };
 
   render() {
     return (
       <>
-        <Form noValidate onSubmit={this.onSubmit.bind(this)}>
+        <Form onSubmit={this.onSubmit.bind(this)}>
           <Form.Group controlId="expenseList" className="expenseform">
             <Form.Control
               as="select"
