@@ -5,7 +5,6 @@ import Header from "./Header";
 import Footer from "./Footer";
 import "../styles/WelcomePage.css";
 
-
 class WelcomePage extends Component {
 
   state = {
@@ -29,11 +28,12 @@ class WelcomePage extends Component {
 
 
   render() {
+    const { welcomeText, welcomeCTA } = require("../phrases/App.json");
     return (
       <div className="WelcomePage">
       <Header />
       <main>
-        <h2 id="welcomeText">Welcome Text</h2>
+        <h2 id="welcomeText">{welcomeText}</h2>
         <Form onSubmit={this.onSubmit}>
           <Form.Group controlId="userName">
             <Form.Control
@@ -45,7 +45,7 @@ class WelcomePage extends Component {
           </Form.Group>
           <Link to="/landing">
             <Button onClick={this.handleLogin} id="welcomeCTA" className="w-100 text-white">
-              Let's begin
+             {welcomeCTA}
             </Button>
           </Link>
         </Form>
