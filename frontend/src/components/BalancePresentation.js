@@ -7,7 +7,7 @@ class BalancePresentation extends React.Component {
     super(props);
     this.state = {
       salary: 5000,
-      saving: 1000,
+      saving: 0,
       expenses: 2800,
       balance: 1200,
     };
@@ -28,7 +28,7 @@ class BalancePresentation extends React.Component {
           </tr>
           <tr>
             <td>{savingLabel}</td>
-            <td>{this.state.saving} €</td>
+            <td>{this.props.saving} €</td>
           </tr>
           <tr>
             <td>{expensesLabel}</td>
