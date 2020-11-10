@@ -5,10 +5,10 @@ class BalancePresentation extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      salary: 5000,
-      saving: 1000,
-      expenses: 2800,
-      balance: 1200,
+      salary: 1,
+      saving: 1,
+      expenses: 1,
+      balance: 1,
     };
   }
   render() {
@@ -20,7 +20,7 @@ class BalancePresentation extends React.Component {
     } = require("../phrases/BalancePresentation.json");
     return (
       <Container className="px-0 pt-3 font-weight-bold">
-        <Row className="pb-1 ">
+        <Row id="salary" className="pb-1 ">
           <Col className="font-weight-bolder">
             <p>{salaryLabel}</p>
           </Col>

@@ -2,6 +2,8 @@ module.exports = {
   src_folders: ["./test"],
   output_folder: "./test/reports",
 
+  abortOnAssertionFailure: false,
+
   webdriver: {
     start_process: true,
     server_path: require("chromedriver").path,
@@ -18,4 +20,5 @@ module.exports = {
       },
     },
   },
+  
 };

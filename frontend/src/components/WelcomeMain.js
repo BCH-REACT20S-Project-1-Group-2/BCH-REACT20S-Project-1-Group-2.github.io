@@ -22,7 +22,11 @@ function WelcomeMain() {
       <Row>
         <Col>
           <InputGroup className="mt-5">
-            <FormControl placeholder="your name" className="text-center" />
+            <FormControl
+              id="test"
+              placeholder="your name"
+              className="text-center"
+            />
           </InputGroup>
         </Col>
       </Row>
