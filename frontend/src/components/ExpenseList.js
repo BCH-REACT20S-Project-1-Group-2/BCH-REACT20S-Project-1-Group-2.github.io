@@ -4,7 +4,13 @@ import { FaSave } from "react-icons/fa";
 import "../styles/ExpenseList.css";
 
 class ExpenseList extends React.Component {
+  state = {
+    categories: require("../phrases/Categories.json"),
+  };
   render() {
+    const categoriesList = this.state.categories.map((item) => {
+      return <option>{item.categoryName}</option>;
+    });
     const { saveButtonLabel } = require("../phrases/App.json");
 
     return (
@@ -13,10 +19,7 @@ class ExpenseList extends React.Component {
           <Form.Group controlId="expenseList" className="expenseform">
             <Form.Control as="select" custom defaultValue="Add category">
               <option disabled>Add category</option>
-              <option>Rent</option>
-              <option>Mortgage(s)</option>
-              <option>Utility Bills</option>
-              <option>Insurance</option>
+              {categoriesList}
             </Form.Control>
             <Form.Control type="number" placeholder="e.g. 100 €" step=".01" />
             <FaSave className="SaveIcon" />
