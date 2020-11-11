@@ -8,7 +8,6 @@ class BalancePresentation extends React.Component {
     this.state = {
       saving: 1000,
       expenses: 2800,
-      balance: 1200,
     };
   }
 
@@ -50,7 +49,7 @@ class BalancePresentation extends React.Component {
             <p>{balanceLabel}</p>
           </Col>
           <Col className="pl-0 d-flex justify-content-end">
-            <p>{this.state.balance} €</p>
+            <p>{this.props.balance} €</p>
           </Col>
         </Row>
       </Container>

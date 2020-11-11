@@ -32,6 +32,19 @@ class LandingMain extends React.Component {
     this.setState({ savedSalary: e.target[0].value });
     document.getElementById("UpdateSalaryBtn").click();
   };
+  getBalance = () => {
+    let userExpenses =
+      localStorage.getItem("userexpenses") === null
+        ? 0
+        : JSON.parse(localStorage.getItem("userexpenses"));
+
+    let userSaving =
+      localStorage.getItem("saving") === null
+        ? 0
+        : JSON.parse(localStorage.getItem("saving"));
+
+    return this.state.savedSalary - userExpenses - userSaving;
+  };
 
   render() {
     const {
@@ -45,7 +58,10 @@ class LandingMain extends React.Component {
 
     return (
       <main>
-        <BalancePresentation salary={this.state.savedSalary} />
+        <BalancePresentation
+          salary={this.state.savedSalary}
+          balance={this.getBalance()}
+        />
         <Accordion className="mt-3">
           <Card className="mb-3">
             <Accordion.Toggle
