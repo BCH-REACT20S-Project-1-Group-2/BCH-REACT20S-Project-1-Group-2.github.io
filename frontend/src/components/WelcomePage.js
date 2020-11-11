@@ -8,8 +8,9 @@ import "../styles/WelcomePage.css";
 class WelcomePage extends Component {
 
   state = {
-    username: "",
+    username: localStorage.getItem("user"),
   }
+
   onChangeName = (e) => {
     this.setState({
       [e.target.name]: e.target.value,
@@ -33,12 +34,13 @@ class WelcomePage extends Component {
       <div className="WelcomePage">
       <Header />
       <main>
-        <h2 id="welcomeText">{welcomeText}</h2>
+    <h2 id="welcomeText">{welcomeText} {this.state.username}</h2>
         <Form onSubmit={this.onSubmit}>
           <Form.Group controlId="userName">
             <Form.Control
               type="text"
               placeholder="your name"
+              value={this.state.username}
               className="text-center"
               onChange={this.onChangeName} name="username"
             />
