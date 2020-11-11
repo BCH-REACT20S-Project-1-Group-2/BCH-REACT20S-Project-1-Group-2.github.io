@@ -6,15 +6,7 @@ import BalancePresentation from "./BalancePresentation";
 import Footer from "./Footer";
 import "../styles/LandingPage.css";
 
-const {
-  updateSalaryLabel,
-  salaryInputLabel,
-  updateSavingAmoungLabel,
-  savingInputLabel,
-  expensePageLinkLabel,
-} = require("../phrases/LandingPage.json");
 
-const {saveButtonLabel} = require('../phrases/App.json');
 class LandingPage extends React.Component {
 
   state = {
@@ -43,6 +35,17 @@ class LandingPage extends React.Component {
   }
 
   render () {
+
+    const {
+      updateSalaryLabel,
+      salaryInputLabel,
+      updateSavingAmoungLabel,
+      savingInputLabel,
+      expensePageLinkLabel,
+    } = require("../phrases/LandingPage.json");
+    
+    const {saveButtonLabel} = require('../phrases/App.json');
+    
     return (
       <div className="LandingPage">
         <Header />
@@ -75,7 +78,15 @@ class LandingPage extends React.Component {
                   <Form className="form-wrapper">
                     <Form.Group controlId="formSavings">
                       <Form.Label>{savingInputLabel}</Form.Label>
-                      <Form.Control type="number" onChange={this.onChange.bind(this)} min="0"/>
+                      <Form.Control 
+                        type="number" 
+                        placeholder="e.g. 3000 €"
+                        step="1"
+                        required
+                        name="savingsAmount"
+                        min="0"
+                        onChange={this.onChange.bind(this)}
+                        />
                       <p>€</p>
                     </Form.Group>
                     <Button variant="primary" type="submit">{saveButtonLabel}</Button>
