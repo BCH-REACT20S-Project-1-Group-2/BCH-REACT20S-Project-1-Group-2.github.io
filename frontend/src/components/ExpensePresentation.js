@@ -6,9 +6,11 @@ class ExpensePresentation extends React.Component {
     super();
   }
   render() {
+    const { expensesLabel } = require("../phrases/ExpensePresentation.json");
+
     return (
       <div className="ExpensePresentation">
-        <div>Total Expense</div>
+        <div>{expensesLabel}</div>
         <div>{this.props.total} €</div>
       </div>
     );

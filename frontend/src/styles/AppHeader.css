@@ -1,5 +1,7 @@
 .userIcon {
     height: 20px;
     width: 20px;
-    border: 1px solid var(--light-font);
+    top: 98px;
+    left: 342px;
+    color: rgba(244, 245, 248, 0.62);
 }
