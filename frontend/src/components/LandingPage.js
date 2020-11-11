@@ -15,7 +15,7 @@ class LandingPage extends React.Component {
 
   onChange = (event) => {
     this.setState({
-      saving: event.target.value
+      saving: event.target[0].value
     })
   }
 
@@ -45,7 +45,7 @@ class LandingPage extends React.Component {
     } = require("../phrases/LandingPage.json");
     
     const {saveButtonLabel} = require('../phrases/App.json');
-    
+
     return (
       <div className="LandingPage">
         <Header />
@@ -75,7 +75,7 @@ class LandingPage extends React.Component {
               </Accordion.Toggle>
               <Accordion.Collapse eventKey="1">
                 <Card.Body>
-                  <Form className="form-wrapper">
+                  <Form className="form-wrapper" onSubmit={this.onChange.bind(this)}>
                     <Form.Group controlId="formSavings">
                       <Form.Label>{savingInputLabel}</Form.Label>
                       <Form.Control 
@@ -84,8 +84,7 @@ class LandingPage extends React.Component {
                         step="1"
                         required
                         name="savingsAmount"
-                        min="0"
-                        onChange={this.onChange.bind(this)}
+                        min="0"                        
                         />
                       <p>€</p>
                     </Form.Group>
