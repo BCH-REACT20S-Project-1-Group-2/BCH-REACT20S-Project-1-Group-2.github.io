@@ -21,21 +21,14 @@ class WelcomePage extends Component {
     localStorage.setItem("user",(this.state.username));
   }
 
-  onSubmit = (e) => {
-    this.setState({
-      username: "",
-    })
-  };
-
-
   render() {
     const { welcomeText, welcomeCTA } = require("../phrases/App.json");
     return (
       <div className="WelcomePage">
       <Header />
       <main>
-    <h2 id="welcomeText">{welcomeText} {this.state.username}</h2>
-        <Form onSubmit={this.onSubmit}>
+        <h2 id="welcomeText">{welcomeText} {this.state.username}</h2>
+        <Form>
           <Form.Group controlId="userName">
             <Form.Control
               type="text"
