@@ -1,6 +1,5 @@
 import React from "react";
-//import { Table } from "react-bootstrap";
-import "../styles/BalancePresentation.css";
+import { Container, Row, Col } from "react-bootstrap";
 
 class BalancePresentation extends React.Component {
   constructor(props) {
@@ -21,26 +20,40 @@ class BalancePresentation extends React.Component {
       balanceLabel,
     } = require("../phrases/BalancePresentation.json");
     return (
-      <table className="balance-display">
-        <tbody>
-          <tr>
-            <td>{salaryLabel}</td>
-            <td>{this.props.salary} €</td>
-          </tr>
-          <tr>
-            <td>{savingLabel}</td>
-            <td>{this.state.saving} €</td>
-          </tr>
-          <tr>
-            <td>{expensesLabel}</td>
-            <td>{this.state.expenses} €</td>
-          </tr>
-          <tr>
-            <td>{balanceLabel}</td>
-            <td>{this.state.balance} €</td>
-          </tr>
-        </tbody>
-      </table>
+      <Container className="px-2 pt-3 font-weight-bold">
+        <Row className="pb-1 ">
+          <Col xs={9} className="pr-0 font-weight-bolder">
+            <p>{salaryLabel}</p>
+          </Col>
+          <Col className="pl-0 d-flex justify-content-end">
+            <p>{this.props.salary} €</p>
+          </Col>
+        </Row>
+        <Row className="pb-1">
+          <Col xs={9} className="pr-0 font-weight-bolder">
+            <p>{savingLabel}</p>
+          </Col>
+          <Col className="pl-0 d-flex justify-content-end">
+            <p>{this.state.saving} €</p>
+          </Col>
+        </Row>
+        <Row className="pb-1">
+          <Col className="pr-0 font-weight-bolder">
+            <p>{expensesLabel}</p>
+          </Col>
+          <Col className="pl-0 d-flex justify-content-end">
+            <p>{this.state.expenses} €</p>
+          </Col>
+        </Row>
+        <Row className="pb-1">
+          <Col className="pr-0 font-weight-bolder">
+            <p>{balanceLabel}</p>
+          </Col>
+          <Col className="pl-0 d-flex justify-content-end">
+            <p>{this.state.balance} €</p>
+          </Col>
+        </Row>
+      </Container>
     );
   }
 }

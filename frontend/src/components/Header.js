@@ -4,11 +4,7 @@ import AppHeader from "./AppHeader";
 
 function Header() {
   return (
-    <header style={{ 
-      height: "155px",
-      display: "flex",
-      alignItems: "flex-end",
-    }}>
+    <header className="d-flex justify-content-center align-items-end">
       <Switch>
         <Route path="/landing">
           <AppHeader />
