@@ -4,13 +4,14 @@ import { Container, Row, Col } from "react-bootstrap";
 class BalancePresentation extends React.Component {
   constructor(props) {
     super(props);
+
     this.state = {
-      salary: 5000,
       saving: 1000,
       expenses: 2800,
       balance: 1200,
     };
   }
+
   render() {
     const {
       salaryLabel,
@@ -25,7 +26,7 @@ class BalancePresentation extends React.Component {
             <p>{salaryLabel}</p>
           </Col>
           <Col className="pl-0 d-flex justify-content-end">
-            <p>{this.state.salary} €</p>
+            <p>{this.props.salary} €</p>
           </Col>
         </Row>
         <Row className="pb-1">
