@@ -5,13 +5,14 @@ import "../styles/BalancePresentation.css";
 class BalancePresentation extends React.Component {
   constructor(props) {
     super(props);
+
     this.state = {
-      salary: 5000,
       saving: 1000,
       expenses: 2800,
       balance: 1200,
     };
   }
+
   render() {
     const {
       salaryLabel,
@@ -24,7 +25,7 @@ class BalancePresentation extends React.Component {
         <tbody>
           <tr>
             <td>{salaryLabel}</td>
-            <td>{this.state.salary} €</td>
+            <td>{this.props.salary} €</td>
           </tr>
           <tr>
             <td>{savingLabel}</td>
