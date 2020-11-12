@@ -26,44 +26,46 @@ class WelcomeMain extends Component {
     const { welcomeText, welcomeCTA } = require("../phrases/App.json");
 
     return (
-      <Container className="mt-5 pt-5 px-0">
-        <Row>
-          <Col>
-            <h2 id="welcome" className="text-center">
-              {welcomeText}
-            </h2>
-          </Col>
-        </Row>
-        <Form onSubmit={this.onSubmit}>
-          <Row>
-            <Col>
-              <Form.Group controlId="userName">
-                <Form.Control
-                  id="userName"
-                  type="text"
-                  placeholder="your name"
-                  className="text-center"
-                  onChange={this.onChangeName}
-                  name="username"
-                />
-              </Form.Group>
-            </Col>
-          </Row>
-          <Row>
-            <Col>
-              <Link to="/landing">
-                <Button
-                  onClick={this.handleLogin}
-                  id="welcomeCTA"
-                  className="w-100 text-white mt-5"
-                >
-                  {welcomeCTA}
-                </Button>
-              </Link>
-            </Col>
-          </Row>
-        </Form>
-      </Container>
+      <main>
+          <Container className="mt-5 pt-5 px-0">
+            <Row>
+              <Col>
+                <h2 id="welcome" className="text-center">
+                  {welcomeText}
+                </h2>
+              </Col>
+            </Row>
+            <Form onSubmit={this.onSubmit}>
+              <Row>
+                <Col>
+                  <Form.Group controlId="userName">
+                    <Form.Control
+                      id="userName"
+                      type="text"
+                      placeholder="your name"
+                      className="text-center"
+                      onChange={this.onChangeName}
+                      name="username"
+                    />
+                  </Form.Group>
+                </Col>
+              </Row>
+              <Row>
+                <Col>
+                  <Link to="/landing">
+                    <Button
+                      onClick={this.handleLogin}
+                      id="welcomeCTA"
+                      className="w-100 text-white mt-5"
+                    >
+                      {welcomeCTA}
+                    </Button>
+                  </Link>
+                </Col>
+              </Row>
+            </Form>
+          </Container>
+      </main>
     );
   }
 }
