@@ -60,7 +60,7 @@ class ExpenseList extends React.Component {
               onChange={this.onChange.bind(this)}
               required
             >
-              <option disabled>Add category</option>
+              <option value="">Add category</option>
               {categoriesList}
             </Form.Control>
             <Form.Control

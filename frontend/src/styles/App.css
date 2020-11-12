@@ -36,20 +36,6 @@ header {
   color: var(--light-font);
 }
 
-.delBtnStyle{
-  background: var(--secondary-color);
-  color: var(--primary-bg-color);
-  border: none;
-  padding: 5px 8px;
-  cursor: pointer,
-}
-
-.transaction{
-  background-color: rgba(232, 168, 124, 0.11); ;
-  margin: .25rem .5rem;
-  display: grid;
-  grid-template-columns: 8fr 1fr 1fr;
-}
 
 /* All application wide styling go here, e.g. fonts and colors etc */
 

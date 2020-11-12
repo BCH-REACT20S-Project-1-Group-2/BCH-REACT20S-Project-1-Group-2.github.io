@@ -42,8 +42,8 @@ export class ExpensePage extends Component {
 
   // React Life Cycle
   componentDidMount() {
-    if (localStorage.getItem("userexpenses")) {
-      const items = JSON.parse(localStorage.getItem("userexpenses"));
+    const items = JSON.parse(localStorage.getItem("userexpenses"));
+    if (items) {
       const fetchExpense = items.map((obj) => ({
         id: obj.id,
         title: obj.title,
@@ -54,15 +54,13 @@ export class ExpensePage extends Component {
       });
 
       //To update total expense amount on start
-      var totalexpensesarray = [];
+      let totalexpensesarray = [];
       fetchExpense.forEach((item) => {
         totalexpensesarray.push(item.amount);
       });
       const totalexpenses = totalexpensesarray.reduce((a, b) => a + b, 0);
 
       this.setState({ total: totalexpenses });
-    } else {
-      this.setState({ userexpenses: [] }, { total: 0 });
     }
   }
 
