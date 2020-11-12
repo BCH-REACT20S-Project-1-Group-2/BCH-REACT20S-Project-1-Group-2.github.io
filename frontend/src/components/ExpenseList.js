@@ -4,6 +4,7 @@ import { FaSave } from "react-icons/fa";
 
 class ExpenseList extends React.Component {
   state = {
+
     userexpense: { categoryName: "", amount: "" },
     categories: require("../phrases/Categories.json"),
   };
@@ -29,6 +30,7 @@ class ExpenseList extends React.Component {
 
   render() {
     const { expenseInputLabel } = require("../phrases/ExpenseList.json");
+
     const categoriesList = this.state.categories.map((item) => {
       return <option>{item.categoryName}</option>;
     });
@@ -63,6 +65,7 @@ class ExpenseList extends React.Component {
                 <Button variant="primary" type="submit" id="savebutton">
                   <FaSave className="SaveIcon" />
                 </Button>
+
               </InputGroup.Text>
             </InputGroup.Append>
           </InputGroup>
