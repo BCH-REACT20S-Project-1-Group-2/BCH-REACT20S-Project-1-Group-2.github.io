@@ -23,13 +23,14 @@ class WelcomeMain extends Component {
   };
 
   render() {
-    const { welcomeText, welcomeCTA } = require("../phrases/App.json");
+    const { welcomeText, welcomeCTA, appName } = require("../phrases/App.json");
 
     return (
       <Container className="mt-5 pt-5 px-0">
         <Row>
           <Col>
             <h2 className="text-center">{welcomeText}</h2>
+            <h1 className="text-center">{appName}</h1>
           </Col>
         </Row>
         <Form onSubmit={this.onSubmit}>

@@ -26,7 +26,10 @@ function CustomModal(props) {
             <h3>{props.title}</h3>
           </Modal.Title>
         </Modal.Header>
-        <Modal.Body>{props.body}</Modal.Body>
+        <Modal.Body>
+            <h4>{props.body}</h4>
+            <p>{props.text}</p>
+        </Modal.Body>
         <Modal.Footer className="align-self-center border-0">
           <Button onClick={handleClose}>{closeButtonLabel}</Button>
         </Modal.Footer>
