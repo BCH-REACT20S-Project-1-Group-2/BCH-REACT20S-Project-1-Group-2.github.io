@@ -34,9 +34,6 @@ export class ExpensePage extends Component {
     this.setState({
       userexpenses: [newExpense, ...this.state.userexpenses],
     });
-  };
-
-  updateTotal = (amount) => {
     this.setState({ total: this.state.total + parseFloat(amount) });
   };
 
@@ -70,12 +67,12 @@ export class ExpensePage extends Component {
     }
   }
 
-  componentWillUpdate(nextProps, nextState) {
+  componentDidUpdate() {
     localStorage.setItem(
       "userexpenses",
-      JSON.stringify(nextState.userexpenses)
+      JSON.stringify(this.state.userexpenses)
     );
-    localStorage.setItem("total", JSON.stringify(nextState.total));
+    localStorage.setItem("total", JSON.stringify(this.state.total));
   }
 
   render() {
@@ -84,10 +81,7 @@ export class ExpensePage extends Component {
         <Header />
         <main>
           <ExpensePresentation total={this.state.total} />
-          <ExpenseList
-            addExpense={this.addExpense}
-            updateTotal={this.updateTotal}
-          />
+          <ExpenseList addExpense={this.addExpense} />
           <TransactionHistory
             userexpenses={this.state.userexpenses}
             delExpense={this.delExpense}
