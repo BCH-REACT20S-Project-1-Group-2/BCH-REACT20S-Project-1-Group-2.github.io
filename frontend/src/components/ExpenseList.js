@@ -35,7 +35,6 @@ class ExpenseList extends React.Component {
 
   onSubmit = (e) => {
     e.preventDefault();
-    this.props.updateTotal(this.state.userexpense.amount);
     this.props.addExpense(
       this.state.userexpense.categoryName,
       this.state.userexpense.amount
@@ -48,7 +47,6 @@ class ExpenseList extends React.Component {
     const categoriesList = this.state.categories.map((item) => {
       return <option>{item.categoryName}</option>;
     });
-    const { saveButtonLabel } = require("../phrases/App.json");
 
     return (
       <>

@@ -23,6 +23,7 @@ export class ExpensePage extends Component {
     this.setState({
       userexpenses: [newExpense, ...this.state.userexpenses],
     });
+    this.setState({ total: this.state.total + parseFloat(amount) });
   };
 
   // This will update the state of userexpenses and total after a transaction is removed.
@@ -37,11 +38,6 @@ export class ExpensePage extends Component {
     this.setState({
       total: this.state.total - parseFloat(amt),
     });
-  };
-
-  //This will calculate the total when a transaction is added.
-  updateTotal = (amount) => {
-    this.setState((state) => ({ total: state.total + parseFloat(amount) }));
   };
 
   // React Life Cycle
@@ -84,10 +80,7 @@ export class ExpensePage extends Component {
         <Header />
         <main>
           <ExpensePresentation total={this.state.total} />
-          <ExpenseList
-            addExpense={this.addExpense}
-            updateTotal={this.updateTotal}
-          />
+          <ExpenseList addExpense={this.addExpense} />
           <TransactionHistory
             userexpenses={this.state.userexpenses}
             delExpense={this.delExpense}
