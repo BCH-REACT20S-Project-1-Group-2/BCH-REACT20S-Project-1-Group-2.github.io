@@ -6,7 +6,6 @@ class BalancePresentation extends React.Component {
     super(props);
 
     this.state = {
-      saving: 1000,
       expenses: 2800,
       balance: 1200,
     };
@@ -34,7 +33,7 @@ class BalancePresentation extends React.Component {
             <p>{savingLabel}</p>
           </Col>
           <Col className="pl-0 d-flex justify-content-end">
-            <p>{this.state.saving} €</p>
+            <p>{this.props.saving} €</p>
           </Col>
         </Row>
         <Row className="pb-1">
