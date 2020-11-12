@@ -20,24 +20,24 @@ export class ExpensePage extends Component {
       title: title,
       amount: parseFloat(amount),
     };
-    this.setState({
-      userexpenses: [newExpense, ...this.state.userexpenses],
-    });
-    this.setState({ total: this.state.total + parseFloat(amount) });
+    this.setState((state) => ({
+      userexpenses: [newExpense, ...state.userexpenses],
+    }));
+    this.setState((state) => ({
+      total: state.total + parseFloat(amount),
+    }));
   };
 
   // This will update the state of userexpenses and total after a transaction is removed.
   delExpense = (id, amt) => {
-    this.setState({
+    this.setState((state) => ({
       userexpenses: [
-        ...this.state.userexpenses.filter(
-          (userexpenses) => userexpenses.id !== id
-        ),
+        ...state.userexpenses.filter((userexpenses) => userexpenses.id !== id),
       ],
-    });
-    this.setState({
-      total: this.state.total - parseFloat(amt),
-    });
+    }));
+    this.setState((state) => ({
+      total: state.total - parseFloat(amt),
+    }));
   };
 
   // React Life Cycle
@@ -49,9 +49,7 @@ export class ExpensePage extends Component {
         title: obj.title,
         amount: parseFloat(obj.amount),
       }));
-      this.setState({
-        userexpenses: [...fetchExpense],
-      });
+      this.setState({ userexpenses: [...fetchExpense] });
 
       //To update total expense amount on start
       let totalexpensesarray = [];
