@@ -1,11 +1,7 @@
 import React, { Component } from "react";
-import Header from "./Header";
 import ExpensePresentation from "./ExpensePresentation";
 import ExpenseList from "./ExpenseList";
 import TransactionHistory from "./TransactionHistory";
-import Footer from "./Footer";
-
-import "../styles/ExpensePage.css";
 
 export class ExpensePage extends Component {
   state = {
@@ -72,8 +68,7 @@ export class ExpensePage extends Component {
 
   render() {
     return (
-      <div className="ExpensePage">
-        <Header />
+      <div>
         <main>
           <ExpensePresentation total={this.state.total} />
           <ExpenseList addExpense={this.addExpense} />
@@ -82,7 +77,6 @@ export class ExpensePage extends Component {
             delExpense={this.delExpense}
           />
         </main>
-        <Footer />
       </div>
     );
   }

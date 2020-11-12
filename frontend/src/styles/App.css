@@ -1,41 +1,105 @@
-:root {
-  --secondary-light-color: #e8a87c45;
-  --input-bg-color: #f2f0eb;
-  --headerFooter-bg-color: #7fc1ac;
-  --light-font: #f4f5f8;
-  --secondary-color: #E27D60;
-  --dark-color: #545149;
-  --primary-bg-color: #F2F0EB;
-}
+/* All custom application wide styling go here, e.g. fonts and colors etc */
 
+/* Root level stylings */
+:root {
+  --primary-green: #7fc1ac;
+  --primary-orange: #E27D60;
+  --light-orange: #e8a87c;
+
+  --dark-color: #545149;
+  --light-color: #F2F0EB;
+  --lighter-color: #f4f5f8;
+}
 * {
   font-family: 'Nunito', sans-serif !important;
+  box-sizing: border-box !important;
+}
+body { 
+  overflow: hidden;
 }
 
-.App * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+/* Text stylings */
+h1 {
+  font-size: 40px !important;
+  font-weight: 700 !important;
+}
+h2 {
+  font-size: 32px !important;
+  font-weight: 800 !important;
+}
+h3 {
+  font-size: 24px !important;
+  font-weight: 600 !important;
+}
+h6 {
+  font-size: 12px !important;
+  margin: 0 !important;
+}
+p {
+  font-size: 20px !important;
+  margin: 0 !important;
+}
+span {
+  font-size: inherit !important;
+  color: inherit !important;
 }
 
-.App h2 {
-  font-weight: 800;
-  font-size: 32px;
+/* Input and button stylings  */
+input, select {
+  height: 60px !important;
+  background-color: var(--lighter-color) !important;
+  border: 2px solid var(--primary-green) !important;
+  font-size: 20px !important;
 }
-
 button,
 button:hover,
 button:active {
   font-size: 20px !important;
-  background-color: var(--secondary-color) !important;
-  border-color: var(--secondary-color) !important;
+  color: var(--lighter-color) !important;
+  height: 60px !important;
+  background-color: var(--primary-orange) !important;
+  border-color: var(--primary-orange) !important;
+}
+*::placeholder {
+  font-size: smaller;
+}
+select {
+  font-size: smaller !important;
 }
 
+/* Page level element styling */
+.Page, .Page-main-area {
+  min-height: 100vh !important;
+}
+.Page, .Page-header, .Page-footer {
+  width: 375px !important;
+}
+.Page-main-area {
+  margin-top: 155px;
+  margin-bottom: 78px;
+  background: var(--lighter-color);
+}
+header, footer {
+  min-width: 375px;
+  
+  background-color: var(--primary-green);
+  color: var(--lighter-color) !important;
+}
+footer * {
+  font-size: 32px;
+  color: var(--lighter-color) !important;
+}
 header {
-  background-color: var(--headerFooter-bg-color);
-  color: var(--light-font);
+  height: 155px;
+}
+footer {
+  height: 78px;
 }
 
-
-/* All application wide styling go here, e.g. fonts and colors etc */
-
+/* Other component specific custom styling  */
+.modal-content {
+  background-color: var(--lighter-color) !important;
+}
+.card-body {
+  background-color: var(--light-color) !important;
+}
