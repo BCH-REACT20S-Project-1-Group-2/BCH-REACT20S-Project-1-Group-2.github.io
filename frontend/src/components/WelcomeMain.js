@@ -4,8 +4,9 @@ import { Container, Row, Col, Button, Form } from "react-bootstrap";
 
 class WelcomeMain extends Component {
   state = {
-    username: "",
+    username: localStorage.getItem("user"),
   };
+
   onChangeName = (e) => {
     this.setState({
       [e.target.name]: e.target.value,
@@ -15,13 +16,7 @@ class WelcomeMain extends Component {
   handleLogin = (e) => {
     localStorage.setItem("user", this.state.username);
   };
-
-  onSubmit = (e) => {
-    this.setState({
-      username: "",
-    });
-  };
-
+  
   render() {
     const { welcomeText, welcomeCTA } = require("../phrases/App.json");
 
@@ -29,16 +24,19 @@ class WelcomeMain extends Component {
       <Container className="mt-5 pt-5 px-0">
         <Row>
           <Col>
-            <h2 className="text-center">{welcomeText}</h2>
+            <h2 className="text-center">
+              {welcomeText} {this.state.username}
+            </h2>
           </Col>
         </Row>
-        <Form onSubmit={this.onSubmit}>
+        <Form>
           <Row>
             <Col>
               <Form.Group controlId="userName">
                 <Form.Control
                   type="text"
                   placeholder="your name"
+                  value={this.state.username}
                   className="text-center"
                   onChange={this.onChangeName}
                   name="username"
