@@ -1,6 +1,7 @@
 import React from "react";
 import { Container, Row, Col } from "react-bootstrap";
 import { FaUserEdit } from "react-icons/fa";
+import logo from "../assets/BCtrlLogo.svg"
 
 export default class AppHeader extends React.Component {
   state = {
@@ -12,7 +13,7 @@ export default class AppHeader extends React.Component {
       <Container className="mx-4">
         <Row className="d-flex align-items-center">
           <Col className="px-0 d-flex justify-content-start">
-            <h1>Logo</h1>
+            <img src={logo} alt="BudgetCtrl logo"/>
           </Col>
           <Col className="px-0 text-center">
             <h3>{this.state.username}</h3>

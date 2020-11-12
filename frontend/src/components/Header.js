@@ -1,6 +1,7 @@
 import React from 'react';
 import { Switch, Route } from 'react-router-dom';
 import AppHeader from "./AppHeader";
+import logo from "../assets/BCtrlLogo.svg";
 
 function Header() {
   return (
@@ -13,7 +14,7 @@ function Header() {
           <AppHeader />
         </Route>
         <Route path="/">
-          <h1 className="mx-auto">Logo</h1>
+          <img src={logo} alt="BudgetCtrl logo"/>
         </Route>
       </Switch>
     </header>

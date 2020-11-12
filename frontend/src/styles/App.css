@@ -44,6 +44,11 @@ span {
   color: inherit !important;
 }
 
+/* Logo styling */
+img {
+  padding-bottom: 1rem;
+}
+
 /* Input and button stylings  */
 input, select {
   height: 60px !important;
