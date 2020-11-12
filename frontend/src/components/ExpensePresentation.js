@@ -1,5 +1,5 @@
 import React from "react";
-import "../styles/ExpensePresentation.css";
+import { Container, Row, Col } from "react-bootstrap";
 
 class ExpensePresentation extends React.Component {
   constructor() {
@@ -12,10 +12,16 @@ class ExpensePresentation extends React.Component {
     const { expensesLabel } = require("../phrases/ExpensePresentation.json");
 
     return (
-      <div className="ExpensePresentation">
-        <div>{expensesLabel}</div>
-        <div>{this.state.expenses} €</div>
-      </div>
+      <Container className="px-2 pt-3 font-weight-bold">
+        <Row className="pb-1 ">
+          <Col className="font-weight-bolder">
+            <p>{expensesLabel}</p>
+          </Col>
+          <Col className="d-flex justify-content-end">
+            <p>{this.state.expenses} €</p>
+          </Col>
+        </Row>
+      </Container>
     );
   }
 }
