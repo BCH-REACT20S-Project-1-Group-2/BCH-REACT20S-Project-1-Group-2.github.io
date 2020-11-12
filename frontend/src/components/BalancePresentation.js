@@ -49,7 +49,9 @@ class BalancePresentation extends React.Component {
             <p>{balanceLabel}</p>
           </Col>
           <Col className="pl-0 d-flex justify-content-end">
-            <p>{this.props.balance} €</p>
+            <p>
+              {this.props.salary - this.state.saving - this.state.expenses}€
+            </p>
           </Col>
         </Row>
       </Container>
