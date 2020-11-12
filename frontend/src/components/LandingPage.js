@@ -33,7 +33,7 @@ class LandingPage extends React.Component {
   saveSaving = (e) => {
     e.preventDefault();
     this.setState({
-      saving: e.target[0].value,
+      saving: parseFloat(e.target[0].value)
     });
     document.getElementById("UpdateSavingBtn").click();
   };
