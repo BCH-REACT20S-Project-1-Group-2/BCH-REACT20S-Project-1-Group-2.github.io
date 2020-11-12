@@ -1,30 +1,41 @@
-import React from 'react';
-import { Switch, Route } from 'react-router-dom';
-import AppFooter from './AppFooter';
-import CustomModal from './CustomModal';
-import '../styles/Footer.css';
+import React from "react";
+import { Container, Row, Col } from "react-bootstrap";
+import { Switch, Route } from "react-router-dom";
+import AppFooter from "./AppFooter";
+import CustomModal from "./CustomModal";
 
 function Footer() {
   const { about, privacyPolicy } = require("../phrases/Footer.json");
   const { appName } = require("../phrases/App.json");
   return (
-    <footer>
-      <Switch>
-        <Route path="/landing">
-          <AppFooter />
-        </Route>
-        <Route path="/expense">
-          <AppFooter />
-        </Route>
-        <Route path="/">
-          <CustomModal title="About" body={about} />
-          <CustomModal
-            title="Privacy Policy"
-            body={privacyPolicy}
-          />
-        </Route>
-      </Switch>
-      <div id="copyright">Copyright &copy; {appName}</div>
+    <footer className="p-2 d-flex justify-content-center">
+      <Container>
+        <Switch>
+          <Route path="/landing">
+            <AppFooter />
+          </Route>
+          <Route path="/expense">
+            <AppFooter />
+          </Route>
+          <Route path="/">
+            <Row>
+              <Col>
+                <CustomModal title="About" body={about} />
+              </Col>
+              <Col className="d-flex justify-content-end">
+                <CustomModal title="Privacy Policy" body={privacyPolicy} />
+              </Col>
+            </Row>
+            <Row>
+              <Col>
+                <h6 className="d-flex justify-content-center mt-3">
+                  Copyright &copy; {appName}
+                </h6>
+              </Col>
+            </Row>
+          </Route>
+        </Switch>
+      </Container>
     </footer>
   );
 }
