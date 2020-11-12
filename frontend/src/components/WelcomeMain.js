@@ -1,50 +1,71 @@
-import React from "react";
+import React, { Component } from "react";
 import { Link } from "react-router-dom";
-import {
-  Container,
-  Row,
-  Col,
-  InputGroup,
-  FormControl,
-  Button,
-} from "react-bootstrap";
+import { Container, Row, Col, Button, Form } from "react-bootstrap";
 
-function WelcomeMain() {
-  const { welcomeText, welcomeCTA } = require("../phrases/App.json");
+class WelcomeMain extends Component {
+  state = {
+    username: "",
+  };
+  onChangeName = (e) => {
+    this.setState({
+      [e.target.name]: e.target.value,
+    });
+  };
 
-  return (
-    <main>
-            <Container className="mt-5 pt-5 px-0">
-              <Row>
-                <Col>
-                  <h2 id="welcome" className="text-center">
-                    {welcomeText}
-                  </h2>
-                </Col>
-              </Row>
-              <Row>
-                <Col>
-                  <InputGroup className="mt-5">
-                    <FormControl
-                      id="userName"
-                      placeholder="your name"
-                      className="text-center"
-                    />
-                  </InputGroup>
-                </Col>
-              </Row>
-              <Row>
-                <Col>
-                  <Link to="/landing">
-                    <Button id="welcomeCTA" className="w-100 text-white mt-5">
-                      {welcomeCTA}
-                    </Button>
-                  </Link>
-                </Col>
-              </Row>
-            </Container>
-    </main>
-  );
+  handleLogin = (e) => {
+    localStorage.setItem("user", this.state.username);
+  };
+
+  onSubmit = (e) => {
+    this.setState({
+      username: "",
+    });
+  };
+
+  render() {
+    const { welcomeText, welcomeCTA } = require("../phrases/App.json");
+
+    return (
+      <Container className="mt-5 pt-5 px-0">
+        <Row>
+          <Col>
+            <h2 id="welcome" className="text-center">
+              {welcomeText}
+            </h2>
+          </Col>
+        </Row>
+        <Form onSubmit={this.onSubmit}>
+          <Row>
+            <Col>
+              <Form.Group controlId="userName">
+                <Form.Control
+                  id="userName"
+                  type="text"
+                  placeholder="your name"
+                  className="text-center"
+                  onChange={this.onChangeName}
+                  name="username"
+                />
+              </Form.Group>
+            </Col>
+          </Row>
+          <Row>
+            <Col>
+              <Link to="/landing">
+                <Button
+                  onClick={this.handleLogin}
+                  id="welcomeCTA"
+                  className="w-100 text-white mt-5"
+                >
+                  {welcomeCTA}
+                </Button>
+              </Link>
+            </Col>
+          </Row>
+        </Form>
+      </Container>
+    );
+  }
 }
 
 export default WelcomeMain;

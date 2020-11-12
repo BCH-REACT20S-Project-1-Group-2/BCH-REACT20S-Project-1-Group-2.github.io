@@ -60,6 +60,12 @@ button:active {
   background-color: var(--primary-orange) !important;
   border-color: var(--primary-orange) !important;
 }
+*::placeholder {
+  font-size: smaller;
+}
+select {
+  font-size: smaller !important;
+}
 
 /* Page level element styling */
 .Page, .Page-main-area {

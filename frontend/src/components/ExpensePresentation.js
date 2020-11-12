@@ -12,7 +12,7 @@ class ExpensePresentation extends React.Component {
     const { expensesLabel } = require("../phrases/ExpensePresentation.json");
 
     return (
-      <Container className="px-0 pt-3 font-weight-bold">
+      <Container className="px-2 pt-3 font-weight-bold">
         <Row id="expenses" className="pb-1 ">
           <Col className="font-weight-bolder">
             <p>{expensesLabel}</p>
