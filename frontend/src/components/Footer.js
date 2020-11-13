@@ -5,8 +5,13 @@ import AppFooter from "./AppFooter";
 import CustomModal from "./CustomModal";
 
 function Footer() {
-  const { about, privacyPolicy, aboutText, privacyPolicyText } = require("../phrases/Footer.json");
-  const { appName } = require("../phrases/App.json");
+  const {
+    appName,
+    about,
+    privacyPolicy,
+    aboutText,
+    privacyPolicyText,
+  } = require("../phrases/App.json");
   return (
     <footer className="p-2 d-flex justify-content-center">
       <Container>

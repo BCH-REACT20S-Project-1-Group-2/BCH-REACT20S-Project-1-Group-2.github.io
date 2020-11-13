@@ -64,8 +64,8 @@ class LandingMain extends React.Component {
       updateSavingAmoungLabel,
       savingInputLabel,
       expensePageLinkLabel,
-    } = require("../phrases/LandingPage.json");
-    const { saveButtonLabel } = require("../phrases/App.json");
+      saveButtonLabel,
+    } = require("../phrases/App.json");
 
     return (
       <main>

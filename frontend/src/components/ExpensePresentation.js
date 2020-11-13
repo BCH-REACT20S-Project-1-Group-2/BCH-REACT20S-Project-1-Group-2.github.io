@@ -2,7 +2,7 @@ import React from "react";
 import { Container, Row, Col } from "react-bootstrap";
 
 const ExpensePresentation = (props) => {
-  const { expensesLabel } = require("../phrases/ExpensePresentation.json");
+  const { expensesLabel } = require("../phrases/App.json");
   return (
     <Container className="px-2 pt-3 font-weight-bold">
       <Row className="pb-1 ">

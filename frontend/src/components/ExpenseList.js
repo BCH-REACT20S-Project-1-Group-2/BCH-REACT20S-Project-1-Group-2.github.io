@@ -29,7 +29,7 @@ class ExpenseList extends React.Component {
   };
 
   render() {
-    const { expenseInputLabel } = require("../phrases/ExpenseList.json");
+    const { expenseInputLabel } = require("../phrases/App.json");
 
     const categoriesList = this.state.categories.map((item) => {
       return <option>{item.categoryName}</option>;

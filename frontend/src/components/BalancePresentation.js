@@ -17,7 +17,7 @@ class BalancePresentation extends React.Component {
       savingLabel,
       expensesLabel,
       balanceLabel,
-    } = require("../phrases/BalancePresentation.json");
+    } = require("../phrases/App.json");
     return (
       <Container className="px-2 pt-3 font-weight-bold">
         <Row className="pb-1 ">
