@@ -13,7 +13,7 @@ module.exports = {
       desiredCapabilities: {
         browserName: "chrome",
         chromeOptions: {
-          args: ["--headless"],
+          args: ["--headless"], // Note non-headless won't work before responsiveness is implemented
         },
       },
     },
