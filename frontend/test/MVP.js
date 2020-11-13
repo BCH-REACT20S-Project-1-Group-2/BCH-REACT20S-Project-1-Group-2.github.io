@@ -19,19 +19,20 @@ describe("BudgetCrtl app MVP test suite", function () {
 
   //prettier-ignore
   test("Test welcome page elements", function (browser) {
-    browser
-    .verify.visible("header")
-    .verify.visible("h1[id=logo]")
+    browser.verify
+      .visible("header")
+      .verify.visible("#logo")
 
-    .verify.visible("main")
-    .verify.visible("h2[id=welcome]")
-    .verify.visible("input[id=userName]")
-    .verify.visible("button[id=welcomeCTA]")
+      .verify.visible("main")
+      .verify.visible("#welcomeText")
+      .verify.visible("#appName")
+      .verify.visible("input[id=username]")
+      .verify.visible("button[id=welcomeCTA]")
 
-    .verify.visible("footer")
-    .verify.visible("#about")
-    .verify.visible("#privacy")
-    .verify.visible("#copyright");
+      .verify.visible("footer")
+      .verify.visible("#about")
+      .verify.visible("#privacy")
+      .verify.visible("#copyright");
   });
   //prettier-ignore
   test("Welcome page functionality", function (browser) {
@@ -48,32 +49,32 @@ describe("BudgetCrtl app MVP test suite", function () {
     .verify.containsText("#modal-close", closeButtonLabel)
     .click("#modal-close")
 
-    .setValue("input[id=userName]", "MyUserName")
+    .setValue("input[id=username]", "MyUserName")
     .click("button[id=welcomeCTA]")
   });
   //prettier-ignore
   test("Landing page elements", function (browser) {
-    browser
-    .verify.visible("header")
-    .verify.visible("h1[id=logo]")
-    .verify.visible("h3[id=userName]")
-    .verify.visible("div[id=userIcon]")
+    browser.verify
+      .visible("header")
+      .verify.visible("#logo")
+      .verify.visible("#username")
+      .verify.visible("#userIcon")
 
-    .verify.visible("main")
-    .verify.containsText("#salary", salaryLabel)
-    .verify.containsText("#saving", savingLabel)
-    .verify.containsText("#expenses", expensesLabel)
-    .verify.containsText("#balance", balanceLabel)
-    .verify.visible("button[id=updateSalary]")
-    .verify.not.visible(`input[id=inputSalary]`)
-    .verify.visible("button[id=updateSaving]")
-    .verify.not.visible(`input[id=inputSaving]`)
-    .verify.visible("button[id=updateExpense]")
+      .verify.visible("main")
+      .verify.containsText("#salary", salaryLabel)
+      .verify.containsText("#saving", savingLabel)
+      .verify.containsText("#expenses", expensesLabel)
+      .verify.containsText("#balance", balanceLabel)
+      .verify.containsText("button[id=updateSalary]",updateSalaryLabel)
+      .verify.not.visible(`input[id=inputSalary]`)
+      .verify.containsText("button[id=updateSaving]", updateSavingAmoungLabel)
+      .verify.not.visible(`input[id=inputSaving]`)
+      .verify.containsText("button[id=updateExpense]",expensePageLinkLabel)
 
-    .verify.visible("footer")
-    .verify.visible("a[href='/landing']")
-    .verify.visible("a[href='/analysis']")
-    .verify.visible("a[href='/']")
+      .verify.visible("footer")
+      .verify.visible("a[href='/landing']")
+      .verify.visible("a[href='/analysis']")
+      .verify.visible("a[href='/']");
   });
   //prettier-ignore
   test("Landing page functionality", function (browser) {
@@ -109,12 +110,15 @@ describe("BudgetCrtl app MVP test suite", function () {
    test("Expense page elements", function (browser) {
     browser
     .verify.visible("header")
-    .verify.visible("h1[id=logo]")
-    .verify.visible("h3[id=userName]")
-    .verify.visible("div[id=userIcon]")
+    .verify.visible("#logo")
+    .verify.visible("#username")
+    .verify.visible("#userIcon")
 
     .verify.visible("main")
-    // TODO: main area elements
+    .verify.containsText("#expenses", expensesLabel)
+    .verify.visible("select[id=inputCategory]")
+    .verify.visible("input[id=inputExpense]")
+    .verify.visible("button[id=savebutton]")
 
     .verify.visible("footer")
     .verify.visible("a[href='/landing']")
@@ -126,14 +130,31 @@ describe("BudgetCrtl app MVP test suite", function () {
     browser
     .verify.containsText("header", "MyUserName")
 
-    // TODO: expense functions
+    .verify.containsText("#expenses", "0 €")
+
+    .click("button[id=savebutton]")
+    .verify.containsText("#expenses", "0 €")
+
+    .click('select[id=inputCategory] option[value="Groceries"]')
+    .setValue("input[id=inputExpense]", "100")
+    .click("button[id=savebutton]")
+    .verify.containsText("#expenses", "100 €")
+
+    // TODO: transaction history / item testing
+    // The component elements do not yet have proper ids to target them in an automated test
+    // To be completed once Transaction... styling has been completed
+
+    .click('select[id=inputCategory] option[value="Insurances"]')
+    .setValue("input[id=inputExpense]", "200")
+    .click("button[id=savebutton]")
+    .verify.containsText("#expenses", "300 €")
 
     .click("a[href='/']")
   });
   //prettier-ignore
   test("General navigation", function (browser) {
     browser
-    .verify.visible("h2[id=welcome]")
+    .verify.visible("#welcomeText")
     .click("button[id=welcomeCTA]")
     .verify.visible("#salary")
     .click("button[id=updateExpense]")
@@ -143,7 +164,7 @@ describe("BudgetCrtl app MVP test suite", function () {
     // .click("a[href='/analysis']") // TODO: add when adding the Analysis page
     // .verify.visible("#tbd") // TODO: element ids still tbd
     .click("a[href='/']")
-    .verify.visible("h2[id=welcome]") 
+    .verify.visible("#welcomeText") 
   });
 
   after((browser) => browser.end());

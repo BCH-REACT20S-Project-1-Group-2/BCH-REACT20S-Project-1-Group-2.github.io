@@ -25,16 +25,20 @@ class WelcomeMain extends Component {
         <Container className="mt-5 pt-5 px-0">
           <Row>
             <Col>
-              <h2 className="text-center">{welcomeText}</h2>
-              <h1 className="text-center">{appName}</h1>
+              <h2 id="welcomeText" className="text-center">
+                {welcomeText}
+              </h2>
+              <h1 id="appName" className="text-center">
+                {appName}
+              </h1>
             </Col>
           </Row>
           <Form>
             <Row>
               <Col>
-                <Form.Group controlId="userName">
+                <Form.Group>
                   <Form.Control
-                    id="userName"
+                    id="username"
                     type="text"
                     placeholder="your name"
                     value={this.state.username}
