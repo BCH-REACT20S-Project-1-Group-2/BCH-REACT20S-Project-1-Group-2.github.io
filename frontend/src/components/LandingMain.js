@@ -23,6 +23,7 @@ class LandingMain extends React.Component {
 
     this.state = {
       savedSalary: salary,
+      saving: 0,
     };
   }
 
@@ -32,6 +33,29 @@ class LandingMain extends React.Component {
     this.setState({ savedSalary: e.target[0].value });
     document.getElementById("updateSalary").click();
   };
+
+  saveSaving = (e) => {
+    e.preventDefault();
+    this.setState({
+      saving: parseFloat(e.target[0].value),
+    });
+    document.getElementById("updateSaving").click();
+  };
+
+  componentDidUpdate() {
+    localStorage.setItem("saving", JSON.stringify(this.state.saving));
+  }
+
+  componentDidMount() {
+    let sTarget = JSON.parse(localStorage.getItem("saving"));
+    sTarget
+      ? this.setState({
+          saving: JSON.parse(sTarget),
+        })
+      : this.setState({
+          saving: 0,
+        });
+  }
 
   render() {
     const {
@@ -45,7 +69,10 @@ class LandingMain extends React.Component {
 
     return (
       <main>
-        <BalancePresentation salary={this.state.savedSalary} />
+        <BalancePresentation
+          salary={this.state.savedSalary}
+          saving={this.state.saving}
+        />
         <Accordion className="mt-3">
           <Card className="mb-3">
             <Accordion.Toggle
@@ -96,7 +123,7 @@ class LandingMain extends React.Component {
             </Accordion.Toggle>
             <Accordion.Collapse eventKey="1">
               <Card.Body>
-                <Form>
+                <Form onSubmit={this.saveSaving}>
                   <InputGroup>
                     <FormControl
                       id="inputSaving"
@@ -104,10 +131,17 @@ class LandingMain extends React.Component {
                       className="text-center"
                       type="number"
                       step=".01"
+                      required
+                      name="savingsAmount"
+                      min="0"
                     />
                     <InputGroup.Append>
                       <InputGroup.Text>€</InputGroup.Text>
-                      <InputGroup.Text as={Button} id="saveSaving">
+                      <InputGroup.Text
+                        as={Button}
+                        id="saveSaving"
+                        type="submit"
+                      >
                         {saveButtonLabel}
                       </InputGroup.Text>
                     </InputGroup.Append>

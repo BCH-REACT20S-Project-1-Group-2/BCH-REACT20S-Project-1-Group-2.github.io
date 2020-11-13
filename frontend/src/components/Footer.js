@@ -5,7 +5,7 @@ import AppFooter from "./AppFooter";
 import CustomModal from "./CustomModal";
 
 function Footer() {
-  const { about, privacyPolicy } = require("../phrases/Footer.json");
+  const { about, privacyPolicy, aboutText, privacyPolicyText } = require("../phrases/Footer.json");
   const { appName } = require("../phrases/App.json");
   return (
     <footer className="p-2 d-flex justify-content-center">
@@ -20,10 +20,10 @@ function Footer() {
           <Route path="/">
             <Row>
               <Col>
-                <CustomModal id="about" title="About" body={about} />
+                <CustomModal id="about" title="About" body={about} text={aboutText}/>
               </Col>
               <Col className="d-flex justify-content-end">
-                <CustomModal title="Privacy Policy" body={privacyPolicy} />
+                <CustomModal title="Privacy Policy" body={privacyPolicy} text={privacyPolicyText}/>
               </Col>
             </Row>
             <Row>
