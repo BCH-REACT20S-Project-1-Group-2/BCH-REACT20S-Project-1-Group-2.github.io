@@ -12,9 +12,7 @@ function Page(props) {
         </Col>
       </Row>
       <Row className="Page-main-area px-3">
-        <Col className="p-0">
-          {props.children}
-        </Col>
+        <Col className="p-0 pb-3">{props.children}</Col>
       </Row>
       <Row className="Page-footer fixed-bottom mx-auto">
         <Col className="p-0">

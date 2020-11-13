@@ -14,9 +14,6 @@
   font-family: 'Nunito', sans-serif !important;
   box-sizing: border-box !important;
 }
-body { 
-  overflow: hidden;
-}
 
 /* Text stylings */
 h1 {
@@ -72,13 +69,14 @@ select {
 }
 
 /* Page level element styling */
-.Page, .Page-main-area {
-  min-height: 100vh !important;
+.Page {
+  min-height: calc(100vh - 155px - 78px) !important;
 }
 .Page, .Page-header, .Page-footer {
   width: 375px !important;
 }
 .Page-main-area {
+  min-height: calc(100vh - 155px - 78px);
   margin-top: 155px;
   margin-bottom: 78px;
   background: var(--light-color);
