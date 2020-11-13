@@ -21,7 +21,7 @@ class LandingMain extends React.Component {
     const {
       updateSalaryLabel,
       salaryInputLabel,
-      updateSavingAmoungLabel,
+      updateSavingLabel,
       savingInputLabel,
       expensePageLinkLabel,
       saveButtonLabel,
@@ -81,7 +81,7 @@ class LandingMain extends React.Component {
               eventKey="1"
               className="w-100"
             >
-              {updateSavingAmoungLabel}
+              {updateSavingLabel}
             </Accordion.Toggle>
             <Accordion.Collapse eventKey="1">
               <Card.Body>
