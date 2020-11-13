@@ -5,7 +5,7 @@ const ExpensePresentation = (props) => {
   const { expensesLabel } = require("../phrases/App.json");
   return (
     <Container className="px-2 pt-3 font-weight-bold">
-      <Row className="pb-1 ">
+      <Row id="expenses" className="pb-1 ">
         <Col className="font-weight-bolder">
           <p>{expensesLabel}</p>
         </Col>
@@ -16,6 +16,5 @@ const ExpensePresentation = (props) => {
     </Container>
   );
 };
-
 
 export default ExpensePresentation;

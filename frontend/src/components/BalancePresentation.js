@@ -6,7 +6,7 @@ class BalancePresentation extends React.Component {
     super(props);
 
     this.state = {
-      expenses: 2800,
+      expenses: localStorage.getItem("total") || 0,
       balance: 1200,
     };
   }
@@ -20,7 +20,7 @@ class BalancePresentation extends React.Component {
     } = require("../phrases/App.json");
     return (
       <Container className="px-2 pt-3 font-weight-bold">
-        <Row className="pb-1 ">
+        <Row id="salary" className="pb-1 ">
           <Col xs={9} className="pr-0 font-weight-bolder">
             <p>{salaryLabel}</p>
           </Col>
@@ -28,7 +28,7 @@ class BalancePresentation extends React.Component {
             <p>{this.props.salary} €</p>
           </Col>
         </Row>
-        <Row className="pb-1">
+        <Row id="saving" className="pb-1">
           <Col xs={9} className="pr-0 font-weight-bolder">
             <p>{savingLabel}</p>
           </Col>
@@ -36,7 +36,7 @@ class BalancePresentation extends React.Component {
             <p>{this.props.saving} €</p>
           </Col>
         </Row>
-        <Row className="pb-1">
+        <Row id="expenses" className="pb-1">
           <Col className="pr-0 font-weight-bolder">
             <p>{expensesLabel}</p>
           </Col>
@@ -44,7 +44,7 @@ class BalancePresentation extends React.Component {
             <p>{this.state.expenses} €</p>
           </Col>
         </Row>
-        <Row className="pb-1">
+        <Row id="balance" className="pb-1">
           <Col className="pr-0 font-weight-bolder">
             <p>{balanceLabel}</p>
           </Col>

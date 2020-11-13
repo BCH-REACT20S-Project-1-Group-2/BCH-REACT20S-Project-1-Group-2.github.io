@@ -31,7 +31,7 @@ class LandingMain extends React.Component {
     e.preventDefault();
     localStorage.setItem("totalSalary", e.target[0].value);
     this.setState({ savedSalary: e.target[0].value });
-    document.getElementById("UpdateSalaryBtn").click();
+    document.getElementById("updateSalary").click();
   };
 
   saveSaving = (e) => {
@@ -39,7 +39,7 @@ class LandingMain extends React.Component {
     this.setState({
       saving: parseFloat(e.target[0].value),
     });
-    document.getElementById("UpdateSavingBtn").click();
+    document.getElementById("updateSaving").click();
   };
 
   componentDidUpdate() {
@@ -69,7 +69,7 @@ class LandingMain extends React.Component {
 
     return (
       <main>
-        <BalancePresentation 
+        <BalancePresentation
           salary={this.state.savedSalary}
           saving={this.state.saving}
         />
@@ -79,7 +79,7 @@ class LandingMain extends React.Component {
               as={Button}
               eventKey="0"
               className="w-100"
-              id="UpdateSalaryBtn"
+              id="updateSalary"
             >
               {updateSalaryLabel}
             </Accordion.Toggle>
@@ -88,6 +88,7 @@ class LandingMain extends React.Component {
                 <Form onSubmit={this.saveSalary}>
                   <InputGroup>
                     <FormControl
+                      id="inputSalary"
                       placeholder={salaryInputLabel}
                       className="text-center"
                       type="number"
@@ -98,7 +99,11 @@ class LandingMain extends React.Component {
                     />
                     <InputGroup.Append>
                       <InputGroup.Text>€</InputGroup.Text>
-                      <InputGroup.Text as={Button} type="submit">
+                      <InputGroup.Text
+                        as={Button}
+                        id="saveSalary"
+                        type="submit"
+                      >
                         {saveButtonLabel}
                       </InputGroup.Text>
                     </InputGroup.Append>
@@ -108,7 +113,12 @@ class LandingMain extends React.Component {
             </Accordion.Collapse>
           </Card>
           <Card className="mb-3">
-            <Accordion.Toggle as={Button} eventKey="1" className="w-100" id="UpdateSavingBtn">
+            <Accordion.Toggle
+              as={Button}
+              id="updateSaving"
+              eventKey="1"
+              className="w-100"
+            >
               {updateSavingAmoungLabel}
             </Accordion.Toggle>
             <Accordion.Collapse eventKey="1">
@@ -116,6 +126,7 @@ class LandingMain extends React.Component {
                 <Form onSubmit={this.saveSaving}>
                   <InputGroup>
                     <FormControl
+                      id="inputSaving"
                       placeholder={savingInputLabel}
                       className="text-center"
                       type="number"
@@ -126,7 +137,11 @@ class LandingMain extends React.Component {
                     />
                     <InputGroup.Append>
                       <InputGroup.Text>€</InputGroup.Text>
-                      <InputGroup.Text as={Button} type="submit">
+                      <InputGroup.Text
+                        as={Button}
+                        id="saveSaving"
+                        type="submit"
+                      >
                         {saveButtonLabel}
                       </InputGroup.Text>
                     </InputGroup.Append>
@@ -137,7 +152,11 @@ class LandingMain extends React.Component {
           </Card>
           <Card className="mb-3">
             <Link to="/expense">
-              <Accordion.Toggle as={Button} className="w-100">
+              <Accordion.Toggle
+                as={Button}
+                id="updateExpense"
+                className="w-100"
+              >
                 {expensePageLinkLabel}
               </Accordion.Toggle>
             </Link>

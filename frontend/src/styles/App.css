@@ -4,7 +4,7 @@
 :root {
   --primary-green: #7fc1ac;
   --primary-orange: #E27D60;
-  --light-orange: #e8a87c;
+  --light-orange: #e8a87c45;
 
   --dark-color: #545149;
   --light-color: #F2F0EB;
@@ -81,7 +81,7 @@ select {
 .Page-main-area {
   margin-top: 155px;
   margin-bottom: 78px;
-  background: var(--lighter-color);
+  background: var(--light-color);
 }
 header, footer {
   min-width: 375px;
@@ -105,5 +105,5 @@ footer {
   background-color: var(--lighter-color) !important;
 }
 .card-body {
-  background-color: var(--light-color) !important;
+  background-color: var(--light-orange) !important;
 }

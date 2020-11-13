@@ -25,7 +25,7 @@ function Footer() {
           <Route path="/">
             <Row>
               <Col>
-                <CustomModal title="About" body={about} text={aboutText}/>
+                <CustomModal id="about" title="About" body={about} text={aboutText}/>
               </Col>
               <Col className="d-flex justify-content-end">
                 <CustomModal title="Privacy Policy" body={privacyPolicy} text={privacyPolicyText}/>
@@ -33,7 +33,10 @@ function Footer() {
             </Row>
             <Row>
               <Col>
-                <h6 className="d-flex justify-content-center mt-3">
+                <h6
+                  id="copyright"
+                  className="d-flex justify-content-center mt-3"
+                >
                   Copyright &copy; {appName}
                 </h6>
               </Col>

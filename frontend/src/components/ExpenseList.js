@@ -32,7 +32,7 @@ class ExpenseList extends React.Component {
     const { expenseInputLabel } = require("../phrases/App.json");
 
     const categoriesList = this.state.categories.map((item) => {
-      return <option>{item.categoryName}</option>;
+      return <option value={item.categoryName}>{item.categoryName}</option>;
     });
 
     return (
@@ -46,6 +46,7 @@ class ExpenseList extends React.Component {
               name="categoryName"
               onChange={this.onChange.bind(this)}
               required
+              id="inputCategory"
             >
               <option value="">Add category</option>
               {categoriesList}
@@ -59,6 +60,7 @@ class ExpenseList extends React.Component {
               name="amount"
               min="0.01"
               onChange={this.onChange.bind(this)}
+              id="inputExpense"
             />
             <InputGroup.Append>
               <InputGroup.Text>
