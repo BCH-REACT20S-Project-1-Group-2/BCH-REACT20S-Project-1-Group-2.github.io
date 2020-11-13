@@ -12,6 +12,7 @@ function CustomModal(props) {
   return (
     <>
       <p
+        id={props.title.split(" ")[0].toLowerCase()}
         onClick={handleShow}
         style={{
           cursor: "pointer",
@@ -31,7 +32,9 @@ function CustomModal(props) {
             <p>{props.text}</p>
         </Modal.Body>
         <Modal.Footer className="align-self-center border-0">
-          <Button onClick={handleClose}>{closeButtonLabel}</Button>
+          <Button id="modal-close" onClick={handleClose}>
+            {closeButtonLabel}
+          </Button>
         </Modal.Footer>
       </Modal>
     </>
