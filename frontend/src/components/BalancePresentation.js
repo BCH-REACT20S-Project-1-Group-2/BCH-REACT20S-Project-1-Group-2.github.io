@@ -50,7 +50,7 @@ class BalancePresentation extends React.Component {
           </Col>
           <Col className="pl-0 d-flex justify-content-end">
             <p>
-              {this.props.salary - this.state.saving - this.state.expenses}€
+              {this.props.salary - this.props.saving - this.state.expenses}€
             </p>
           </Col>
         </Row>
