@@ -10,7 +10,7 @@ const ExpensePresentation = (props) => {
           <p>{expensesLabel}</p>
         </Col>
         <Col className="d-flex justify-content-end">
-          <p>{props.total} €</p>
+          <p>{props.expenses} €</p>
         </Col>
       </Row>
     </Container>

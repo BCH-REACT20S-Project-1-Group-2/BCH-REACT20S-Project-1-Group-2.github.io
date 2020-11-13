@@ -8,7 +8,7 @@ function Page(props) {
     <Container className="Page">
       <Row className="Page-header fixed-top mx-auto">
         <Col className="p-0">
-          <Header />
+          <Header username={props.username}/>
         </Col>
       </Row>
       <Row className="Page-main-area px-3">

@@ -11,51 +11,11 @@ import { Link } from "react-router-dom";
 import BalancePresentation from "./BalancePresentation";
 
 class LandingMain extends React.Component {
-  constructor(props) {
-    super(props);
-
-    let salary = JSON.parse(localStorage.getItem("totalSalary"));
-
-    if (salary == null) {
-      salary = 0;
-      localStorage.setItem("totalSalary", salary);
-    }
-
-    this.state = {
-      savedSalary: salary,
-      saving: 0,
-    };
-  }
-
-  saveSalary = (e) => {
+  toggleAccordion = (e, i) => {
     e.preventDefault();
-    localStorage.setItem("totalSalary", e.target[0].value);
-    this.setState({ savedSalary: e.target[0].value });
-    document.getElementById("updateSalary").click();
+    document.getElementById(`accordion-toggle-${i}`).click();
+    e.target.reset();
   };
-
-  saveSaving = (e) => {
-    e.preventDefault();
-    this.setState({
-      saving: parseFloat(e.target[0].value),
-    });
-    document.getElementById("updateSaving").click();
-  };
-
-  componentDidUpdate() {
-    localStorage.setItem("saving", JSON.stringify(this.state.saving));
-  }
-
-  componentDidMount() {
-    let sTarget = JSON.parse(localStorage.getItem("saving"));
-    sTarget
-      ? this.setState({
-          saving: JSON.parse(sTarget),
-        })
-      : this.setState({
-          saving: 0,
-        });
-  }
 
   render() {
     const {
@@ -70,8 +30,9 @@ class LandingMain extends React.Component {
     return (
       <main>
         <BalancePresentation
-          salary={this.state.savedSalary}
-          saving={this.state.saving}
+          salary={this.props.salary}
+          saving={this.props.saving}
+          expenses={this.props.expenses}
         />
         <Accordion className="mt-3">
           <Card className="mb-3">
@@ -79,13 +40,13 @@ class LandingMain extends React.Component {
               as={Button}
               eventKey="0"
               className="w-100"
-              id="updateSalary"
+              id="accordion-toggle-0"
             >
               {updateSalaryLabel}
             </Accordion.Toggle>
             <Accordion.Collapse eventKey="0">
               <Card.Body>
-                <Form onSubmit={this.saveSalary}>
+                <Form onSubmit={(e) => this.toggleAccordion(e, 0)}>
                   <InputGroup>
                     <FormControl
                       id="inputSalary"
@@ -94,8 +55,9 @@ class LandingMain extends React.Component {
                       type="number"
                       step=".01"
                       required
-                      name="amount"
+                      name="salary"
                       min="0.01"
+                      onChange={this.props.handleChange}
                     />
                     <InputGroup.Append>
                       <InputGroup.Text>€</InputGroup.Text>
@@ -115,7 +77,7 @@ class LandingMain extends React.Component {
           <Card className="mb-3">
             <Accordion.Toggle
               as={Button}
-              id="updateSaving"
+              id="accordion-toggle-1"
               eventKey="1"
               className="w-100"
             >
@@ -123,7 +85,7 @@ class LandingMain extends React.Component {
             </Accordion.Toggle>
             <Accordion.Collapse eventKey="1">
               <Card.Body>
-                <Form onSubmit={this.saveSaving}>
+                <Form onSubmit={(e) => this.toggleAccordion(e, 1)}>
                   <InputGroup>
                     <FormControl
                       id="inputSaving"
@@ -132,8 +94,9 @@ class LandingMain extends React.Component {
                       type="number"
                       step=".01"
                       required
-                      name="savingsAmount"
-                      min="0"
+                      name="saving"
+                      min="0.01"
+                      onChange={this.props.handleChange}
                     />
                     <InputGroup.Append>
                       <InputGroup.Text>€</InputGroup.Text>
