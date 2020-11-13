@@ -13,7 +13,7 @@ export default class AppHeader extends React.Component {
       <Container className="mx-4">
         <Row className="d-flex align-items-center">
           <Col className="px-0 d-flex justify-content-start">
-            <img src={logo} alt="BudgetCtrl logo"/>
+            <img src={logo} alt="BudgetCtrl logo" className="pb-3"/>
           </Col>
           <Col className="px-0 text-center">
             <h3>{this.state.username}</h3>

@@ -14,7 +14,7 @@ function Header() {
           <AppHeader />
         </Route>
         <Route path="/">
-          <img src={logo} alt="BudgetCtrl logo"/>
+          <img src={logo} alt="BudgetCtrl logo" className="pb-3"/>
         </Route>
       </Switch>
     </header>
