@@ -107,3 +107,21 @@ footer {
 .card-body {
   background-color: var(--light-color) !important;
 }
+
+.transactionContainer{
+  background-color: var(--light-color) !important;
+  margin-top: 8px !important; 
+}
+
+.transactionContainer *{
+  font-size: 16px !important;
+  
+}
+
+.transactionContainer button{
+height: 32px !important;
+width: 32px !important;
+margin: -8px;
+margin-bottom: 8px;
+padding: 3px;
+} 
