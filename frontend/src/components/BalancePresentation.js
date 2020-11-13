@@ -6,7 +6,7 @@ class BalancePresentation extends React.Component {
     super(props);
 
     this.state = {
-      expenses: 2800,
+      expenses: localStorage.getItem("total") || 0,
       balance: 1200,
     };
   }
