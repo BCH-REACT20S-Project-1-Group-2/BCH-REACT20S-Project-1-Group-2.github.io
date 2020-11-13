@@ -1,19 +1,19 @@
 import React from "react";
-import { Container, Row, Col, Button } from "react-bootstrap";
+import { Container, Row, Col, Button, Card } from "react-bootstrap";
 import { FaRegTrashAlt } from "react-icons/fa";
 
 const TransactionItem = (props) => {
   return (
-    <Container className="px-1 pt-3 transactionContainer ">
-      <Row className="pb-1 ">
-        <Col xs={7}>
+    <Container as={Card.Body} className="p-2 mt-2 transactionContainer ">
+      <Row className="d-flex justify-content-between align-items-center">
+        <Col xs={7} className="pr-0">
           <p>{props.userexpense.title}</p>
         </Col>
-        <Col xs={3}>
+        <Col className="px-0 d-flex justify-content-end">
           <p>{props.userexpense.amount} €</p>
         </Col>
-        <Col xs={2}>
-          <Button
+        <Col className="d-flex justify-content-end">
+          <Button 
             onClick={() => {
               props.delExpense(props.userexpense.id, props.userexpense.amount);
             }}
