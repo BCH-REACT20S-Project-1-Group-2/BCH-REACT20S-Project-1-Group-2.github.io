@@ -78,8 +78,8 @@ select {
 .Page-main-area {
   min-height: calc(100vh - 155px - 78px);
   margin-top: 155px;
-  margin-bottom: 78px;
   background: var(--light-color);
+  margin-bottom: 78px;
 }
 header, footer {
   min-width: 375px;
