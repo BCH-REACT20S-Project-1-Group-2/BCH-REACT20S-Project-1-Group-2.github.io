@@ -35,7 +35,9 @@ class ExpenseAdd extends React.Component {
     const categoriesList = require("../phrases/Categories.json").map(
       (category) => {
         return (
-          <option value={category.categoryName}>{category.categoryName}</option>
+          <option key={category.id} value={category.categoryName}>
+            {category.categoryName}
+          </option>
         );
       }
     );
@@ -62,9 +64,9 @@ class ExpenseAdd extends React.Component {
               min="0.01"
               id="inputExpense"
             />
-              <Button type="submit" id="savebutton">
-                <FaSave className="SaveIcon" />
-              </Button>
+            <Button type="submit" id="savebutton">
+              <FaSave className="SaveIcon" />
+            </Button>
           </InputGroup>
         </Form>
       </Card.Body>
