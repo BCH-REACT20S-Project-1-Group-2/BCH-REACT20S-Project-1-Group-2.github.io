@@ -4,7 +4,7 @@
 :root {
   --primary-green: #7fc1ac;
   --primary-orange: #E27D60;
-  --light-orange: #e8a87c;
+  --light-orange: #e8a87c45;
 
   --dark-color: #545149;
   --light-color: #F2F0EB;
@@ -31,6 +31,10 @@ h3 {
   font-size: 24px !important;
   font-weight: 600 !important;
 }
+h4 {
+  font-size: 24px !important;
+  font-weight: 400 !important;
+}
 h6 {
   font-size: 12px !important;
   margin: 0 !important;
@@ -46,25 +50,18 @@ span {
 
 /* Input and button stylings  */
 input, select {
-  height: 60px !important;
   background-color: var(--lighter-color) !important;
   border: 2px solid var(--primary-green) !important;
-  font-size: 20px !important;
 }
 button,
 button:hover,
 button:active {
-  font-size: 20px !important;
   color: var(--lighter-color) !important;
-  height: 60px !important;
   background-color: var(--primary-orange) !important;
   border-color: var(--primary-orange) !important;
 }
-*::placeholder {
+*::placeholder, option {
   font-size: smaller;
-}
-select {
-  font-size: smaller !important;
 }
 
 /* Page level element styling */
@@ -77,7 +74,7 @@ select {
 .Page-main-area {
   margin-top: 155px;
   margin-bottom: 78px;
-  background: var(--lighter-color);
+  background: var(--light-color);
 }
 header, footer {
   min-width: 375px;
@@ -101,5 +98,8 @@ footer {
   background-color: var(--lighter-color) !important;
 }
 .card-body {
-  background-color: var(--light-color) !important;
+  background-color: var(--light-orange) !important;
+}
+.transactionContainer *{
+  font-size: 16px !important;
 }

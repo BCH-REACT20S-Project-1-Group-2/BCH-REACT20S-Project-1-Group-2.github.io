@@ -16,10 +16,10 @@ export default class AppHeader extends React.Component {
             <img src={logo} alt="BudgetCtrl logo" className="pb-3"/>
           </Col>
           <Col className="px-0 text-center">
-            <h3>{this.state.username}</h3>
+            <h3 id="username">{this.state.username}</h3>
           </Col>
           <Col className="px-0 d-flex justify-content-end">
-            <h3>
+            <h3 id="userIcon">
               <FaUserEdit className="userIcon" />
             </h3>
           </Col>
