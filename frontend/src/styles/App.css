@@ -50,25 +50,18 @@ span {
 
 /* Input and button stylings  */
 input, select {
-  height: 60px !important;
   background-color: var(--lighter-color) !important;
   border: 2px solid var(--primary-green) !important;
-  font-size: 20px !important;
 }
 button,
 button:hover,
 button:active {
-  font-size: 20px !important;
   color: var(--lighter-color) !important;
-  height: 60px !important;
   background-color: var(--primary-orange) !important;
   border-color: var(--primary-orange) !important;
 }
-*::placeholder {
+*::placeholder, option {
   font-size: smaller;
-}
-select {
-  font-size: smaller !important;
 }
 
 /* Page level element styling */
@@ -106,4 +99,7 @@ footer {
 }
 .card-body {
   background-color: var(--light-orange) !important;
+}
+.transactionContainer *{
+  font-size: 16px !important;
 }
