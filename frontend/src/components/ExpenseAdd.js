@@ -6,7 +6,7 @@ class ExpenseAdd extends React.Component {
   // Creates new targets for "expenseList" and "expenses":
   // - with the "target" properties required in handleChange (validity, name, and new value)
   // - with a new expense item added in to the "expenseList" array or summed in "expenses"
-  onSubmit = (e) => {
+  handleSubmit = (e) => {
     e.preventDefault();
 
     this.props.handleChange({
@@ -44,7 +44,7 @@ class ExpenseAdd extends React.Component {
 
     return (
       <Card.Body className="mt-3 p-3">
-        <Form onSubmit={this.onSubmit}>
+        <Form onSubmit={this.handleSubmit}>
           <InputGroup>
             <Form.Control
               as="select"

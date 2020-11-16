@@ -12,10 +12,10 @@ import BalancePresentation from "./BalancePresentation";
 
 class LandingMain extends React.Component {
   handleSubmit = (e, i) => {
-    e.preventDefault();
-    this.props.handleChange(e.target[0]);
-    document.getElementById(`accordion-toggle-${i}`).click();
-    e.target.reset();
+    e.preventDefault(); // Prevent normal form submit handling
+    this.props.handleChange(e.target[0]); // Handle change of the 1st (only) prop
+    document.getElementById(`accordion-toggle-${i}`).click(); // Collapse the related accordion
+    e.target.reset(); // Reset form inputs
   };
 
   render() {
