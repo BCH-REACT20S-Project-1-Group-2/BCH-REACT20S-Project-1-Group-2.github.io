@@ -62,11 +62,9 @@ class ExpenseAdd extends React.Component {
               min="0.01"
               id="inputExpense"
             />
-            <InputGroup.Append>
-              <Button variant="primary" type="submit" id="savebutton">
+              <Button type="submit" id="savebutton">
                 <FaSave className="SaveIcon" />
               </Button>
-            </InputGroup.Append>
           </InputGroup>
         </Form>
       </Card.Body>

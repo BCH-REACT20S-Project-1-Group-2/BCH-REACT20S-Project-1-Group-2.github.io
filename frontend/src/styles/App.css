@@ -14,9 +14,6 @@
   font-family: 'Nunito', sans-serif !important;
   box-sizing: border-box !important;
 }
-body { 
-  overflow: hidden;
-}
 
 /* Text stylings */
 h1 {
@@ -50,38 +47,32 @@ span {
 
 /* Input and button stylings  */
 input, select {
-  height: 60px !important;
   background-color: var(--lighter-color) !important;
   border: 2px solid var(--primary-green) !important;
-  font-size: 20px !important;
 }
 button,
 button:hover,
 button:active {
-  font-size: 20px !important;
   color: var(--lighter-color) !important;
-  height: 60px !important;
   background-color: var(--primary-orange) !important;
   border-color: var(--primary-orange) !important;
 }
-*::placeholder {
+*::placeholder, option {
   font-size: smaller;
-}
-select {
-  font-size: smaller !important;
 }
 
 /* Page level element styling */
-.Page, .Page-main-area {
-  min-height: 100vh !important;
+.Page {
+  min-height: calc(100vh - 155px - 78px) !important;
 }
 .Page, .Page-header, .Page-footer {
   width: 375px !important;
 }
 .Page-main-area {
+  min-height: calc(100vh - 155px - 78px);
   margin-top: 155px;
-  margin-bottom: 78px;
   background: var(--light-color);
+  margin-bottom: 78px;
 }
 header, footer {
   min-width: 375px;
@@ -106,4 +97,7 @@ footer {
 }
 .card-body {
   background-color: var(--light-orange) !important;
+}
+.transactionContainer *{
+  font-size: 16px !important;
 }
