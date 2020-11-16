@@ -12,7 +12,7 @@ const BalancePresentation = (props) => {
     return (
       <Container className="px-2 pt-3 font-weight-bold">
         <Row id="salary" className="pb-1 ">
-          <Col xs={9} className="pr-0 font-weight-bolder">
+          <Col className="pr-0 font-weight-bolder">
             <p>{salaryLabel}</p>
           </Col>
           <Col className="pl-0 d-flex justify-content-end">
@@ -20,7 +20,7 @@ const BalancePresentation = (props) => {
           </Col>
         </Row>
         <Row id="saving" className="pb-1">
-          <Col xs={9} className="pr-0 font-weight-bolder">
+          <Col xs={8} className="pr-0 font-weight-bolder">
             <p>{savingLabel}</p>
           </Col>
           <Col className="pl-0 d-flex justify-content-end">
@@ -40,9 +40,7 @@ const BalancePresentation = (props) => {
             <p>{balanceLabel}</p>
           </Col>
           <Col className="pl-0 d-flex justify-content-end">
-            <p>
-              {props.salary - props.saving - props.expenses} €
-            </p>
+            <p>{props.salary - props.saving - props.expenses} €</p>
           </Col>
         </Row>
       </Container>

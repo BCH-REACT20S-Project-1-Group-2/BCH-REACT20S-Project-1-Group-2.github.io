@@ -7,9 +7,7 @@ function Page(props) {
   return (
     <Container className="Page">
       <Row className="Page-header fixed-top mx-auto">
-        <Col className="p-0">
-          <Header username={props.username} />
-        </Col>
+        <Header username={props.username} />
       </Row>
       <Row className="Page-main-area px-3">
         <Col className="p-0 pb-3">{props.children}</Col>

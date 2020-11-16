@@ -51,6 +51,7 @@ class ExpenseAdd extends React.Component {
               defaultValue="Add category"
               required
               id="inputCategory"
+              style={{ width: "52px" }} // FIXME
             >
               <option value="">Add category</option>
               {categoriesList}
