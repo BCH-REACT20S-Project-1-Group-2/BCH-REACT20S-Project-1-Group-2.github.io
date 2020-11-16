@@ -6,7 +6,9 @@ const ExpenseList = (props) => {
     <ExpenseItem
       key={expenseItem.id}
       expenseItem={expenseItem}
-      delExpense={props.delExpense}
+      expenses={props.expenses}
+      expenseList={props.expenseList}
+      handleChange={props.handleChange}
     />
   ));
 };

@@ -3,22 +3,42 @@ import { InputGroup, FormControl, Form, Button, Card } from "react-bootstrap";
 import { FaSave } from "react-icons/fa";
 
 class ExpenseAdd extends React.Component {
+  // Creates new targets for "expenseList" and "expenses":
+  // - with the "target" properties required in handleChange (validity, name, and new value)
+  // - with a new expense item added in to the "expenseList" array or summed in "expenses"
   onSubmit = (e) => {
     e.preventDefault();
-    this.props.addExpense(
-      this.props.newExpenseCategory,
-      this.props.newExpenseAmount
-    );
+
+    this.props.handleChange({
+      validity: { valid: true },
+      name: "expenseList",
+      value: [
+        {
+          id: this.props.expenseList.length,
+          category: e.target[0].value,
+          amount: e.target[1].valueAsNumber,
+        },
+        ...this.props.expenseList,
+      ],
+    });
+    this.props.handleChange({
+      validity: { valid: true },
+      name: "expenses",
+      value: this.props.expenses + e.target[1].valueAsNumber,
+    });
+
     e.target.reset();
   };
 
   render() {
     const { expenseInputLabel } = require("../phrases/App.json");
-    const categoriesList = this.props.categoryList.map((category) => {
-      return (
-        <option value={category.categoryName}>{category.categoryName}</option>
-      );
-    });
+    const categoriesList = require("../phrases/Categories.json").map(
+      (category) => {
+        return (
+          <option value={category.categoryName}>{category.categoryName}</option>
+        );
+      }
+    );
 
     return (
       <Card.Body className="mt-3 p-3">
@@ -27,8 +47,6 @@ class ExpenseAdd extends React.Component {
             <Form.Control
               as="select"
               defaultValue="Add category"
-              name="newExpenseCategory"
-              onChange={this.props.handleChange}
               required
               id="inputCategory"
             >
@@ -41,9 +59,7 @@ class ExpenseAdd extends React.Component {
               type="number"
               step=".01"
               required
-              name="newExpenseAmount"
               min="0.01"
-              onChange={this.props.handleChange}
               id="inputExpense"
             />
             <InputGroup.Append>

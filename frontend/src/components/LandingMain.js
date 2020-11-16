@@ -11,8 +11,9 @@ import { Link } from "react-router-dom";
 import BalancePresentation from "./BalancePresentation";
 
 class LandingMain extends React.Component {
-  toggleAccordion = (e, i) => {
+  handleSubmit = (e, i) => {
     e.preventDefault();
+    this.props.handleChange(e.target[0]);
     document.getElementById(`accordion-toggle-${i}`).click();
     e.target.reset();
   };
@@ -46,7 +47,7 @@ class LandingMain extends React.Component {
             </Accordion.Toggle>
             <Accordion.Collapse eventKey="0">
               <Card.Body>
-                <Form onSubmit={(e) => this.toggleAccordion(e, 0)}>
+                <Form onSubmit={(e) => this.handleSubmit(e, 0)}>
                   <InputGroup>
                     <FormControl
                       id="inputSalary"
@@ -57,7 +58,6 @@ class LandingMain extends React.Component {
                       required
                       name="salary"
                       min="0.01"
-                      onChange={this.props.handleChange}
                     />
                     <InputGroup.Append>
                       <InputGroup.Text>€</InputGroup.Text>
@@ -85,7 +85,7 @@ class LandingMain extends React.Component {
             </Accordion.Toggle>
             <Accordion.Collapse eventKey="1">
               <Card.Body>
-                <Form onSubmit={(e) => this.toggleAccordion(e, 1)}>
+                <Form onSubmit={(e) => this.handleSubmit(e, 1)}>
                   <InputGroup>
                     <FormControl
                       id="inputSaving"
@@ -96,7 +96,6 @@ class LandingMain extends React.Component {
                       required
                       name="saving"
                       min="0.01"
-                      onChange={this.props.handleChange}
                     />
                     <InputGroup.Append>
                       <InputGroup.Text>€</InputGroup.Text>

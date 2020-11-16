@@ -28,7 +28,7 @@ const WelcomeMain = (props) => {
                     placeholder="your name"
                     value={props.username}
                     className="text-center"
-                    onChange={props.handleChange}
+                    onChange={(e) => props.handleChange(e.target)}
                     name="username"
                   />
                 </Form.Group>
@@ -37,10 +37,7 @@ const WelcomeMain = (props) => {
             <Row>
               <Col>
                 <Link to="/landing">
-                  <Button
-                    id="welcomeCTA"
-                    className="w-100 text-white mt-5"
-                  >
+                  <Button id="welcomeCTA" className="w-100 text-white mt-5">
                     {welcomeCTA}
                   </Button>
                 </Link>
