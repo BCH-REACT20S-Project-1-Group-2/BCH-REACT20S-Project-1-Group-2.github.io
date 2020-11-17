@@ -2,6 +2,26 @@
     "appName": "BudgetCrtl",
     "welcomeText": "Welcome to",
     "welcomeCTA":"Let's Begin",
+
+    "about": "Wanna start making your budget balancing easier?",
+    "aboutText": "If the answer is yes, BudgetCtrl is the App for You! It let's you follow your income and expenses in simple and efficient way.",
+    "privacyPolicy": "Article 12 of GDPR",
+    "privacyPolicyText": "We communicate information about how we process your personal data in concise, transparent and clear way. Information is easily accessible and free of charge.",
+
     "saveButtonLabel":"Save",
-    "closeButtonLabel":"Close"
+    "closeButtonLabel":"Close",
+
+    "salaryLabel":"Total Salary",
+    "updateSalaryLabel":"Update salary",
+    "salaryInputLabel":"Salary",
+
+    "savingLabel":"Target Saving Amount",
+    "updateSavingLabel":"Add saving amount",
+    "savingInputLabel":"Amount",
+
+    "expensesLabel":"Total Expenses",
+    "expensePageLinkLabel":"Add expense",
+    "expenseInputLabel":"e.g. 100 €",
+
+    "balanceLabel":"Balance"
 }

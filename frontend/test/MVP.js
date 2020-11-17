@@ -1,38 +1,38 @@
 describe("BudgetCrtl app MVP test suite", function () {
-  const { closeButtonLabel } = require("../src/phrases/App.json");
-  const { about, privacyPolicy } = require("../src/phrases/Footer.json");
   const {
+    closeButtonLabel,
+    about,
+    privacyPolicy,  
     salaryLabel,
     savingLabel,
     expensesLabel,
     balanceLabel,
-  } = require("../src/phrases/BalancePresentation.json");
-  const {
     updateSalaryLabel,
     salaryInputLabel,
-    updateSavingAmoungLabel,
+    updateSavingLabel,
     savingInputLabel,
-    expensePageLinkLabel,
-  } = require("../src/phrases/LandingPage.json");
+    expensePageLinkLabel
+  } = require("../src/phrases/App.json");
 
+  // eslint-disable-next-line no-undef
   before((browser) => browser.url("http://localhost:3000"));
 
   //prettier-ignore
   test("Test welcome page elements", function (browser) {
     browser.verify
-      .visible("header")
-      .verify.visible("#logo")
+    .visible("header")
+    .verify.visible("#logo")
 
-      .verify.visible("main")
-      .verify.visible("#welcomeText")
-      .verify.visible("#appName")
-      .verify.visible("input[id=username]")
-      .verify.visible("button[id=welcomeCTA]")
+    .verify.visible("main")
+    .verify.visible("#welcomeText")
+    .verify.visible("#appName")
+    .verify.visible("input[id=username]")
+    .verify.visible("button[id=welcomeCTA]")
 
-      .verify.visible("footer")
-      .verify.visible("#about")
-      .verify.visible("#privacy")
-      .verify.visible("#copyright");
+    .verify.visible("footer")
+    .verify.visible("#about")
+    .verify.visible("#privacy")
+    .verify.visible("#copyright");
   });
   //prettier-ignore
   test("Welcome page functionality", function (browser) {
@@ -55,56 +55,56 @@ describe("BudgetCrtl app MVP test suite", function () {
   //prettier-ignore
   test("Landing page elements", function (browser) {
     browser.verify
-      .visible("header")
-      .verify.visible("#logo")
-      .verify.visible("#username")
-      .verify.visible("#userIcon")
+        .visible("header")
+        .verify.visible("#logo")
+        .verify.visible("#username")
+        .verify.visible("#userIcon")
 
-      .verify.visible("main")
-      .verify.containsText("#salary", salaryLabel)
-      .verify.containsText("#saving", savingLabel)
-      .verify.containsText("#expenses", expensesLabel)
-      .verify.containsText("#balance", balanceLabel)
-      .verify.containsText("button[id=updateSalary]",updateSalaryLabel)
-      .verify.not.visible(`input[id=inputSalary]`)
-      .verify.containsText("button[id=updateSaving]", updateSavingAmoungLabel)
-      .verify.not.visible(`input[id=inputSaving]`)
-      .verify.containsText("button[id=updateExpense]",expensePageLinkLabel)
+        .verify.visible("main")
+        .verify.containsText("#salary", salaryLabel)
+        .verify.containsText("#saving", savingLabel)
+        .verify.containsText("#expenses", expensesLabel)
+        .verify.containsText("#balance", balanceLabel)
+        .verify.containsText("button[id=accordion-toggle-0]", updateSalaryLabel)
+        .verify.not.visible(`input[id=inputSalary]`)
+        .verify.containsText("button[id=accordion-toggle-1]", updateSavingLabel)
+        .verify.not.visible(`input[id=inputSaving]`)
+        .verify.containsText("button[id=updateExpense]",  expensePageLinkLabel)
 
-      .verify.visible("footer")
-      .verify.visible("a[href='/landing']")
-      .verify.visible("a[href='/analysis']")
-      .verify.visible("a[href='/']");
+        .verify.visible("footer")
+        .verify.visible("a[href='/landing']")
+        .verify.visible("a[href='/analysis']")
+        .verify.visible("a[href='/']");
   });
   //prettier-ignore
   test("Landing page functionality", function (browser) {
-    browser
-    .verify.containsText("header", "MyUserName")
+    browser.verify
+      .containsText("header", "MyUserName")
 
-    .verify.containsText("#salary", "0 €")
-    .verify.containsText("#saving", "0 €")
-    .verify.containsText("#expenses", "0 €")
-    .verify.containsText("#balance", "0 €")
+      .verify.containsText("#salary", "0 €")
+      .verify.containsText("#saving", "0 €")
+      .verify.containsText("#expenses", "0 €")
+      .verify.containsText("#balance", "0 €")
 
-    .click("button[id=updateSalary]")
-    .verify.visible(`input[id=inputSalary]`)
-    .verify.visible(`input[placeholder=${salaryInputLabel}]`)
-    .setValue(`input[id=inputSalary]`, "100")
-    .click("button[id=saveSalary]")
-    .verify.not.visible(`input[id=inputSalary]`)
-    .verify.containsText("#salary", "100 €")
-    .verify.containsText("#balance", "100 €")
+      .click("button[id=accordion-toggle-0]")
+      .verify.visible(`input[id=inputSalary]`)
+      .verify.visible(`input[placeholder=${salaryInputLabel}]`)
+      .setValue(`input[id=inputSalary]`, "100")
+      .click("button[id=saveSalary]")
+      .verify.not.visible(`input[id=inputSalary]`)
+      .verify.containsText("#salary", "100 €")
+      .verify.containsText("#balance", "100 €")
 
-    .click("button[id=updateSaving]")
-    .verify.visible(`input[id=inputSaving]`)
-    .verify.visible(`input[placeholder=${savingInputLabel}]`)
-    .setValue(`input[id=inputSaving]`, "200")
-    .click("button[id=saveSaving]")
-    .verify.not.visible(`input[id=inputSaving]`)
-    .verify.containsText("#saving", "200 €")
-    .verify.containsText("#balance", "-100 €")
+      .click("button[id=accordion-toggle-1]")
+      .verify.visible(`input[id=inputSaving]`)
+      .verify.visible(`input[placeholder=${savingInputLabel}]`)
+      .setValue(`input[id=inputSaving]`, "200")
+      .click("button[id=saveSaving]")
+      .verify.not.visible(`input[id=inputSaving]`)
+      .verify.containsText("#saving", "200 €")
+      .verify.containsText("#balance", "-100 €")
 
-    .click("button[id=updateExpense]")
+      .click("button[id=updateExpense]");
   });
    //prettier-ignore
    test("Expense page elements", function (browser) {
@@ -167,5 +167,6 @@ describe("BudgetCrtl app MVP test suite", function () {
     .verify.visible("#welcomeText") 
   });
 
+  // eslint-disable-next-line no-undef
   after((browser) => browser.end());
 });
