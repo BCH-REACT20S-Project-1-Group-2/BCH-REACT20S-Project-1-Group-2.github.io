@@ -19,8 +19,8 @@ class App extends React.Component {
   handleChange = (target) => {
     // If the given target content is valid ...
     if (target.validity.valid) {
-      // ... set it to state:
-      this.setState({ [target.name]: target.value });
+      // ... set it to state, as a number if possible:
+      this.setState({ [target.name]: target.valueAsNumber || target.value });
       // ... and to local storage:
       localStorage.setItem(
         `bdgtCtrl-${target.name}`,

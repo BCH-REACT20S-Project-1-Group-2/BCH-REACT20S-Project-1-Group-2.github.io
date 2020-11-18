@@ -89,7 +89,7 @@ describe("BudgetCrtl app MVP test suite", function () {
       .click("button[id=accordion-toggle-0]")
       .verify.visible(`input[id=inputSalary]`)
       .verify.visible(`input[placeholder=${salaryInputLabel}]`)
-      .setValue(`input[id=inputSalary]`, "100")
+      .setValue(`input[id=inputSalary]`, "0100")
       .click("button[id=saveSalary]")
       .verify.not.visible(`input[id=inputSalary]`)
       .verify.containsText("#salary", "100 €")
@@ -98,7 +98,7 @@ describe("BudgetCrtl app MVP test suite", function () {
       .click("button[id=accordion-toggle-1]")
       .verify.visible(`input[id=inputSaving]`)
       .verify.visible(`input[placeholder=${savingInputLabel}]`)
-      .setValue(`input[id=inputSaving]`, "200")
+      .setValue(`input[id=inputSaving]`, "0200")
       .click("button[id=saveSaving]")
       .verify.not.visible(`input[id=inputSaving]`)
       .verify.containsText("#saving", "200 €")
@@ -136,7 +136,7 @@ describe("BudgetCrtl app MVP test suite", function () {
     .verify.containsText("#expenses", "0 €")
 
     .click('select[id=inputCategory] option[value="Groceries"]')
-    .setValue("input[id=inputExpense]", "100")
+    .setValue("input[id=inputExpense]", "0100")
     .click("button[id=savebutton]")
     .verify.containsText("#expenses", "100 €")
 
@@ -145,7 +145,7 @@ describe("BudgetCrtl app MVP test suite", function () {
     // To be completed once Transaction... styling has been completed
 
     .click('select[id=inputCategory] option[value="Insurances"]')
-    .setValue("input[id=inputExpense]", "200")
+    .setValue("input[id=inputExpense]", "0200")
     .click("button[id=savebutton]")
     .verify.containsText("#expenses", "300 €")
 
