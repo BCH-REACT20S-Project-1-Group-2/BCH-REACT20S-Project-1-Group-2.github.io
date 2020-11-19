@@ -1,86 +1,27 @@
-import React, { Component } from "react";
+import React from "react";
 import ExpensePresentation from "./ExpensePresentation";
+import ExpenseAdd from "./ExpenseAdd";
 import ExpenseList from "./ExpenseList";
-import TransactionHistory from "./TransactionHistory";
 
-export class ExpensePage extends Component {
-  state = {
-    userexpenses: [],
-    total: 0,
-  };
-
-  // This will update the state of userexpenses after a transaction is added.
-  addExpense = (title, amount) => {
-    const newExpense = {
-      id: Math.floor(Math.random() * 10000000000),
-      title: title,
-      amount: parseFloat(amount),
-    };
-    this.setState((state) => ({
-      userexpenses: [newExpense, ...state.userexpenses],
-    }));
-    this.setState((state) => ({
-      total: state.total + parseFloat(amount),
-    }));
-  };
-
-  // This will update the state of userexpenses and total after a transaction is removed.
-  delExpense = (id, amt) => {
-    this.setState((state) => ({
-      userexpenses: [
-        ...state.userexpenses.filter((userexpenses) => userexpenses.id !== id),
-      ],
-    }));
-    this.setState((state) => ({
-      total: state.total - parseFloat(amt),
-    }));
-  };
-
-  // React Life Cycle
-  componentDidMount() {
-    const items = JSON.parse(localStorage.getItem("userexpenses"));
-    if (items) {
-      const fetchExpense = items.map((obj) => ({
-        id: obj.id,
-        title: obj.title,
-        amount: parseFloat(obj.amount),
-      }));
-      this.setState({ userexpenses: [...fetchExpense] });
-
-      //To update total expense amount on start
-      let totalexpensesarray = [];
-      fetchExpense.forEach((item) => {
-        totalexpensesarray.push(item.amount);
-      });
-      const totalexpenses = totalexpensesarray.reduce((a, b) => a + b, 0);
-
-      this.setState({ total: totalexpenses });
-    }
-  }
-
-  componentDidUpdate() {
-    localStorage.setItem(
-      "userexpenses",
-      JSON.stringify(this.state.userexpenses)
-    );
-    localStorage.setItem("total", JSON.stringify(this.state.total));
-  }
-
-  render() {
-    return (
-      <div>
-        <main>
-          <ExpensePresentation total={this.state.total} />
-          <ExpenseList addExpense={this.addExpense} />
-          <TransactionHistory
-            userexpenses={this.state.userexpenses}
-            delExpense={this.delExpense}
-          />
-        </main>
-      </div>
-    );
-  }
+const ExpenseMain = (props) => {
+  return (
+    <main>
+      <ExpensePresentation
+        expenses={props.expenses}
+      />
+      <ExpenseAdd
+        expenses={props.expenses}
+        expenseList={props.expenseList}
+        handleChange={props.handleChange}
+      />
+      <ExpenseList
+        expenses={props.expenses}
+        expenseList={props.expenseList}
+        handleChange={props.handleChange}
+      />
+    </main>
+  );
 }
 
-export default ExpensePage;
+export default ExpenseMain;
 

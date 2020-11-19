@@ -3,18 +3,18 @@ import { Switch, Route } from 'react-router-dom';
 import AppHeader from "./AppHeader";
 import logo from "../assets/BCtrlLogo.svg";
 
-function Header() {
+function Header(props) {
   return (
     <header className="d-flex justify-content-center align-items-end">
       <Switch>
         <Route path="/landing">
-          <AppHeader />
+          <AppHeader username={props.username} />
         </Route>
         <Route path="/expense">
-          <AppHeader />
+          <AppHeader username={props.username} />
         </Route>
         <Route path="/">
-          <img src={logo} alt="BudgetCtrl logo" className="pb-3"/>
+          <img id="logo" src={logo} alt="BudgetCtrl logo" className="pb-3" />
         </Route>
       </Switch>
     </header>
