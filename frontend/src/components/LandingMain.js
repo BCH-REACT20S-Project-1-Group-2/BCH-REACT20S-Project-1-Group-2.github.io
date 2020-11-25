@@ -28,12 +28,14 @@ class LandingMain extends React.Component {
       saveButtonLabel,
     } = require("../phrases/App.json");
 
+    const { salary, saving, expenses } = this.props;
+
     return (
       <main>
         <BalancePresentation
-          salary={this.props.salary}
-          saving={this.props.saving}
-          expenses={this.props.expenses}
+          salary={salary}
+          saving={saving}
+          expenses={expenses}
         />
         <Accordion className="mt-3">
           <Card className="mb-3">

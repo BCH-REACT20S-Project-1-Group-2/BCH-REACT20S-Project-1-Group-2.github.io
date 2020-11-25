@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Modal, Button } from "react-bootstrap";
 
-function CustomModal(props) {
+function CustomModal({ title, body, text }) {
   const [show, setShow] = useState(false);
 
   const handleClose = () => setShow(false);
@@ -12,24 +12,24 @@ function CustomModal(props) {
   return (
     <>
       <p
-        id={props.title.split(" ")[0].toLowerCase()}
+        id={title.split(" ")[0].toLowerCase()}
         onClick={handleShow}
         style={{
           cursor: "pointer",
         }}
       >
-        {props.title}
+        {title}
       </p>
 
       <Modal show={show} onHide={handleClose} className="mt-5 pt-5">
         <Modal.Header className="align-self-center border-0">
           <Modal.Title>
-            <h3>{props.title}</h3>
+            <h3>{title}</h3>
           </Modal.Title>
         </Modal.Header>
         <Modal.Body>
-            <h4>{props.body}</h4>
-            <p>{props.text}</p>
+          <h4>{body}</h4>
+          <p>{text}</p>
         </Modal.Body>
         <Modal.Footer className="align-self-center border-0">
           <Button id="modal-close" onClick={handleClose}>
