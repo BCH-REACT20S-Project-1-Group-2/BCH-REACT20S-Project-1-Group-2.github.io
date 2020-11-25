@@ -24,7 +24,7 @@ class App extends React.Component {
       // ... and to local storage:
       localStorage.setItem(
         `bdgtCtrl-${target.name}`,
-        JSON.stringify(target.value)
+        JSON.stringify(target.valueAsNumber || target.value)
       );
     }
   };
