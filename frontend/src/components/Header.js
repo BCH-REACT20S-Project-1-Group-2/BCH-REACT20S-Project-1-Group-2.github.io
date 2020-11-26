@@ -14,7 +14,7 @@ function Header({ username }) {
           <AppHeader username={username} />
         </Route>
         <Route path="/">
-          <img id="logo" src={logo} alt="BudgetCtrl logo" className="pb-3" />
+          <img id="logoWelcome" src={logo} alt="BudgetCtrl logo" className="pb-3" />
         </Route>
       </Switch>
     </header>
