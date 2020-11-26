@@ -35,7 +35,7 @@ class ExpenseAdd extends React.Component {
     const categoriesList = require("../phrases/Categories.json").map(
       (category) => {
         return (
-          <option key={category.id} value={category.categoryName}>
+          <option key={category.id} value={category.categoryId}>
             {category.categoryName}
           </option>
         );

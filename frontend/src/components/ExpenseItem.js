@@ -25,11 +25,19 @@ class ExpenseItem extends React.Component {
 
   render() {
     const { expenseItem } = this.props;
+    const categoriesList = require("../phrases/Categories.json");
+
+    const getCategoryName = (id) => {
+      var data = categoriesList;
+      let categories = data.find((el) => el.categoryId === Number(id));
+      return categories["categoryName"]; // returns the name of category from CategoryId
+    };
+
     return (
       <Container as={Card.Body} className="p-2 mt-2 transactionContainer ">
         <Row className="d-flex justify-content-between align-items-center">
           <Col xs={7} className="pr-0">
-            <p>{expenseItem.category}</p>
+            <p>{getCategoryName(expenseItem.category)}</p>
           </Col>
           <Col className="px-0 d-flex justify-content-end">
             <p>{expenseItem.amount} €</p>
