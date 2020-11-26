@@ -59,7 +59,7 @@ class LandingMain extends React.Component {
                       step=".01"
                       required
                       name="salary"
-                      min="0.01"
+                      min="0"
                     />
                     <InputGroup.Append>
                       <InputGroup.Text>€</InputGroup.Text>
@@ -97,7 +97,7 @@ class LandingMain extends React.Component {
                       step=".01"
                       required
                       name="saving"
-                      min="0.01"
+                      min="0"
                     />
                     <InputGroup.Append>
                       <InputGroup.Text>€</InputGroup.Text>
