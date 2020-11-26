@@ -3,25 +3,22 @@ import ExpensePresentation from "./ExpensePresentation";
 import ExpenseAdd from "./ExpenseAdd";
 import ExpenseList from "./ExpenseList";
 
-const ExpenseMain = (props) => {
+const ExpenseMain = ({ expenses, expenseList, handleChange }) => {
   return (
     <main>
-      <ExpensePresentation
-        expenses={props.expenses}
-      />
+      <ExpensePresentation expenses={expenses} />
       <ExpenseAdd
-        expenses={props.expenses}
-        expenseList={props.expenseList}
-        handleChange={props.handleChange}
+        expenses={expenses}
+        expenseList={expenseList}
+        handleChange={handleChange}
       />
       <ExpenseList
-        expenses={props.expenses}
-        expenseList={props.expenseList}
-        handleChange={props.handleChange}
+        expenses={expenses}
+        expenseList={expenseList}
+        handleChange={handleChange}
       />
     </main>
   );
-}
+};
 
 export default ExpenseMain;
-

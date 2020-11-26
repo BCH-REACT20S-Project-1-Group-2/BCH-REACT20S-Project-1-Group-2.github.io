@@ -1,14 +1,14 @@
 import React from "react";
 import ExpenseItem from "./ExpenseItem";
 
-const ExpenseList = (props) => {
-  return props.expenseList.map((expenseItem) => (
+const ExpenseList = ({ expenses, expenseList, handleChange }) => {
+  return expenseList.map((expenseItem) => (
     <ExpenseItem
       key={expenseItem.id}
       expenseItem={expenseItem}
-      expenses={props.expenses}
-      expenseList={props.expenseList}
-      handleChange={props.handleChange}
+      expenses={expenses}
+      expenseList={expenseList}
+      handleChange={handleChange}
     />
   ));
 };

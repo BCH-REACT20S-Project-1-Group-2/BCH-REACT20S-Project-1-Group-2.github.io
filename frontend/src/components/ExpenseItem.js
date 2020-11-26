@@ -24,31 +24,29 @@ class ExpenseItem extends React.Component {
   };
 
   render() {
+    const { expenseItem } = this.props;
     return (
       <Container as={Card.Body} className="p-2 mt-2 transactionContainer ">
-          <Row className="d-flex justify-content-between align-items-center">
-            <Col xs={7} className="pr-0">
-              <p>{this.props.expenseItem.category}</p>
-            </Col>
-            <Col className="px-0 d-flex justify-content-end">
-              <p>{this.props.expenseItem.amount} €</p>
-            </Col>
-            <Col className="d-flex justify-content-end">
-              <Button
-                onClick={() => {
-                  this.handleClick(
-                    this.props.expenseItem.id,
-                    this.props.expenseItem.amount
-                  );
-                }}
-              >
-                <FaRegTrashAlt />
-              </Button>
-            </Col>
-          </Row>
-        </Container>
+        <Row className="d-flex justify-content-between align-items-center">
+          <Col xs={7} className="pr-0">
+            <p>{expenseItem.category}</p>
+          </Col>
+          <Col className="px-0 d-flex justify-content-end">
+            <p>{expenseItem.amount} €</p>
+          </Col>
+          <Col className="d-flex justify-content-end">
+            <Button
+              onClick={() => {
+                this.handleClick(expenseItem.id, expenseItem.amount);
+              }}
+            >
+              <FaRegTrashAlt />
+            </Button>
+          </Col>
+        </Row>
+      </Container>
     );
   }
-};
+}
 
 export default ExpenseItem;
