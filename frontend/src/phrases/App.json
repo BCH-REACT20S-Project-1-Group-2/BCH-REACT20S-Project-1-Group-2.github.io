@@ -21,7 +21,7 @@
 
     "expensesLabel":"Total Expenses",
     "expensePageLinkLabel":"Add expense",
-    "expenseInputLabel":"e.g. 100 €",
+    "expenseInputLabel":"e.g. 10 €",
 
     "balanceLabel":"Balance"
 }
