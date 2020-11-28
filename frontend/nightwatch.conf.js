@@ -13,7 +13,8 @@ module.exports = {
       desiredCapabilities: {
         browserName: "chrome",
         chromeOptions: {
-          args: ["--headless"], // Note non-headless won't work before responsiveness is implemented
+          // FIXME: non-headless won't work with current footer display hack (see index.html inline js-script), fix when implementing responsiveness
+          args: ["--headless", "window-size=375,812"],
         },
       },
     },

@@ -21,6 +21,7 @@
     "deploy": "gh-pages -d build",
     "build": "react-scripts build",
     "test": "npx nightwatch",
+    "test-debug": "node --inspect-brk node_modules/.bin/nightwatch",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
