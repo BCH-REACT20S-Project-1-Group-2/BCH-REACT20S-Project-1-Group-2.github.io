@@ -25,11 +25,11 @@ class ExpenseItem extends React.Component {
 
   render() {
     const { expenseItem } = this.props;
-    const categoriesList = require("../phrases/Categories.json");
 
     const getCategoryName = (id) => {
-      var data = categoriesList;
-      let categories = data.find((el) => el.categoryId === Number(id));
+      const categories = require("../phrases/Categories.json").find(
+        (el) => el.categoryId === Number(id)
+      );
       return categories["categoryName"]; // returns the name of category from CategoryId
     };
 
