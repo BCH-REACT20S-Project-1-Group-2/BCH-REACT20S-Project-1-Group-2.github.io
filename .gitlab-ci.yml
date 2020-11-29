@@ -1,0 +1,23 @@
+# Using latest node as the base image
+image: node
+
+# All validations are done in this single "Test" job
+Test:
+    before_script:
+    # First we are going to install dependencies that chrome and chromedriver will need
+    - apt-get update && apt-get install -yq libnss3 unzip openjdk-8-jre-headless xvfb libxi6 libgconf-2-4
+    # Install chrome browser as it does not exist with the node image
+    - curl -sS -o - https://dl-ssl.google.com/linux/linux_signing_key.pub | apt-key add
+    - echo "deb http://dl.google.com/linux/chrome/deb/ stable main" >> /etc/apt/sources.list.d/google-chrome.list
+    - apt-get -y update
+    - apt-get -y install google-chrome-stable
+    # Install project application and serve
+    - cd frontend
+    - npm i
+    - npm i serve
+    script:
+    # Build and serve the app
+    - npm run build
+    - npx serve -s build -l 3000 &
+    # Run all tests
+    - npm test
