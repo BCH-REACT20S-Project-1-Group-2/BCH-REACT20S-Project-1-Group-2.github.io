@@ -16,7 +16,7 @@ class ExpenseAdd extends React.Component {
         {
           id: this.props.expenseList.length,
           category: e.target[0].value,
-          amount: Math.floor(e.target[1].valueAsNumber*100)/100,
+          amount: (Math.floor(e.target[1].valueAsNumber*100)/100),
         },
         ...this.props.expenseList,
       ],
@@ -24,7 +24,7 @@ class ExpenseAdd extends React.Component {
     this.props.handleChange({
       validity: { valid: true },
       name: "expenses",
-      value: this.props.expenses + Math.floor(e.target[1].valueAsNumber*100)/100,
+      value: (Math.floor((this.props.expenses)*100)/100) + (Math.floor(e.target[1].valueAsNumber*100)/100),
     });
 
     e.target.reset();

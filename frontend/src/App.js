@@ -20,11 +20,11 @@ class App extends React.Component {
     // If the given target content is valid ...
     if (target.validity.valid) {
       // ... set it to state, as a number if possible:
-      this.setState({ [target.name]: Math.floor(target.valueAsNumber*100)/100 || target.value });
+      this.setState({ [target.name]: (Math.floor((target.valueAsNumber)*100)/100) || target.value });
       // ... and to local storage:
       localStorage.setItem(
         `bdgtCtrl-${target.name}`,
-        JSON.stringify(Math.floor(target.valueAsNumber*100)/100 || target.value)
+        JSON.stringify(Math.floor((target.valueAsNumber)*100)/100 || target.value)
       );
     }
   };

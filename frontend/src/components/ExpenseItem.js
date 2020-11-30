@@ -19,7 +19,7 @@ class ExpenseItem extends React.Component {
     this.props.handleChange({
       validity: { valid: true },
       name: "expenses",
-      value: this.props.expenses - parseFloat(amount),
+      value: (Math.floor((this.props.expenses)*100)/100) - (Math.floor(parseFloat(amount)*100)/100),
     });
   };
 
