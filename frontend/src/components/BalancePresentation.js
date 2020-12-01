@@ -40,7 +40,7 @@ const BalancePresentation = ({ salary, expenses, saving }) => {
           <p>{balanceLabel}</p>
         </Col>
         <Col className="pl-0 d-flex justify-content-end">
-          <p>{salary - saving - expenses} €</p>
+          <p>{Number((salary - saving - expenses).toFixed(2))} €</p>
         </Col>
       </Row>
     </Container>
