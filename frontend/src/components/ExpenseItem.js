@@ -24,14 +24,12 @@ class ExpenseItem extends React.Component {
   };
 
   render() {
-    const { expenseItem } = this.props;
+    const { expenseItem, getCategoryName } = this.props;
 
-    const getCategoryName = (id) => {
-      const categories = require("../phrases/Categories.json").find(
-        (el) => el.categoryId === Number(id)
-      );
-      return categories["categoryName"]; // returns the name of category from CategoryId
-    };
+    // const getCategoryName = (id) =>
+    //   require("../phrases/Categories.json").find(
+    //     (el) => el.categoryId === Number(id)
+    //   ).categoryName; // returns the name of category from CategoryId;
 
     return (
       <Container as={Card.Body} className="p-2 mt-2 transactionContainer ">

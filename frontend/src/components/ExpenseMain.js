@@ -3,7 +3,12 @@ import ExpensePresentation from "./ExpensePresentation";
 import ExpenseAdd from "./ExpenseAdd";
 import ExpenseList from "./ExpenseList";
 
-const ExpenseMain = ({ expenses, expenseList, handleChange }) => {
+const ExpenseMain = ({
+  expenses,
+  expenseList,
+  handleChange,
+  getCategoryName,
+}) => {
   return (
     <main>
       <ExpensePresentation expenses={expenses} />
@@ -16,6 +21,7 @@ const ExpenseMain = ({ expenses, expenseList, handleChange }) => {
         expenses={expenses}
         expenseList={expenseList}
         handleChange={handleChange}
+        getCategoryName={getCategoryName}
       />
     </main>
   );

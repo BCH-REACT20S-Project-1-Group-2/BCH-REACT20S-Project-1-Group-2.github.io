@@ -1,7 +1,12 @@
 import React from "react";
 import ExpenseItem from "./ExpenseItem";
 
-const ExpenseList = ({ expenses, expenseList, handleChange }) => {
+const ExpenseList = ({
+  expenses,
+  expenseList,
+  handleChange,
+  getCategoryName,
+}) => {
   return expenseList.map((expenseItem) => (
     <ExpenseItem
       key={expenseItem.id}
@@ -9,6 +14,7 @@ const ExpenseList = ({ expenses, expenseList, handleChange }) => {
       expenses={expenses}
       expenseList={expenseList}
       handleChange={handleChange}
+      getCategoryName={getCategoryName}
     />
   ));
 };

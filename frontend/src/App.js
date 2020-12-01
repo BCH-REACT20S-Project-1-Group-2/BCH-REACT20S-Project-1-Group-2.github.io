@@ -1,9 +1,9 @@
 import React from "react";
 import "./styles/App.css";
 import Page from "./components/Page";
-import WelcomeMain from "./components/WelcomeMain"
-import LandingMain from "./components/LandingMain"
-import ExpenseMain from "./components/ExpenseMain"
+import WelcomeMain from "./components/WelcomeMain";
+import LandingMain from "./components/LandingMain";
+import ExpenseMain from "./components/ExpenseMain";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 class App extends React.Component {
@@ -29,6 +29,11 @@ class App extends React.Component {
     }
   };
 
+  getCategoryName = (id) =>
+    require("./phrases/Categories.json").find(
+      (el) => el.categoryId === Number(id)
+    ).categoryName; // returns the name of category from CategoryId;
+
   render() {
     return (
       <Router className="App">
@@ -49,6 +54,7 @@ class App extends React.Component {
                 expenses={this.state.expenses}
                 expenseList={this.state.expenseList}
                 handleChange={this.handleChange}
+                getCategoryName={this.getCategoryName}
               />
             </Page>
           </Route>
