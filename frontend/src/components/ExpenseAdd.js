@@ -43,22 +43,23 @@ class ExpenseAdd extends React.Component {
     );
 
     return (
-      <Card.Body className="mt-3 p-3">
+      <Card.Body className="mt-3 py-3 px-2">
         <Form onSubmit={this.handleSubmit}>
           <InputGroup>
             <Form.Control
+              className="mr-2"              
               as="select"
               defaultValue="Add category"
               required
               id="inputCategory"
-              style={{ width: "52px" }} // FIXME
+              style={{ width: "100px" }} 
             >
               <option value="">Add category</option>
               {categoriesList}
             </Form.Control>
             <FormControl
               placeholder={expenseInputLabel}
-              className="text-center"
+              className="text-center mr-2"
               type="number"
               step=".01"
               required
